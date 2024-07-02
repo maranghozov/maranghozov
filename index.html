@@ -483,8 +483,7 @@ const vocabList = [
 
     
 ];
-
-        let currentIndex = Math.floor(Math.random() * vocabList.length);
+       let currentIndex = Math.floor(Math.random() * vocabList.length);
 
         function displayVocab() {
             const vocab = vocabList[currentIndex];
@@ -524,9 +523,11 @@ const vocabList = [
             const newEntry = { word, synonym, example };
             vocabList.push(newEntry); // Add the new entry to the vocabList array
 
-            // Optionally update display immediately
-            currentIndex = vocabList.length - 1; // Update index to show the newly added entry
-            displayVocab();
+            // Update localStorage with updated vocabList
+            localStorage.setItem('vocabList', JSON.stringify(vocabList));
+
+            // Display entries list
+            displayEntries();
 
             // Clear form inputs
             document.getElementById('wordForm').reset();
@@ -535,8 +536,20 @@ const vocabList = [
             alert('Entry added successfully!');
         });
 
+        function displayEntries() {
+            const entriesList = document.getElementById('entries-list');
+            entriesList.innerHTML = ''; // Clear previous entries
+
+            vocabList.forEach(entry => {
+                const entryElement = document.createElement('div');
+                entryElement.textContent = `Word: ${entry.word}, Synonym: ${entry.synonym}, Example: ${entry.example}`;
+                entriesList.appendChild(entryElement);
+            });
+        }
+
         // Initial display
         displayVocab();
+        displayEntries(); // Display existing entries on page load
     </script>
 </body>
 </html>
