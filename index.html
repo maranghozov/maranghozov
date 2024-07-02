@@ -483,7 +483,7 @@ const vocabList = [
 
     
 ];
-       let currentIndex = Math.floor(Math.random() * vocabList.length);
+        let currentIndex = Math.floor(Math.random() * vocabList.length);
 
         function displayVocab() {
             const vocab = vocabList[currentIndex];
@@ -504,9 +504,12 @@ const vocabList = [
             displayVocab();
         });
 
+        // Initial display
+        displayVocab();
+
         document.getElementById('accessButton').addEventListener('click', function() {
             const password = prompt('Enter the password:');
-            if (password === 'sashko2006') { // replace with your actual password
+            if (password === 'sashko2006') { // Replace with your actual password
                 document.getElementById('menu').style.display = 'block';
             } else {
                 alert('Incorrect password!');
@@ -516,18 +519,14 @@ const vocabList = [
         document.getElementById('wordForm').addEventListener('submit', function(event) {
             event.preventDefault();
 
-            const word = document.getElementById('wordInput').value;
-            const synonym = document.getElementById('synonymInput').value;
-            const example = document.getElementById('exampleInput').value;
+            const word = document.getElementById('word').value;
+            const synonym = document.getElementById('synonym').value;
+            const example = document.getElementById('example').value;
 
             const newEntry = { word, synonym, example };
             vocabList.push(newEntry); // Add the new entry to the vocabList array
 
-            // Update localStorage with updated vocabList
-            localStorage.setItem('vocabList', JSON.stringify(vocabList));
-
-            // Display entries list
-            displayEntries();
+            displayEntries(); // Update the displayed entries
 
             // Clear form inputs
             document.getElementById('wordForm').reset();
@@ -538,6 +537,11 @@ const vocabList = [
 
         function displayEntries() {
             const entriesList = document.getElementById('entries-list');
+            if (!entriesList) {
+                console.error("Entries list element not found in DOM.");
+                return;
+            }
+
             entriesList.innerHTML = ''; // Clear previous entries
 
             vocabList.forEach(entry => {
@@ -546,12 +550,3 @@ const vocabList = [
                 entriesList.appendChild(entryElement);
             });
         }
-
-        // Initial display
-        displayVocab();
-        displayEntries(); // Display existing entries on page load
-    document.addEventListener('DOMContentLoaded', function() {
-    // Your code that accesses form elements goes here
-    </script>
-</body>
-</html>
