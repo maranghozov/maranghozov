@@ -42,7 +42,7 @@
         <p id="synonym" class="hidden"></p>
         <p id="example-sentence" class="hidden"></p>
         <button id="next-btn">Next</button>
-        <button id="accessButton">Access Form</button>
+    <button id="accessButton">Access Form</button>
     <div id="menu">
         <form id="wordForm">
             <label for="word">Word:</label><br>
@@ -53,7 +53,7 @@
             <input type="text" id="example" name="example"><br><br>
             <input type="submit" value="Submit">
         </form>
-        </div>
+    </div>
     </div>
 <script>
 const vocabList = [
@@ -518,30 +518,28 @@ const vocabList = [
     }
 });
 
-document.getElementById('wordForm').addEventListener('submit', async function(event) {
-    event.preventDefault();
-    
-    const word = document.getElementById('word').value;
-    const synonym = document.getElementById('synonym').value;
-    const example = document.getElementById('example').value;
+        document.getElementById('accessButton').addEventListener('click', function() {
+            const password = prompt('Enter the password:');
+            if (password === 'your_password_here') { // replace 'your_password_here' with your actual password
+                document.getElementById('menu').style.display = 'block';
+            } else {
+                alert('Incorrect password!');
+            }
+        });
 
-    const newEntry = { word, synonym, example };
+        document.getElementById('wordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const word = document.getElementById('word').value;
+            const synonym = document.getElementById('synonym').value;
+            const example = document.getElementById('example').value;
 
-    const response = await fetch('/.netlify/functions/addEntry', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newEntry)
-    });
+            const newEntry = { word, synonym, example };
+            vocabList.push(newEntry); // Add the new entry to the vocabList array
 
-    if (response.ok) {
-        alert('Entry added successfully!');
-        document.getElementById('wordForm').reset();
-    } else {
-        alert('Failed to add entry.');
-    }
-});
+            alert('Entry added successfully!');
+            document.getElementById('wordForm').reset(); // Clear the form inputs
+        });
 
         
     </script>
