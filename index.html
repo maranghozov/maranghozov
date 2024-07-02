@@ -42,18 +42,18 @@
         <p id="synonym" class="hidden"></p>
         <p id="example-sentence" class="hidden"></p>
         <button id="next-btn">Next</button>
-    <button id="accessButton">Access Form</button>
-    <div id="menu">
-        <form id="wordForm">
-            <label for="word">Word:</label><br>
-            <input type="text" id="word" name="word"><br>
-            <label for="synonym">Synonym:</label><br>
-            <input type="text" id="synonym" name="synonym"><br>
-            <label for="example">Example:</label><br>
-            <input type="text" id="example" name="example"><br><br>
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+        <button id="accessButton">Access Form</button>
+        <div id="menu">
+            <form id="wordForm">
+                <label for="word">Word:</label><br>
+                <input type="text" id="word" name="word"><br>
+                <label for="synonym">Synonym:</label><br>
+                <input type="text" id="synonymInput" name="synonym"><br>
+                <label for="example">Example:</label><br>
+                <input type="text" id="exampleInput" name="example"><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
     </div>
 <script>
 const vocabList = [
@@ -506,21 +506,9 @@ const vocabList = [
             displayVocab();
         });
 
-        // Initial display
-        displayVocab();
-        
-        document.getElementById('accessButton').addEventListener('click', function() {
-    const password = prompt('Enter the password:');
-    if (password === 'sashko2006') { // replace 'your_password_here' with your actual password
-        document.getElementById('menu').style.display = 'block';
-    } else {
-        alert('Incorrect password!');
-    }
-});
-
         document.getElementById('accessButton').addEventListener('click', function() {
             const password = prompt('Enter the password:');
-            if (password === 'your_password_here') { // replace 'your_password_here' with your actual password
+            if (password === 'sashko2006') { // replace with your actual password
                 document.getElementById('menu').style.display = 'block';
             } else {
                 alert('Incorrect password!');
@@ -529,10 +517,10 @@ const vocabList = [
 
         document.getElementById('wordForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            
+
             const word = document.getElementById('word').value;
-            const synonym = document.getElementById('synonym').value;
-            const example = document.getElementById('example').value;
+            const synonym = document.getElementById('synonymInput').value; // adjusted ID
+            const example = document.getElementById('exampleInput').value; // adjusted ID
 
             const newEntry = { word, synonym, example };
             vocabList.push(newEntry); // Add the new entry to the vocabList array
@@ -541,7 +529,8 @@ const vocabList = [
             document.getElementById('wordForm').reset(); // Clear the form inputs
         });
 
-        
+        // Initial display
+        displayVocab();
     </script>
 </body>
 </html>
