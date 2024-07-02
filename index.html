@@ -484,64 +484,59 @@ const vocabList = [
     
 ];
 
-    let currentIndex = Math.floor(Math.random() * vocabList.length);
+        let currentIndex = Math.floor(Math.random() * vocabList.length);
 
-    function displayVocab() {
-        const vocab = vocabList[currentIndex];
-        document.getElementById('vocab-word').textContent = vocab.word;
-        document.getElementById('synonym').textContent = `Synonym: ${vocab.synonym}`;
-        document.getElementById('example-sentence').textContent = `Example: ${vocab.example}`;
-        document.getElementById('synonym').classList.add('hidden');
-        document.getElementById('example-sentence').classList.add('hidden');
-    }
-
-    document.getElementById('reveal-btn').addEventListener('click', () => {
-        document.getElementById('synonym').classList.remove('hidden');
-        document.getElementById('example-sentence').classList.remove('hidden');
-    });
-
-    document.getElementById('next-btn').addEventListener('click', () => {
-        currentIndex = Math.floor(Math.random() * vocabList.length);
-        displayVocab();
-    });
-
-    document.getElementById('accessButton').addEventListener('click', function() {
-        const password = prompt('Enter the password:');
-        if (password === 'sashko2006') { // replace with your actual password
-            document.getElementById('menu').style.display = 'block';
-        } else {
-            alert('Incorrect password!');
-            // Prevent form access on incorrect password
+        function displayVocab() {
+            const vocab = vocabList[currentIndex];
+            document.getElementById('vocab-word').textContent = vocab.word;
+            document.getElementById('synonym').textContent = `Synonym: ${vocab.synonym}`;
+            document.getElementById('example-sentence').textContent = `Example: ${vocab.example}`;
+            document.getElementById('synonym').classList.add('hidden');
+            document.getElementById('example-sentence').classList.add('hidden');
         }
-    });
 
-    document.getElementById('wordForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+        document.getElementById('reveal-btn').addEventListener('click', () => {
+            document.getElementById('synonym').classList.remove('hidden');
+            document.getElementById('example-sentence').classList.remove('hidden');
+        });
 
-        const word = document.getElementById('word').value;
-        const synonym = document.getElementById('synonymInput').value;
-        const example = document.getElementById('exampleInput').value;
+        document.getElementById('next-btn').addEventListener('click', () => {
+            currentIndex = Math.floor(Math.random() * vocabList.length);
+            displayVocab();
+        });
 
-        const newEntry = { word, synonym, example };
-        vocabList.push(newEntry); // Add the new entry to the vocabList array
+        document.getElementById('accessButton').addEventListener('click', function() {
+            const password = prompt('Enter the password:');
+            if (password === 'sashko2006') { // replace with your actual password
+                document.getElementById('menu').style.display = 'block';
+            } else {
+                alert('Incorrect password!');
+            }
+        });
 
-        // Display the newly added entry (for demonstration purposes)
-        console.log('New entry added:', newEntry);
+        document.getElementById('wordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-        // Clear form inputs
-        document.getElementById('wordForm').reset();
+            const word = document.getElementById('wordInput').value;
+            const synonym = document.getElementById('synonymInput').value;
+            const example = document.getElementById('exampleInput').value;
 
-        // Optionally update display immediately
-        currentIndex = vocabList.length - 1; // Update index to show the newly added entry
+            const newEntry = { word, synonym, example };
+            vocabList.push(newEntry); // Add the new entry to the vocabList array
+
+            // Optionally update display immediately
+            currentIndex = vocabList.length - 1; // Update index to show the newly added entry
+            displayVocab();
+
+            // Clear form inputs
+            document.getElementById('wordForm').reset();
+
+            // Inform user
+            alert('Entry added successfully!');
+        });
+
+        // Initial display
         displayVocab();
-
-        // Inform user
-        alert('Entry added successfully!');
-    });
-
-    // Initial display
-    displayVocab();
-</script>
     </script>
 </body>
 </html>
