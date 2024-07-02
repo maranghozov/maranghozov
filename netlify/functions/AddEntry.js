@@ -13,7 +13,7 @@ exports.handler = async function(event, context) {
     const newEntry = { word, synonym, example };
 
     try {
-        const filePath = path.join(__dirname, '../../public/index.html');
+        const filePath = path.join(__dirname, 'maranghozov/index.html');
         let vocabList = [];
 
         // Read existing vocab list from index.html, if any
