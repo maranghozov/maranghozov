@@ -54,7 +54,9 @@
                 <input type="submit" value="Submit">
             </form>
         </div>
+        <div id="entries-list"></div> <!-- This div will display the entries -->
     </div>
+
 <script>
 const vocabList = [
     { word: "Aberration", synonym: "Anomaly", example: "The test results were an aberration and not indicative of the student's actual abilities." },
@@ -483,101 +485,83 @@ const vocabList = [
 
     
 ];
-let currentIndex = Math.floor(Math.random() * vocabList.length);
+        let currentIndex = Math.floor(Math.random() * vocabList.length);
 
-function displayVocab() {
-    const vocab = vocabList[currentIndex];
-    document.getElementById('vocab-word').textContent = vocab.word;
-    document.getElementById('synonym').textContent = `Synonym: ${vocab.synonym}`;
-    document.getElementById('example-sentence').textContent = `Example: ${vocab.example}`;
-    document.getElementById('synonym').classList.add('hidden');
-    document.getElementById('example-sentence').classList.add('hidden');
-}
+        function displayVocab() {
+            const vocab = vocabList[currentIndex];
+            document.getElementById('vocab-word').textContent = vocab.word;
+            document.getElementById('synonym').textContent = `Synonym: ${vocab.synonym}`;
+            document.getElementById('example-sentence').textContent = `Example: ${vocab.example}`;
+            document.getElementById('synonym').classList.add('hidden');
+            document.getElementById('example-sentence').classList.add('hidden');
+        }
 
-document.getElementById('reveal-btn').addEventListener('click', () => {
-    document.getElementById('synonym').classList.remove('hidden');
-    document.getElementById('example-sentence').classList.remove('hidden');
-});
+        document.getElementById('reveal-btn').addEventListener('click', () => {
+            document.getElementById('synonym').classList.remove('hidden');
+            document.getElementById('example-sentence').classList.remove('hidden');
+        });
 
-document.getElementById('next-btn').addEventListener('click', () => {
-    currentIndex = Math.floor(Math.random() * vocabList.length);
-    displayVocab();
-});
+        document.getElementById('next-btn').addEventListener('click', () => {
+            currentIndex = Math.floor(Math.random() * vocabList.length);
+            displayVocab();
+        });
 
-// Initial display
-displayVocab();
+        // Initial display
+        displayVocab();
 
-document.getElementById('accessButton').addEventListener('click', function() {
-    const password = prompt('Enter the password:');
-    if (password === 'your_password_here') { // Replace with your actual password
-        document.getElementById('menu').style.display = 'block';
-    } else {
-        alert('Incorrect password!');
-    }
-});
+        document.getElementById('accessButton').addEventListener('click', function() {
+            const password = prompt('Enter the password:');
+            if (password === 'your_password_here') { // Replace with your actual password
+                document.getElementById('menu').style.display = 'block';
+            } else {
+                alert('Incorrect password!');
+            }
+        });
 
-document.getElementById('wordForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+        document.getElementById('wordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-    const word = document.getElementById('word').value;
-    const synonym = document.getElementById('synonym').value;
-    const example = document.getElementById('example').value;
+            // Ensure elements are accessible before reading values
+            const wordInput = document.getElementById('word');
+            const synonymInput = document.getElementById('synonymInput'); // Corrected ID
+            const exampleInput = document.getElementById('exampleInput'); // Corrected ID
 
-    const newEntry = { word, synonym, example };
-    vocabList.push(newEntry); // Add the new entry to the vocabList array
+            // Check if elements are found before accessing their values
+            if (wordInput && synonymInput && exampleInput) {
+                const word = wordInput.value;
+                const synonym = synonymInput.value;
+                const example = exampleInput.value;
 
-    displayEntries(); // Update the displayed entries
+                const newEntry = { word, synonym, example };
+                vocabList.push(newEntry); // Add the new entry to the vocabList array
 
-    // Clear form inputs
-    document.getElementById('wordForm').reset();
+                displayEntries(); // Update the displayed entries
 
-    // Inform user
-    alert('Entry added successfully!');
-});
+                // Clear form inputs
+                document.getElementById('wordForm').reset();
 
-function displayEntries() {
-    const entriesList = document.getElementById('entries-list');
-    if (!entriesList) {
-        console.error("Entries list element not found in DOM.");
-        return;
-    }
+                // Inform user
+                alert('Entry added successfully!');
+            } else {
+                console.error("One or more input elements not found.");
+            }
+        });
 
-    entriesList.innerHTML = ''; // Clear previous entries
+        function displayEntries() {
+            const entriesList = document.getElementById('entries-list');
+            if (!entriesList) {
+                console.error("Entries list element not found in DOM.");
+                return;
+            }
 
-    vocabList.forEach(entry => {
-        const entryElement = document.createElement('div');
-        entryElement.textContent = `Word: ${entry.word}, Synonym: ${entry.synonym}, Example: ${entry.example}`;
-        entriesList.appendChild(entryElement);
-    });
-}
-    document.getElementById('wordForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+            entriesList.innerHTML = ''; // Clear previous entries
 
-    // Ensure elements are accessible before reading values
-    const wordInput = document.getElementById('word');
-    const synonymInput = document.getElementById('synonym');
-    const exampleInput = document.getElementById('example');
-
-    // Check if elements are found before accessing their values
-    if (wordInput && synonymInput && exampleInput) {
-        const word = wordInput.value;
-        const synonym = synonymInput.value;
-        const example = exampleInput.value;
-
-        const newEntry = { word, synonym, example };
-        vocabList.push(newEntry); // Add the new entry to the vocabList array
-
-        displayEntries(); // Update the displayed entries
-
-        // Clear form inputs
-        document.getElementById('wordForm').reset();
-
-        // Inform user
-        alert('Entry added successfully!');
-    } else {
-        console.error("One or more input elements not found.");
-    }
-});
-</script>
+            vocabList.forEach(entry => {
+                const entryElement = document.createElement('div');
+                entryElement.textContent = `Word: ${entry.word}, Synonym: ${entry.synonym}, Example: ${entry.example}`;
+                entriesList.appendChild(entryElement);
+            });
+        }
+    </script>
 </body>
 </html>
