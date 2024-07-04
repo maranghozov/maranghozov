@@ -125,7 +125,7 @@ document.getElementById('wordForm').addEventListener('submit', async function(ev
 
     const newEntry = { word, synonym, example };
 
-    const response = await fetch('/.netlify/functions/addEntry', {
+    const response = await fetch('/.netlify/functions/AddEntry', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
