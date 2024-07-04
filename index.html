@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 50px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+        #menu {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Do you know the meaning of this?</h1> <a href="https://maranghozov.github.io/maranghozov/">here</a>
+        <p id="vocab-word"></p>
+        <button id="reveal-btn">Reveal</button>
+        <p id="synonym" class="hidden"></p>
+        <p id="example-sentence" class="hidden"></p>
+        <button id="next-btn">Next</button>
+        <button id="accessButton">Access Form</button>
+    <div id="menu">
+        <form id="wordForm">
+            <label for="word-input">Word:</label><br>
+            <input type="text" id="word-input" name="word"><br>
+            <label for="synonym-input">Synonym:</label><br>
+            <input type="text" id="synonym-input" name="synonym"><br>
+            <label for="example-input">Example:</label><br>
+            <input type="text" id="example-input" name="example"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+        </div>
+    </div>
+<script>
+let vocabList = [];
+let currentIndex = 0;
+
+async function fetchVocabList() {
+    try {
+        const response = await fetch('vocabulary.json');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.text();  // Read response as text
+        console.log('Raw response data:', data);  // Log raw response text
+        try {
+            vocabList = JSON.parse(data);  // Attempt to parse JSON
+            displayVocab();
+        } catch (jsonError) {
+            console.error('Error parsing JSON:', jsonError, data);  // Log error and raw data
+        }
+    } catch (error) {
+        console.error('Error fetching the vocabulary list:', error);
+    }
+}
+
+function displayVocab() {
+    if (vocabList.length === 0) {
+        console.error('Vocabulary list is empty.');
+        return;
+    }
+
+    const vocab = vocabList[currentIndex];
+    document.getElementById('vocab-word').textContent = vocab.word;
+    document.getElementById('synonym').textContent = `Synonym: ${vocab.synonym}`;
+    document.getElementById('example-sentence').textContent = `Example: ${vocab.example}`;
+    document.getElementById('synonym').classList.add('hidden');
+    document.getElementById('example-sentence').classList.add('hidden');
+}
+
+document.getElementById('reveal-btn').addEventListener('click', () => {
+    document.getElementById('synonym').classList.remove('hidden');
+    document.getElementById('example-sentence').classList.remove('hidden');
+});
+
+document.getElementById('next-btn').addEventListener('click', () => {
+    if (vocabList.length > 0) {
+        currentIndex = Math.floor(Math.random() * vocabList.length);
+        displayVocab();
+    }
+});
+
+// Initial fetch and display
+fetchVocabList();
+
+document.getElementById('accessButton').addEventListener('click', function() {
+    const password = prompt('Enter the password:');
+    if (password === 'sashko2006') {
+        document.getElementById('menu').style.display = 'block';
+    } else {
+        alert('Incorrect password!');
+    }
+});
+
+document.getElementById('wordForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    
+    const word = document.getElementById('word-input').value;
+    const synonym = document.getElementById('synonym-input').value;
+    const example = document.getElementById('example-input').value;
+
+    const newEntry = { word, synonym, example };
+
+    const response = await fetch('/.netlify/functions/addEntry', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newEntry)
+    });
+
+    if (response.ok) {
+        alert('Entry added successfully!');
+        document.getElementById('wordForm').reset();
+    } else {
+        alert('Failed to add entry.');
+    }
+});
+</script>
+</body>
+</html>
+
