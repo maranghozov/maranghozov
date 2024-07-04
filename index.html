@@ -55,92 +55,96 @@
         </form>
         </div>
     </div>
+<script src="//cdn.jsdelivr.net/npm/eruda"></script>
 <script>
-let vocabList = [];
-let currentIndex = 0;
+    eruda.init();
 
-async function fetchVocabList() {
-    try {
-        const response = await fetch('vocabulary.json');
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        const data = await response.text();  // Read response as text
-        console.log('Raw response data:', data);  // Log raw response text
+    let vocabList = [];
+    let currentIndex = 0;
+
+    async function fetchVocabList() {
         try {
-            vocabList = JSON.parse(data);  // Attempt to parse JSON
-            displayVocab();
-        } catch (jsonError) {
-            console.error('Error parsing JSON:', jsonError, data);  // Log error and raw data
+            const response = await fetch('vocabulary.json');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.text();  // Read response as text
+            console.log('Raw response data:', data);  // Log raw response text
+            try {
+                vocabList = JSON.parse(data);  // Attempt to parse JSON
+                displayVocab();
+            } catch (jsonError) {
+                console.error('Error parsing JSON:', jsonError, data);  // Log error and raw data
+            }
+        } catch (error) {
+            console.error('Error fetching the vocabulary list:', error);
         }
-    } catch (error) {
-        console.error('Error fetching the vocabulary list:', error);
-    }
-}
-
-function displayVocab() {
-    if (vocabList.length === 0) {
-        console.error('Vocabulary list is empty.');
-        return;
     }
 
-    const vocab = vocabList[currentIndex];
-    document.getElementById('vocab-word').textContent = vocab.word;
-    document.getElementById('synonym').textContent = `Synonym: ${vocab.synonym}`;
-    document.getElementById('example-sentence').textContent = `Example: ${vocab.example}`;
-    document.getElementById('synonym').classList.add('hidden');
-    document.getElementById('example-sentence').classList.add('hidden');
-}
+    function displayVocab() {
+        if (vocabList.length === 0) {
+            console.error('Vocabulary list is empty.');
+            return;
+        }
 
-document.getElementById('reveal-btn').addEventListener('click', () => {
-    document.getElementById('synonym').classList.remove('hidden');
-    document.getElementById('example-sentence').classList.remove('hidden');
-});
-
-document.getElementById('next-btn').addEventListener('click', () => {
-    if (vocabList.length > 0) {
-        currentIndex = Math.floor(Math.random() * vocabList.length);
-        displayVocab();
+        const vocab = vocabList[currentIndex];
+        document.getElementById('vocab-word').textContent = vocab.word;
+        document.getElementById('synonym').textContent = `Synonym: ${vocab.synonym}`;
+        document.getElementById('example-sentence').textContent = `Example: ${vocab.example}`;
+        document.getElementById('synonym').classList.add('hidden');
+        document.getElementById('example-sentence').classList.add('hidden');
     }
-});
 
-// Initial fetch and display
-fetchVocabList();
-
-document.getElementById('accessButton').addEventListener('click', function() {
-    const password = prompt('Enter the password:');
-    if (password === 'sashko2006') {
-        document.getElementById('menu').style.display = 'block';
-    } else {
-        alert('Incorrect password!');
-    }
-});
-
-document.getElementById('wordForm').addEventListener('submit', async function(event) {
-    event.preventDefault();
-    
-    const word = document.getElementById('word-input').value;
-    const synonym = document.getElementById('synonym-input').value;
-    const example = document.getElementById('example-input').value;
-
-    const newEntry = { word, synonym, example };
-
-    const response = await fetch('/.netlify/functions/addEntry', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newEntry)
+    document.getElementById('reveal-btn').addEventListener('click', () => {
+        document.getElementById('synonym').classList.remove('hidden');
+        document.getElementById('example-sentence').classList.remove('hidden');
     });
 
-    if (response.ok) {
-        alert('Entry added successfully!');
-        document.getElementById('wordForm').reset();
-    } else {
-        alert('Failed to add entry.');
-    }
-});
+    document.getElementById('next-btn').addEventListener('click', () => {
+        if (vocabList.length > 0) {
+            currentIndex = Math.floor(Math.random() * vocabList.length);
+            displayVocab();
+        }
+    });
+
+    // Initial fetch and display
+    fetchVocabList();
+
+    document.getElementById('accessButton').addEventListener('click', function() {
+        const password = prompt('Enter the password:');
+        if (password === 'sashko2006') {
+            document.getElementById('menu').style.display = 'block';
+        } else {
+            alert('Incorrect password!');
+        }
+    });
+
+    document.getElementById('wordForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+        
+        const word = document.getElementById('word-input').value;
+        const synonym = document.getElementById('synonym-input').value;
+        const example = document.getElementById('example-input').value;
+
+        const newEntry = { word, synonym, example };
+
+        const response = await fetch('/.netlify/functions/addEntry', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newEntry)
+        });
+
+        if (response.ok) {
+            alert('Entry added successfully!');
+            document.getElementById('wordForm').reset();
+        } else {
+            alert('Failed to add entry.');
+        }
+    });
 </script>
 </body>
 </html>
+
 
