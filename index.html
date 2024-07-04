@@ -131,9 +131,12 @@ document.getElementById('wordForm').addEventListener('submit', async function(ev
         });
 
         if (response.ok) {
+            const savedEntry = await response.json();
+            console.log('Entry added successfully:', savedEntry);
             alert('Entry added successfully!');
             document.getElementById('wordForm').reset();
         } else {
+            console.error('Failed to add entry. Status:', response.status);
             alert('Failed to add entry. Status: ' + response.status);
         }
     } catch (error) {
@@ -142,14 +145,6 @@ document.getElementById('wordForm').addEventListener('submit', async function(ev
     }
 });
 
-
-        if (response.ok) {
-            alert('Entry added successfully!');
-            document.getElementById('wordForm').reset();
-        } else {
-            alert('Failed to add entry.');
-        }
-    });
 </script>
 </body>
 </html>
