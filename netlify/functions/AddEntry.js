@@ -1,4 +1,7 @@
-// addEntry.js - Example Netlify Function for handling POST requests
+// netlify/functions/addEntry.js
+
+const fs = require('fs');
+const path = require('path');
 
 exports.handler = async (event, context) => {
     if (event.httpMethod !== 'POST') {
@@ -11,17 +14,20 @@ exports.handler = async (event, context) => {
     try {
         const { word, synonym, example } = JSON.parse(event.body);
         
-        // Here, you would typically add logic to save the entry to your database or perform any other backend operation
-        
-        // Example: Save entry to database (not implemented here)
-        // const savedEntry = await saveEntryToDatabase({ word, synonym, example });
+        // Read current vocabulary list
+        const vocabFilePath = path.resolve(__dirname, 'vocabulary.json');
+        let vocabList = JSON.parse(fs.readFileSync(vocabFilePath, 'utf8'));
 
-        // For demo purposes, simulate saving entry
-        const savedEntry = { id: 1, word, synonym, example };
-        
+        // Add new entry
+        const newEntry = { word, synonym, example };
+        vocabList.push(newEntry);
+
+        // Write updated vocabulary list back to file
+        fs.writeFileSync(vocabFilePath, JSON.stringify(vocabList, null, 2));
+
         return {
             statusCode: 200,
-            body: JSON.stringify(savedEntry)
+            body: JSON.stringify({ message: 'Entry added successfully' })
         };
     } catch (error) {
         console.error('Error handling POST request:', error);
