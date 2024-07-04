@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-exports.handler = async function(event, context) {
+exports.handler = async (event, context) => {
     if (event.httpMethod !== 'POST') {
         return {
             statusCode: 405,
@@ -9,34 +9,26 @@ exports.handler = async function(event, context) {
         };
     }
 
-    const { word, synonym, example } = JSON.parse(event.body);
-    const newEntry = { word, synonym, example };
+    const dataPath = path.resolve(__dirname, '../vocabulary.json');
+    const newEntry = JSON.parse(event.body);
 
     try {
-        const filePath = path.join(__dirname, 'maranghozov/index.html');
-        let vocabList = [];
+        const data = fs.readFileSync(dataPath, 'utf8');
+        const vocabList = JSON.parse(data);
 
-        // Read existing vocab list from index.html, if any
-        if (fs.existsSync(filePath)) {
-            const data = fs.readFileSync(filePath, 'utf8');
-            vocabList = JSON.parse(data);
-        }
-
-        // Add the new entry to vocabList
         vocabList.push(newEntry);
 
-        // Write updated vocab list back to index.html
-        fs.writeFileSync(filePath, JSON.stringify(vocabList));
+        fs.writeFileSync(dataPath, JSON.stringify(vocabList, null, 2), 'utf8');
 
         return {
             statusCode: 200,
-            body: 'Entry added successfully!',
+            body: JSON.stringify({ message: 'Entry added successfully!' }),
         };
     } catch (error) {
-        console.error('Error adding entry:', error);
+        console.error('Error updating vocabulary.json:', error);
         return {
             statusCode: 500,
-            body: 'Failed to add entry.',
+            body: 'Internal Server Error',
         };
     }
 };
