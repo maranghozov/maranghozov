@@ -112,15 +112,16 @@
         }
     });
 
-    document.getElementById('wordForm').addEventListener('submit', async function(event) {
-        event.preventDefault();
-        
-        const word = document.getElementById('word-input').value;
-        const synonym = document.getElementById('synonym-input').value;
-        const example = document.getElementById('example-input').value;
+document.getElementById('wordForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    
+    const word = document.getElementById('word-input').value;
+    const synonym = document.getElementById('synonym-input').value;
+    const example = document.getElementById('example-input').value;
 
-        const newEntry = { word, synonym, example };
+    const newEntry = { word, synonym, example };
 
+    try {
         const response = await fetch('/.netlify/functions/addEntry', {
             method: 'POST',
             headers: {
@@ -128,6 +129,19 @@
             },
             body: JSON.stringify(newEntry)
         });
+
+        if (response.ok) {
+            alert('Entry added successfully!');
+            document.getElementById('wordForm').reset();
+        } else {
+            alert('Failed to add entry. Status: ' + response.status);
+        }
+    } catch (error) {
+        console.error('Error adding entry:', error);
+        alert('Failed to add entry. Check console for details.');
+    }
+});
+
 
         if (response.ok) {
             alert('Entry added successfully!');
