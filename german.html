@@ -218,9 +218,11 @@ function render(){
 
   // explanation link
   const word = card.de;
+
 const command = `Was bedeutet "${word}"? Wenn es ein Nomen ist, was ist sein Artikel (Der, Das, Die) + Plural? Wenn es ein Verb ist, ist es trennbar und geht mit sein oder haben? Wenn es ein Verb ist, nenne seine 3 Formen: Präsens (3. Person Singular), Präteritum, Partizip II. Überprüfe Wörterbücher wie PONS Deutsch-Bulgarisch, PONS Englisch-Deutsch, Cambridge Dictionary Deutsch-Englisch. Führe 10 Beispiele mit diesem Wort auf.`;
-  $('explain-link').href =
-    `https://www.google.com/search?q=${encodeURIComponent(command)}`;
+
+$('explain-link').href =
+  `https://www.google.com/search?udm=50&q=${encodeURIComponent(command)}`;
 }
 
 // controls
