@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vocabulary Flashcards</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:'Inter',system-ui,Arial;
+ background:linear-gradient(135deg,#0f172a,#1e293b);
+ color:white;
+ min-height:100vh;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ padding:20px;
+}
+
+.app{
+ width:100%;
+ max-width:520px;
+}
+
+.header{
+ text-align:center;
+ margin-bottom:18px;
+}
+
+.title{
+ font-size:28px;
+ font-weight:700;
+ letter-spacing:.5px;
+}
+
+.subtitle{
+ opacity:.7;
+ font-size:14px;
+}
+
+.progress-wrapper{
+ margin-top:10px;
+}
+
+.progress-text{
+ font-size:13px;
+ opacity:.8;
+ margin-bottom:6px;
+}
+
+.progress-bar{
+ width:100%;
+ height:8px;
+ border-radius:999px;
+ background:rgba(255,255,255,.1);
+ overflow:hidden;
+}
+
+.progress-fill{
+ height:100%;
+ background:linear-gradient(90deg,#38bdf8,#6366f1);
+ width:0%;
+ transition:width .35s ease;
+}
+
+.card-container{
+ perspective:1400px;
+ margin:25px 0;
+}
+
+.card{
+ width:100%;
+ height:240px;
+ position:relative;
+ transform-style:preserve-3d;
+ transition:transform .7s cubic-bezier(.4,.2,.2,1);
+ cursor:pointer;
+}
+
+.card.flipped{
+ transform:rotateY(180deg);
+}
+
+.side{
+ position:absolute;
+ width:100%;
+ height:100%;
+ border-radius:22px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ text-align:center;
+ padding:30px;
+ backface-visibility:hidden;
+ backdrop-filter:blur(10px);
+ box-shadow:
+ 0 20px 40px rgba(0,0,0,.4),
+ inset 0 0 0 1px rgba(255,255,255,.05);
+}
+
+.front{
+ background:linear-gradient(145deg,#6366f1,#4f46e5);
+ font-size:30px;
+ font-weight:700;
+}
+
+.back{
+ background:linear-gradient(145deg,#06b6d4,#0891b2);
+ transform:rotateY(180deg);
+ font-size:18px;
+ line-height:1.5;
+}
+
+.hint{
+ text-align:center;
+ font-size:12px;
+ opacity:.65;
+ margin-top:-8px;
+ margin-bottom:15px;
+}
+
+.controls{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:12px;
+}
+
+button{
+ border:none;
+ border-radius:14px;
+ padding:12px 14px;
+ font-size:14px;
+ font-weight:600;
+ cursor:pointer;
+ transition:.25s;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ gap:6px;
+}
+
+button:hover{
+ transform:translateY(-2px);
+}
+
+.primary{
+ background:linear-gradient(135deg,#22c55e,#16a34a);
+ color:white;
+ box-shadow:0 10px 18px rgba(0,0,0,.25);
+}
+
+.secondary{
+ background:linear-gradient(135deg,#f59e0b,#d97706);
+ color:white;
+}
+
+.essay{
+ grid-column:span 2;
+ background:linear-gradient(135deg,#38bdf8,#2563eb);
+}
+
+.shuffle{
+ background:linear-gradient(135deg,#ec4899,#be185d);
+}
+
+.footer{
+ margin-top:16px;
+ text-align:center;
+ font-size:12px;
+ opacity:.6;
+}
+
+@media (max-width:480px){
+ .title{font-size:22px}
+ .card{height:200px}
+ .front{font-size:24px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<div class="header">
+<div class="title">Vocabulary Trainer</div>
+<div class="subtitle">Flip cards • Expand vocabulary</div>
+
+<div class="progress-wrapper">
+<div class="progress-text" id="progressText">0 / 0</div>
+<div class="progress-bar">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+</div>
+</div>
+
+<div class="card-container">
+<div class="card" id="card">
+<div class="side front" id="word"></div>
+<div class="side back" id="synonym"></div>
+</div>
+</div>
+
+<div class="hint">Tap or click the card to reveal synonyms</div>
+
+<div class="controls">
+
+<button class="primary" onclick="nextCard()">Next card →</button>
+
+<button class="shuffle" onclick="shuffleCards()">Shuffle</button>
+
+<button class="essay" onclick="academicEssay()">Write Academic Essay</button>
+
+<button class="secondary" onclick="descriptiveEssay()">Write Descriptive Essay</button>
+
+</div>
+
+<div class="footer">Keyboard: Space = flip • → = next</div>
+
+</div>
+
+<script>
+
+let cards=[]
+let order=[]
+let index=0
+
+fetch('vocabulary.json')
+.then(r=>r.json())
+.then(data=>{
+ cards=data
+ initialize()
+})
+
+function initialize(){
+ order=[...Array(cards.length).keys()]
+ shuffle(order)
+ index=0
+ showCard()
+}
+
+function shuffle(arr){
+ for(let i=arr.length-1;i>0;i--){
+  const j=Math.floor(Math.random()*(i+1))
+  ;[arr[i],arr[j]]=[arr[j],arr[i]]
+ }
+}
+
+function showCard(){
+ const card=cards[order[index]]
+
+ document.getElementById('word').textContent=card.word
+ document.getElementById('synonym').textContent=card.synonym
+
+ const progressText=(index+1)+' / '+cards.length
+ document.getElementById('progressText').textContent=progressText
+
+ const percent=((index+1)/cards.length)*100
+ document.getElementById('progressFill').style.width=percent+'%'
+
+ document.getElementById('card').classList.remove('flipped')
+}
+
+function nextCard(){
+ index++
+
+ if(index>=order.length){
+  shuffle(order)
+  index=0
+ }
+
+ showCard()
+}
+
+function shuffleCards(){
+ shuffle(order)
+ index=0
+ showCard()
+}
+
+const cardElement=document.getElementById('card')
+
+cardElement.onclick=()=>{
+ cardElement.classList.toggle('flipped')
+}
+
+function academicEssay(){
+ const word=cards[order[index]].word
+ const prompt=`Write an academic essay of at least 250 words that meaningfully uses the word \"${word}\".`
+ const url='https://www.google.com/search?q='+encodeURIComponent(prompt)
+ window.open(url,'_blank')
+}
+
+function descriptiveEssay(){
+ const word=cards[order[index]].word
+ const prompt=`Write a descriptive essay of at least 250 words that includes the word \"${word}\".`
+ const url='https://www.google.com/search?q='+encodeURIComponent(prompt)
+ window.open(url,'_blank')
+}
+
+// keyboard support
+
+document.addEventListener('keydown',e=>{
+ if(e.code==='Space'){
+  e.preventDefault()
+  cardElement.classList.toggle('flipped')
+ }
+
+ if(e.code==='ArrowRight'){
+  nextCard()
+ }
+})
+
+</script>
+
+</body>
+</html>
