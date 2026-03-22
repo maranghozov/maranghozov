@@ -21362,7 +21362,274 @@
   {"word": "firmament", "synonym": ["heavens", "sky", "Himmelszelt"]},
   {"word": "febrile", "synonym": ["feverish", "hot", "fiebrig"]},
   {"word": "acrid", "synonym": ["pungent", "sharp", "beißend"]},
-  {"word": "inviolate", "synonym": ["sacred", "untouched", "unverletzt"]}
+  {"word": "inviolate", "synonym": ["sacred", "untouched", "unverletzt"]},
+  {
+    "word": "pram",
+    "synonyms": ["baby carriage", "perambulator", "wheeled bassinet", "buggy", "Kinderwagen"]
+  },
+  {
+    "word": "touch-and-go",
+    "synonyms": ["uncertain", "precarious", "dicey", "sketchy", "misslich"]
+  },
+  {
+    "word": "down and out",
+    "synonyms": ["destitute", "impoverished", "penniless", "broke", "heruntergekommen"]
+  },
+  {
+    "word": "spick and span",
+    "synonyms": ["clean", "immaculate", "pristine", "squeaky clean", "blitzblank"]
+  },
+  {
+    "word": "ingrained",
+    "synonyms": ["fixed", "inveterate", "deep-seated", "dyed-in-the-wool", "eingefleischt"]
+  },
+  {
+    "word": "lurid",
+    "synonyms": ["sensational", "ghastly", "macabre", "trashy", "reißerisch"]
+  },
+  {
+    "word": "chinwag",
+    "synonyms": ["chat", "discourse", "confabulation", "natter", "Plausch"]
+  },
+  {
+    "word": "innocuous",
+    "synonyms": ["harmless", "benign", "insipid", "safe", "harmlos"]
+  },
+  {
+    "word": "credulous",
+    "synonyms": ["gullible", "naive", "born yesterday", "green", "leichtgläubig"]
+  },
+  {
+    "word": "bucolic",
+    "synonyms": ["rural", "pastoral", "arcadian", "country-style", "ländlich"]
+  },
+  {
+    "word": "indolent",
+    "synonyms": ["lazy", "slothful", "languid", "bone-idle", "träge"]
+  },
+  {
+    "word": "denouement",
+    "synonyms": ["finale", "resolution", "unraveling", "payoff", "Auflösung"]
+  },
+  {
+    "word": "diaphanous",
+    "synonyms": ["transparent", "translucent", "gossamer", "see-through", "durchsichtig"]
+  },
+  {
+    "word": "ephemeral",
+    "synonyms": ["short-lived", "transient", "evanescent", "fleeting", "kurzlebig"]
+  },
+  {
+    "word": "ineffable",
+    "synonyms": ["indescribable", "unutterable", "beyond words", "mind-blowing", "unsagbar"]
+  },
+  {
+    "word": "insouciance",
+    "synonyms": ["indifference", "nonchalance", "carefree ease", "cool", "Sorglosigkeit"]
+  },
+  {
+    "word": "surreptitious",
+    "synonyms": ["secret", "clandestine", "covert", "sneaky", "heimlich"]
+  },
+  {
+    "word": "woebegone",
+    "synonyms": ["sad", "dolorous", "disconsolate", "down in the dumps", "jammervoll"]
+  },
+  {
+    "word": "run-of-the-mill",
+    "synonyms": ["ordinary", "prosaic", "quotidian", "bog-standard", "stinknormal"]
+  },
+  {
+    "word": "preposterous",
+    "synonyms": ["absurd", "ludicrous", "farcical", "crazy", "unsinnig"]
+  },
+  {
+    "word": "verisimilitude",
+    "synonyms": ["realism", "plausibility", "lifelikeness", "truthiness", "Glaubwürdigkeit"]
+  },
+  {
+    "word": "chicanery",
+    "synonyms": ["deception", "subterfuge", "skulduggery", "trickery", "Schikane"]
+  },
+  {
+    "word": "penchant",
+    "synonyms": ["liking", "predilection", "proclivity", "thing", "Vorliebe"]
+  },
+  {
+    "word": "vaunted",
+    "synonyms": ["praised", "extolled", "much-touted", "hyped-up", "gepriesen"]
+  },
+  {
+    "word": "pernicious",
+    "synonyms": ["harmful", "deleterious", "malignant", "nasty", "schädlich"]
+  },
+  {"word": "wear and tear", "synonyms": ["deterioration", "attrition", "corrosion", "scuffing", "Verschleiß"]},
+  {"word": "by and large", "synonyms": ["generally", "predominantly", "on the whole", "mostly", "im Großen und Ganzen"]},
+  {"word": "ins and outs", "synonyms": ["details", "intricacies", "minutiae", "the lowdown", "Einzelheiten"]},
+  {"word": "rough and ready", "synonyms": ["basic", "impromptu", "unpolished", "quick-and-dirty", "behelfsmäßig"]},
+  {"word": "by leaps and bounds", "synonyms": ["rapidly", "exponentially", "meteoric", "like wildfire", "sprunghaft"]},
+  {"word": "part and parcel", "synonyms": ["essential", "integral", "intrinsic", "built-in", "fester Bestandteil"]},
+  {"word": "up and about", "synonyms": ["recovered", "convalescent", "ambulatory", "back on one's feet", "wieder auf den Beinen"]},
+  {"word": "up-and-coming", "synonyms": ["promising", "emergent", "burgeoning", "on the rise", "aufstrebend"]},
+  {"word": "odds and ends", "synonyms": ["miscellany", "ephemera", "sundries", "bits and bobs", "Kleinkram"]},
+  {"word": "hue and cry", "synonyms": ["outcry", "clamor", "hullabaloo", "uproar", "Zeter und Mordio"]},
+  {"word": "broil", "synonyms": ["grill", "torrefy", "scorch", "cook", "grillen"]},
+  {"word": "inordinate", "synonyms": ["excessive", "exorbitant", "wanton", "over the top", "übermäßig"]},
+  {"word": "buy off", "synonyms": ["bribe", "suborn", "corrupt", "grease the palm", "bestechen"]},
+  {"word": "trade in", "synonyms": ["exchange", "barter", "swap", "part-ex", "eintauschen"]},
+  {"word": "once-over", "synonyms": ["inspection", "perusal", "survey", "quick look-see", "kurze Durchsicht"]},
+  {"word": "trusty", "synonyms": ["reliable", "stalwart", "tried-and-true", "old faithful", "zuverlässig"]},
+  {"word": "officious", "synonyms": ["meddlesome", "intrusive", "dictatorial", "bossy", "vorlaut"]},
+  {"word": "sawdust", "synonyms": ["wood-shavings", "scobs", "residue", "dust", "Sägemehl"]},
+  {"word": "budge", "synonyms": ["move", "dislodge", "shift", "give way", "nachgeben"]},
+  {"word": "cluck", "synonyms": ["cackle", "cluck", "chuckle", "twitter", "glucksen"]},
+  {"word": "affability", "synonyms": ["friendliness", "amiability", "geniality", "niceness", "Leutseligkeit"]},
+  {"word": "proceeds", "synonyms": ["earnings", "revenue", "take", "bottom line", "Erlös"]},
+  {"word": "palm off", "synonyms": ["deceive", "foist", "unload", "fob off", "aufschwatzen"]},
+  {"word": "crummy", "synonyms": ["bad", "inferior", "shoddy", "lousy", "mickrig"]},
+  {"word": "charwoman", "synonyms": ["cleaner", "domestic", "scrubber", "char", "Putzfrau"]},
+  {"word": "make off", "synonyms": ["escape", "abscond", "decamp", "bolt", "sich aus dem Staub machen"]},
+  {"word": "flat footed", "synonyms": ["clumsy", "ungainly", "unprepared", "caught napping", "unvorbereitet"]},
+  {"word": "libation", "synonyms": ["drink", "potation", "offering", "tipple", "Trankopfer"]},
+  {"word": "steeplechase", "synonyms": ["race", "obstacle course", "pursuit", "chase", "Hindernislauf"]},
+  {"word": "disposition", "synonyms": ["temperament", "idiosyncrasy", "nature", "vibe", "Veranlagung"]},
+  {"word": "sleep off", "synonyms": ["recover", "slumber", "repose", "crash", "ausschlafen"]},
+  {"word": "decoy", "synonyms": ["lure", "enticement", "bait", "shill", "Lockvogel"]},
+  {"word": "steward", "synonyms": ["manager", "custodian", "purveyor", "minder", "Verwalter"]},
+  {"word": "run the gauntlet", "synonyms": ["challenge", "ordeal", "tribulation", "go through the wringer", "Spießrutenlaufen"]},
+  {"word": "disparagement", "synonyms": ["insult", "denigration", "deprecation", "trash-talk", "Herabsetzung"]},
+  {"word": "comely", "synonyms": ["attractive", "winsome", "pulchritudinous", "easy on the eye", "ansehnlich"]},
+  {"word": "conflate", "synonyms": ["merge", "amalgamate", "fuse", "lump together", "verschmelzen"]},
+  {"word": "beleaguer", "synonyms": ["beset", "besiege", "badger", "pester", "belagern"]},
+  {"word": "becoming", "synonyms": ["flattering", "appropriate", "decorous", "fit", "kleidsam"]},
+  {"word": "chatoyant", "synonyms": ["shimmering", "iridescent", "lustrous", "shiny", "schillernd"]},
+  {"word": "cynosure", "synonyms": ["centerpiece", "guiding star", "focal point", "it-factor", "Mittelpunkt"]},
+  {"word": "dalliance", "synonyms": ["flirtation", "amorous play", "philandering", "fling", "Tändelei"]},
+  {"word": "demure", "synonyms": ["shy", "decorous", "modest", "prim", "sittsam"]},
+  {"word": "desuetude", "synonyms": ["disuse", "obsolescence", "extinction", "mothballs", "Außerkraftsetzung"]},
+  {"word": "desultory", "synonyms": ["aimless", "haphazard", "rambling", "scattered", "planlos"]},
+  {"word": "dulcet", "synonyms": ["sweet", "mellifluous", "euphonious", "easy listening", "lieblich"]},
+  {"word": "ebullience", "synonyms": ["enthusiasm", "exuberance", "effervescence", "bubbly", "Überschwang"]},
+  {"word": "effervescent", "synonyms": ["sparkling", "bubbly", "vivacious", "fizzy", "sprudelnd"]},
+  {"word": "elision", "synonyms": ["omission", "deletion", "abridgment", "cut", "Auslassung"]},
+  {"word": "embrocation", "synonyms": ["liniment", "ointment", "salve", "rub", "Einreibung"]},
+  {"word": "epiphany", "synonyms": ["revelation", "manifestation", "oracle", "aha moment", "Erscheinung"]},
+  {"word": "ethereal", "synonyms": ["delicate", "celestial", "gossamer", "airy", "ätherisch"]},
+  {"word": "forbearance", "synonyms": ["patience", "tolerance", "abstinence", "cool", "Geduld"]},
+  {"word": "fugacious", "synonyms": ["fleeting", "evanescent", "transient", "gone in a flash", "vergänglich"]},
+  {"word": "furtive", "synonyms": ["sneaky", "surreptitious", "clandestine", "shady", "heimlich"]},
+  {"word": "imbroglio", "synonyms": ["mess", "entanglement", "quagmire", "snafu", "Verwirrung"]},
+  {"word": "imbue", "synonyms": ["infuse", "instill", "saturate", "soak", "durchtränken"]},
+  {"word": "incipient", "synonyms": ["starting", "nascent", "embryonic", "raw", "anfänglich"]},
+  {"word": "ingénue", "synonyms": ["innocent", "naif", "virginal", "greenhorn", "die Unschuldige"]},
+  {"word": "blithe", "synonyms": ["cheerful", "carefree", "unconcerned", "happy-go-lucky", "heiter"]},
+  {"word": "subdued", "synonyms": ["quiet", "muted", "restrained", "low-key", "gedämpft"]},
+  {"word": "blatant", "synonyms": ["obvious", "flagrant", "glaring", "staring you in the face", "offensichtlich"]},
+  {"word": "lilt", "synonyms": ["rhythm", "cadence", "inflection", "swing", "Rhythmus"]},
+  {"word": "opulent", "synonyms": ["luxurious", "palatial", "sumptuous", "posh", "üppig"]},
+  {"word": "penumbra", "synonyms": ["shadow", "eclipse", "obscurity", "shade", "Halbschatten"]},
+  {"word": "lassitude", "synonyms": ["fatigue", "lethargy", "listlessness", "burnout", "Mattigkeit"]},
+  {"word": "redolent", "synonyms": ["fragrant", "evocative", "reminiscent", "smelly", "duftend"]},
+  {"word": "vestigial", "synonyms": ["remaining", "rudimentary", "relic", "leftover", "verkümmert"]},
+  {"word": "small hours", "synonyms": ["late night", "wee hours", "dead of night", "ungodly hour", "frühe Morgenstunden"]},
+  {"word": "peevish", "synonyms": ["irritable", "petulant", "fractious", "cranky", "reizbar"]},
+  {"word": "hustle", "synonyms": ["hurry", "expedite", "scurry", "get a move on", "Hektik"]},
+  {"word": "thrift", "synonyms": ["frugality", "parsimony", "prudence", "penny-pinching", "Sparsamkeit"]},
+  {"word": "rarefied", "synonyms": ["exclusive", "attenuated", "esoteric", "fancy", "erlesen"]},
+  {"word": "maladjusted", "synonyms": ["unstable", "alienated", "dysfunctional", "misfit", "unangepasst"]},
+  {"word": "disillusionment", "synonyms": ["disappointment", "enlightenment", "cynicism", "reality check", "Desillusionierung"]},
+  {"word": "ornery", "synonyms": ["stubborn", "cantankerous", "crotchety", "mean", "reizbar"]},
+  {"word": "sleight", "synonyms": ["trick", "dexterity", "artifice", "magic", "List"]},
+  {"word": "heckling", "synonyms": ["interrupting", "taunting", "jeering", "badgering", "Zwischenrufe"]},
+  {"word": "juxtaposition", "synonyms": ["contrast", "adjacency", "proximity", "side-by-side", "Nebeneinanderstellung"]},
+  {"word": "rebuttal", "synonyms": ["denial", "refutation", "confutation", "comeback", "Widerlegung"]},
+  {"word": "craic", "synonyms": ["fun", "entertainment", "revelry", "good times", "Spaß"]},
+  {"word": "aloof", "synonyms": ["distant", "detached", "unresponsive", "standoffish", "distanziert"]},
+  {"word": "tillage", "synonyms": ["farming", "cultivation", "husbandry", "plowing", "Bodenbearbeitung"]},
+  {"word": "coy", "synonyms": ["shy", "bashful", "arch", "playing hard to get", "kokett"]},
+  {"word": "conscription", "synonyms": ["draft", "enrollment", "levy", "call-up", "Wehrpflicht"]},
+  {"word": "invigilator", "synonyms": ["proctor", "supervisor", "monitor", "minder", "Aufsichtsperson"]},
+  {"word": "prurient", "synonyms": ["lustful", "salacious", "lascivious", "dirty", "lüstern"]},
+  {"word": "avocation", "synonyms": ["hobby", "pursuit", "pastime", "side hustle", "Nebenbeschäftigung"]},
+  {"word": "bereavement", "synonyms": ["loss", "deprivation", "tribulation", "grief", "Trauerfall"]},
+  {"word": "happy-go-lucky", "synonyms": ["carefree", "unconcerned", "insouciant", "easygoing", "sorglos"]},
+  {"word": "foist", "synonyms": ["impose", "inflict", "force", "pass off", "aufdrängen"]},
+  {"word": "upend", "synonyms": ["invert", "overturn", "capsize", "flip", "umdrehen"]},
+  {"word": "contrivance", "synonyms": ["device", "expedient", "machination", "gadget", "Erfindung"]},
+  {"word": "revelry", "synonyms": ["celebration", "festivity", "carousal", "party", "Ausgelassenheit"]},
+  {"word": "carp", "synonyms": ["complain", "cavil", "quibble", "nitpick", "nörgeln"]},
+  {"word": "execrable", "synonyms": ["terrible", "abominable", "loathsome", "vile", "abscheulich"]},
+  {"word": "percipient", "synonyms": ["observant", "discerning", "astute", "sharp", "wahrnehmend"]},
+  {"word": "ambidextrous", "synonyms": ["skilled", "facile", "double-handed", "handy", "beidhändig"]},
+  {"word": "flippant", "synonyms": ["disrespectful", "facetious", "glib", "cheeky", "leichtfertig"]},
+  {"word": "disseminate", "synonyms": ["spread", "propagate", "circulate", "broadcast", "verbreiten"]},
+  {"word": "salient", "synonyms": ["important", "conspicuous", "striking", "main", "hervorragend"]},
+  {"word": "ascribe", "synonyms": ["attribute", "assign", "impute", "put down to", "zuschreiben"]},
+  {"word": "preposterous", "synonyms": ["ridiculous", "absurd", "ludicrous", "insane", "unsinnig"]},
+  {"word": "verisimilitude", "synonyms": ["truth", "plausibility", "authenticity", "realness", "Glaubwürdigkeit"]},
+  {"word": "propensity", "synonyms": ["tendency", "proclivity", "predilection", "leaning", "Neigung"]},
+  {"word": "contentious", "synonyms": ["argumentative", "polemical", "litigious", "feisty", "umstritten"]},
+  {"word": "miscreant", "synonyms": ["criminal", "villain", "reprobate", "scoundrel", "Bösewicht"]},
+  {"word": "cadaver", "synonyms": ["body", "corpse", "carcass", "stiff", "Leiche"]},
+  {"word": "tutelage", "synonyms": ["guardianship", "guidance", "supervision", "mentorship", "Vormundschaft"]},
+  {"word": "chicanery", "synonyms": ["trickery", "deception", "subterfuge", "skulduggery", "Schikane"]},
+  {"word": "intercede", "synonyms": ["mediate", "arbitrate", "advocate", "step in", "fürbittend eintreten"]},
+  {"word": "shroud", "synonyms": ["cover", "winding-sheet", "pall", "cloak", "Leichentuch"]},
+  {"word": "inscrutable", "synonyms": ["mysterious", "unfathomable", "enigmatic", "poker-faced", "unergründlich"]},
+  {"word": "unkempt", "synonyms": ["messy", "disheveled", "scruffy", "shaggy", "ungepflegt"]},
+  {"word": "impudence", "synonyms": ["rudeness", "insolence", "effrontery", "sass", "Frechheit"]},
+  {"word": "malady", "synonyms": ["illness", "affliction", "ailment", "bug", "Krankheit"]},
+  {"word": "duplicitous", "synonyms": ["deceitful", "treacherous", "two-faced", "shady", "doppelzüngig"]},
+  {"word": "flout", "synonyms": ["defy", "disregard", "spurn", "thumb one's nose", "missachten"]},
+  {"word": "quell", "synonyms": ["suppress", "subdue", "extinguish", "squash", "unterdrücken"]},
+  {"word": "rebuke", "synonyms": ["reprimand", "admonition", "scolding", "telling-off", "Rüge"]},
+  {"word": "tempestuous", "synonyms": ["stormy", "turbulent", "boisterous", "wild", "stürmisch"]},
+  {"word": "petulant", "synonyms": ["irritable", "querulous", "peevish", "whiny", "launisch"]},
+  {"word": "pliable", "synonyms": ["flexible", "malleable", "supple", "bendy", "biegsam"]},
+  {"word": "respite", "synonyms": ["break", "hiatus", "intermission", "breather", "Atempause"]},
+  {"word": "embolden", "synonyms": ["encourage", "invigorate", "inspire", "pump up", "ermutigen"]},
+  {"word": "reprehensible", "synonyms": ["blameworthy", "deplorable", "culpable", "shameful", "verwerflich"]},
+  {"word": "hefty", "synonyms": ["heavy", "substantial", "burly", "strapping", "kräftig"]},
+  {"word": "relish", "synonyms": ["enjoyment", "gusto", "zest", "kick", "Genuss"]},
+  {"word": "lacerate", "synonyms": ["cut", "mangle", "gash", "tear", "zerfleischen"]},
+  {"word": "arcane", "synonyms": ["mysterious", "esoteric", "recondite", "hidden", "geheimnisvoll"]},
+  {"word": "moniker", "synonyms": ["name", "appellation", "sobriquet", "handle", "Spitzname"]},
+  {"word": "espouse", "synonyms": ["support", "advocate", "embrace", "champion", "verfechten"]},
+  
+  {"word": "pièce de résistance", "synonyms": ["masterpiece", "magnum opus", "showstopper", "jewel in the crown", "Glanzstück"]},
+  {"word": "centipede", "synonyms": ["arthropod", "myriapod", "creepy-crawly", "leggy beastie", "Hundertfüßer"]},
+  {"word": "pupa", "synonyms": ["chrysalis", "aurelia", "metamorphic stage", "bug-in-a-blanket", "Puppe"]},
+  {"word": "spire", "synonyms": ["steeple", "pinnacle", "turret", "needle", "Kirchturmspitze"]},
+  {"word": "belfry", "synonyms": ["bell tower", "campanile", "carillon", "steeple", "Glockenturm"]},
+  {"word": "sawdust", "synonyms": ["wood shavings", "scobs", "frass", "timber-dust", "Sägemehl"]},
+  {"word": "sugar-cane", "synonyms": ["grass", "Saccharum", "sweet-stalk", "cane", "Zuckerrohr"]},
+  {"word": "zinnia", "synonyms": ["flower", "asteraceous plant", "garden-bright", "bloom", "Zinnie"]},
+  {"word": "quilt", "synonyms": ["blanket", "counterpane", "duvet", "comforter", "Steppdecke"]},
+  {"word": "harness", "synonyms": ["tackle", "accoutrements", "trappings", "gear", "Geschirr"]},
+  {"word": "contraption", "synonyms": ["device", "apparatus", "gizmo", "whatchamacallit", "Apparat"]},
+  {"word": "saltpetre", "synonyms": ["potassium nitrate", "nitre", "villainous saltpetre", "gunpowder-salt", "Salpeter"]},
+  {"word": "toadstool", "synonyms": ["fungus", "agaric", "death-cap", "fairy-stool", "Giftpilz"]},
+  {"word": "yarrow", "synonyms": ["herb", "Achillea", "milfoil", "nosebleed-plant", "Schafgarbe"]},
+  {"word": "uvula", "synonyms": ["palatine hanging", "staphyle", "throat-dangler", "little grape", "Zäpfchen"]},
+  {"word": "femur", "synonyms": ["thighbone", "os femoris", "big-shank", "leg-bone", "Oberschenkelknochen"]},
+  {"word": "pelvis", "synonyms": ["hip-bone", "basin", "bony girdle", "the hips", "Becken"]},
+  {"word": "scabies", "synonyms": ["skin infection", "sarcoptic mange", "the itch", "the seven-year itch", "Krätze"]},
+  {"word": "cast", "synonyms": ["bandage", "orthopedic plaster", "immobilizer", "shell", "Gipsverband"]},
+  {"word": "cadaver", "synonyms": ["corpse", "relic", "stiff", "carcass", "Leiche"]},
+  {"word": "entrails", "synonyms": ["intestines", "viscera", "innards", "guts", "Eingeweide"]},
+  
+  {"word": "since the cradle", "synonyms": ["from birth", "ab ovo", "from one's inception", "knee-high to a grasshopper", "von der Wiege an"]},
+  {"word": "cut to the chase", "synonyms": ["summarize", "get to the point", "skip the preamble", "bottom-line it", "auf den Punkt kommen"]},
+  {"word": "by the skin of my teeth", "synonyms": ["barely", "narrowly", "by a whisker", "just-just", "mit Ach und Krach"]},
+  {"word": "live out of a suitcase", "synonyms": ["travel", "perigrinating", "nomadic", "on the road", "aus dem Koffer leben"]},
+  {"word": "slip of the tongue", "synonyms": ["mistake", "lapsus linguae", "blooper", "brain-fart", "Versprecher"]},
+  {"word": "thrash", "synonyms": ["beat", "trounce", "drub", "wallop", "verprügeln"]},
+  {"word": "swoop down", "synonyms": ["descend", "pounce", "plummet", "drop in", "herabstürzen"]},
+  {"word": "wind down", "synonyms": ["relax", "decompress", "unwind", "chill out", "ausklingen lassen"]},
+  {"word": "talking at cross purposes", "synonyms": ["misunderstanding", "misconstruing", "clashing", "not on the same page", "aneinander vorbeireden"]},
+  {"word": "palm off", "synonyms": ["deceive", "foist", "fob off", "unload", "aufschwatzen"]},
+  {"word": "carry the day", "synonyms": ["win", "prevail", "triumph", "come out on top", "den Sieg davontragen"]},
+  {"word": "reap the whirlwind", "synonyms": ["suffer", "face the music", "pay the piper", "get one's comeuppance", "den Sturm ernten"]}
 
 
 
