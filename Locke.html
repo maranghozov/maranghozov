@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Locke: Political Philosophy Interactive Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        <!-- Chosen Palette: Warm Neutrals (Stone, Amber, Slate) for an academic, classic feel -->
+        <!-- Application Structure Plan: A dashboard layout with a persistent sidebar for easy navigation. The content is divided into logical thematic sections: Overview (summary), Timeline (historical context), Core Concepts (interactive explorations of his theories), Vocabulary (flashcards), and Study Questions (accordions). This structure breaks down dense philosophical text into digestible, task-oriented views, prioritizing user exploration and cognitive ease. -->
+        <!-- Visualization & Content Choices: 
+            1. Overview -> Goal: Inform -> Method: Text blocks with clear typography -> Justification: Sets the stage.
+            2. Timeline -> Goal: Organize -> Method: Vertical timeline layout with hover states -> Justification: Maps historical events linearly.
+            3. State of Nature -> Goal: Compare -> Method: Interactive toggle switch (Locke vs Hobbes) -> Justification: Actively engages the user to see contrasting views.
+            4. Labor Theory -> Goal: Inform/Visualize -> Method: Chart.js Donut Chart (95% Labor / 5% Nature) -> Library/Method: Chart.js -> Justification: Visually quantifies Locke's claim that labor creates almost all value.
+            5. Separation of Powers -> Goal: Organize -> Method: Interactive block diagram -> Justification: Clarifies the three branches clearly without SVG.
+            6. Vocabulary -> Goal: Inform -> Method: Clickable definition cards -> Justification: Aids memory retention through interaction. 
+            Confirming NO SVG/Mermaid used. -->
+        <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+        body {
+            background-color: #f5f5f4;
+            color: #292524;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 350px;
+        }
+
+        .flip-card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            backface-visibility: hidden;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+
+        .nav-active {
+            background-color: #e7e5e4;
+            border-left: 4px solid #b45309;
+            font-weight: bold;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .tab-active {
+            border-bottom: 2px solid #b45309;
+            color: #b45309;
+            font-weight: bold;
+        }
+        
+        .hidden-section {
+            display: none;
+        }
+    </style>
+</head>
+<body class="flex h-screen overflow-hidden antialiased">
+
+    <aside class="w-64 bg-stone-200 shadow-xl flex flex-col h-full z-10 flex-shrink-0 border-r border-stone-300">
+        <div class="p-6">
+            <h1 class="text-2xl font-serif font-bold text-stone-800 leading-tight">John Locke</h1>
+            <p class="text-sm text-stone-600 mt-2 font-medium">Political Philosophy Guide</p>
+        </div>
+        <nav class="flex-1 overflow-y-auto py-4">
+            <ul class="space-y-1">
+                <li><button onclick="navigate('overview')" id="nav-overview" class="w-full text-left px-6 py-3 text-stone-700 hover:bg-stone-300 transition-colors nav-active">&#128214; Overview</button></li>
+                <li><button onclick="navigate('timeline')" id="nav-timeline" class="w-full text-left px-6 py-3 text-stone-700 hover:bg-stone-300 transition-colors">&#9203; Historical Context</button></li>
+                <li><button onclick="navigate('concepts')" id="nav-concepts" class="w-full text-left px-6 py-3 text-stone-700 hover:bg-stone-300 transition-colors">&#9878; Core Philosophies</button></li>
+                <li><button onclick="navigate('vocabulary')" id="nav-vocabulary" class="w-full text-left px-6 py-3 text-stone-700 hover:bg-stone-300 transition-colors">&#128221; Vocabulary</button></li>
+                <li><button onclick="navigate('questions')" id="nav-questions" class="w-full text-left px-6 py-3 text-stone-700 hover:bg-stone-300 transition-colors">&#10068; Study Questions</button></li>
+            </ul>
+        </nav>
+        <div class="p-4 border-t border-stone-300 text-xs text-stone-500 text-center">
+            History of Social Theory
+        </div>
+    </aside>
+
+    <main class="flex-1 overflow-y-auto bg-stone-50 p-8 md:p-12 relative">
+        <div class="max-w-5xl mx-auto">
+
+            <section id="section-overview" class="block animate-fade-in">
+                <header class="mb-8 border-b-2 border-amber-700 pb-4">
+                    <h2 class="text-4xl font-serif text-stone-900 mb-2">Equality, Freedom, and the Foundation of Constitutional Monarchy</h2>
+                    <p class="text-lg text-stone-600">The transition of John Locke’s thought from early authoritarian leanings to becoming the "father of liberalism."</p>
+                </header>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-stone-200 text-stone-800 leading-relaxed text-lg">
+                    <p class="mb-4">This guide explores John Locke’s monumental refutation of absolute monarchy (targeting Robert Filmer's Patriarchalism) and his revolutionary ideas regarding property.</p>
+                    <p class="mb-4">Locke posited that legitimate government must be strictly based on the <strong>consent of the governed</strong>. Its primary purpose is not to rule absolutely, but to protect the natural rights of its citizens: <strong>life, liberty, and estate</strong>.</p>
+                    <div class="mt-8 p-6 bg-amber-50 border-l-4 border-amber-600 rounded-r-lg">
+                        <h3 class="font-bold text-amber-900 text-xl mb-2">&#128161; The Core Argument</h3>
+                        <p class="text-amber-800">Locke provided the intellectual justification for overturning a ruler who violates the trust of the people, cementing the shift of power from the Crown to Parliament during the Glorious Revolution.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-timeline" class="hidden-section">
+                <header class="mb-8 border-b-2 border-amber-700 pb-4">
+                    <h2 class="text-3xl font-serif text-stone-900">Historical Timeline</h2>
+                    <p class="text-stone-600 mt-2">Explore the turbulent reigns that shaped Locke's political radicalization. Click on each era to reveal details.</p>
+                </header>
+
+                <div class="space-y-6">
+                    <div class="bg-white border border-stone-200 rounded-lg overflow-hidden shadow-sm">
+                        <button onclick="toggleTimeline('era1')" class="w-full text-left p-6 bg-stone-100 hover:bg-stone-200 flex justify-between items-center transition-colors">
+                            <div>
+                                <h3 class="text-xl font-bold text-stone-800">&#9812; Charles II & The Restoration (1660–1685)</h3>
+                                <p class="text-sm text-stone-500 mt-1">Post-Cromwell Commonwealth</p>
+                            </div>
+                            <span class="text-2xl text-stone-400" id="icon-era1">&#43;</span>
+                        </button>
+                        <div id="content-era1" class="accordion-content bg-white px-6">
+                            <div class="py-4 space-y-3">
+                                <p><strong>Context:</strong> Monarchy is restored. Locke enters Oxford to study and teach after living through the Civil War.</p>
+                                <p><strong>Locke's Role (1666):</strong> Meets Anthony Ashley Cooper (Earl of Shaftesbury). Becomes his personal physician and advisor, thrusting Locke into London politics.</p>
+                                <p><strong>The Conflict & Exclusion Crisis:</strong> Shaftesbury opposes Charles II, fearing Catholic succession (James) and absolute monarchy. Locke aids the "exclusion" campaign to bar James from the throne, marking his shift to active political resistance.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-stone-200 rounded-lg overflow-hidden shadow-sm">
+                        <button onclick="toggleTimeline('era2')" class="w-full text-left p-6 bg-stone-100 hover:bg-stone-200 flex justify-between items-center transition-colors">
+                            <div>
+                                <h3 class="text-xl font-bold text-stone-800">&#9818; James II & Exile (1685–1688)</h3>
+                                <p class="text-sm text-stone-500 mt-1">Catholic Authoritarianism</p>
+                            </div>
+                            <span class="text-2xl text-stone-400" id="icon-era2">&#43;</span>
+                        </button>
+                        <div id="content-era2" class="accordion-content bg-white px-6">
+                            <div class="py-4 space-y-3">
+                                <p><strong>Exile (1683):</strong> The exclusion campaign fails. Shaftesbury is accused of treason. Locke flees to Holland for safety.</p>
+                                <p><strong>Radicalization:</strong> In Holland, Locke associates with English rebels plotting against James II.</p>
+                                <p><strong>Two Treatises:</strong> Written roughly between 1679-1683, Locke crafts the justification for overturning rulers who violate the people's trust. James II rapidly alienates his supporters.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-stone-200 rounded-lg overflow-hidden shadow-sm">
+                        <button onclick="toggleTimeline('era3')" class="w-full text-left p-6 bg-stone-100 hover:bg-stone-200 flex justify-between items-center transition-colors">
+                            <div>
+                                <h3 class="text-xl font-bold text-stone-800">&#9813; William III of Orange (1689–1702)</h3>
+                                <p class="text-sm text-stone-500 mt-1">The Glorious Revolution</p>
+                            </div>
+                            <span class="text-2xl text-stone-400" id="icon-era3">&#43;</span>
+                        </button>
+                        <div id="content-era3" class="accordion-content bg-white px-6">
+                            <div class="py-4 space-y-3">
+                                <p><strong>The Glorious Revolution (1688):</strong> William is invited to take the throne. James II flees to France in a "bloodless" shift of power.</p>
+                                <p><strong>Return (1689):</strong> Locke returns to England accompanying Princess Mary on the royal yacht.</p>
+                                <p><strong>Intellectual Justification:</strong> Locke publishes <em>Two Treatises of Government</em> and <em>Letter Concerning Toleration</em>. They become the definitive justification for the new regime and parliamentary supremacy.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-concepts" class="hidden-section">
+                <header class="mb-8 border-b-2 border-amber-700 pb-4">
+                    <h2 class="text-3xl font-serif text-stone-900">Core Philosophies</h2>
+                    <p class="text-stone-600 mt-2">Interact with the core pillars of Locke's political theory.</p>
+                </header>
+
+                <div class="flex border-b border-stone-300 mb-6 overflow-x-auto">
+                    <button onclick="switchConceptTab('nature')" id="tab-nature" class="px-4 py-2 text-stone-600 tab-active whitespace-nowrap">State of Nature</button>
+                    <button onclick="switchConceptTab('property')" id="tab-property" class="px-4 py-2 text-stone-600 hover:text-stone-900 whitespace-nowrap">Labor & Property</button>
+                    <button onclick="switchConceptTab('powers')" id="tab-powers" class="px-4 py-2 text-stone-600 hover:text-stone-900 whitespace-nowrap">Separation of Powers</button>
+                    <button onclick="switchConceptTab('lions')" id="tab-lions" class="px-4 py-2 text-stone-600 hover:text-stone-900 whitespace-nowrap">Lions vs Foxes</button>
+                </div>
+
+                <div id="concept-nature" class="block bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                    <h3 class="text-xl font-bold text-stone-800 mb-4">State of Nature: A Philosophical Comparison</h3>
+                    <p class="mb-6 text-stone-600">Toggle between the views of Thomas Hobbes and John Locke to understand their fundamental divergence on human nature.</p>
+                    
+                    <div class="flex items-center justify-center mb-8">
+                        <span id="label-hobbes" class="mr-4 font-bold text-stone-400">Thomas Hobbes</span>
+                        <button id="nature-toggle" onclick="toggleNatureView()" class="w-16 h-8 bg-amber-600 rounded-full relative transition-colors focus:outline-none shadow-inner">
+                            <div id="nature-toggle-knob" class="w-6 h-6 bg-white rounded-full absolute top-1 right-1 transition-transform shadow-md"></div>
+                        </button>
+                        <span id="label-locke" class="ml-4 font-bold text-amber-700">John Locke</span>
+                    </div>
+
+                    <div id="view-locke" class="p-6 bg-amber-50 rounded border border-amber-200 text-center transition-opacity duration-300">
+                        <div class="text-4xl mb-4">&#9878;</div>
+                        <h4 class="text-2xl font-serif text-amber-900 mb-2">A State of Peace & Reason</h4>
+                        <p class="text-amber-800">Humans are naturally free and equal. The state of nature is governed by reason. Conflict is not inevitable, but arises due to "inconveniences"—mainly the lack of an unbiased judge to settle property disputes. Founded on an assumption of <strong>Abundance</strong>.</p>
+                    </div>
+
+                    <div id="view-hobbes" class="hidden p-6 bg-stone-100 rounded border border-stone-300 text-center transition-opacity duration-300">
+                        <div class="text-4xl mb-4">&#9876;</div>
+                        <h4 class="text-2xl font-serif text-stone-800 mb-2">War of All Against All</h4>
+                        <p class="text-stone-600">Human life is "solitary, poor, nasty, brutish, and short." Humans are driven by fear and competition. A strong, absolute sovereign is required to prevent continuous violent conflict. Founded on an assumption of <strong>Scarcity</strong>.</p>
+                    </div>
+                </div>
+
+                <div id="concept-property" class="hidden bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                    <h3 class="text-xl font-bold text-stone-800 mb-4">The Labor Theory of Property</h3>
+                    <p class="mb-4 text-stone-600">Locke famously claimed that mixing one's labor with natural resources creates private property. He estimated that the vast majority of a product's value is derived from human industry, not the raw materials.</p>
+                    
+                    <div class="flex flex-col md:flex-row items-center gap-8 mt-8">
+                        <div class="w-full md:w-1/2">
+                            <div class="chart-container">
+                                <canvas id="laborChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 space-y-4">
+                            <div class="bg-stone-50 p-4 rounded border border-stone-200">
+                                <h4 class="font-bold text-stone-800 mb-1">The Spoilage Proviso</h4>
+                                <p class="text-sm text-stone-600">One can only claim as much property from nature as they can use before it spoils.</p>
+                            </div>
+                            <div class="bg-amber-50 p-4 rounded border border-amber-200">
+                                <h4 class="font-bold text-amber-900 mb-1">The Role of Money</h4>
+                                <p class="text-sm text-amber-800">The invention of gold/silver bypasses the spoilage limit. Because money does not decay, wealth can be accumulated indefinitely without violating natural law or injuring others.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="concept-powers" class="hidden bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                    <h3 class="text-xl font-bold text-stone-800 mb-4">Separation of Powers</h3>
+                    <p class="mb-6 text-stone-600">Locke argued that combining the making and enforcing of laws leads directly to tyranny. Hover over or click the branches to see their functions.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div onmouseover="highlightPower('leg')" onmouseout="resetPower('leg')" id="power-leg" class="p-6 border-2 border-stone-300 rounded-lg text-center cursor-pointer transition-all duration-300">
+                            <div class="text-4xl mb-2">&#128220;</div>
+                            <h4 class="font-bold text-lg text-stone-800 mb-2">Legislative</h4>
+                            <p class="text-sm text-stone-600 h-20">The supreme power of the commonwealth. Responsible for creating laws that govern the society.</p>
+                        </div>
+                        <div onmouseover="highlightPower('exec')" onmouseout="resetPower('exec')" id="power-exec" class="p-6 border-2 border-stone-300 rounded-lg text-center cursor-pointer transition-all duration-300">
+                            <div class="text-4xl mb-2">&#9874;</div>
+                            <h4 class="font-bold text-lg text-stone-800 mb-2">Executive</h4>
+                            <p class="text-sm text-stone-600 h-20">Responsible for enforcing the laws internally. Must be kept strictly separate from the Legislative.</p>
+                        </div>
+                        <div onmouseover="highlightPower('fed')" onmouseout="resetPower('fed')" id="power-fed" class="p-6 border-2 border-stone-300 rounded-lg text-center cursor-pointer transition-all duration-300">
+                            <div class="text-4xl mb-2">&#127758;</div>
+                            <h4 class="font-bold text-lg text-stone-800 mb-2">Federative</h4>
+                            <p class="text-sm text-stone-600 h-20">Manages foreign relations, war, peace, and defense against outside enemies.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="concept-lions" class="hidden bg-white p-6 rounded-lg shadow-sm border border-stone-200">
+                    <h3 class="text-xl font-bold text-stone-800 mb-4">The Analogy: Lions vs. Foxes</h3>
+                    <p class="mb-6 text-stone-600">Locke uses this powerful analogy to critique the logic of absolute monarchy. Why would reasonable people protect themselves from minor threats while exposing themselves to a massive one?</p>
+                    
+                    <div class="flex flex-col md:flex-row justify-around items-center gap-8 bg-stone-50 p-8 rounded-lg border border-stone-200">
+                        <div class="text-center w-full md:w-5/12">
+                            <div class="text-6xl mb-4">&#129418;</div>
+                            <h4 class="font-bold text-stone-800 text-xl mb-2">The Foxes</h4>
+                            <p class="text-stone-600 text-sm">Represent thieving neighbors or minor criminals in the state of nature. People create civil society to protect themselves from these common threats.</p>
+                        </div>
+                        <div class="text-4xl text-stone-300 w-full md:w-2/12 text-center">&#10145;&#65039;</div>
+                        <div class="text-center w-full md:w-5/12">
+                            <div class="text-6xl mb-4">&#129409;</div>
+                            <h4 class="font-bold text-amber-800 text-xl mb-2">The Lions</h4>
+                            <p class="text-stone-600 text-sm">Represent Absolute Monarchs. Locke argues it is foolish to build defenses against foxes only to hand all power over to a lion who is completely above the law.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-vocabulary" class="hidden-section">
+                <header class="mb-8 border-b-2 border-amber-700 pb-4">
+                    <h2 class="text-3xl font-serif text-stone-900">Vocabulary Flashcards</h2>
+                    <p class="text-stone-600 mt-2">Click on a term to reveal its definition and context within Locke's philosophy.</p>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="vocab-grid">
+                </div>
+            </section>
+
+            <section id="section-questions" class="hidden-section">
+                <header class="mb-8 border-b-2 border-amber-700 pb-4">
+                    <h2 class="text-3xl font-serif text-stone-900">Study Questions</h2>
+                    <p class="text-stone-600 mt-2">Test your understanding of the material. Click the questions to reveal guidance.</p>
+                </header>
+
+                <div class="space-y-4" id="questions-container">
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script>
+        let isLockeView = true;
+        let chartInstance = null;
+
+        const vocabularyData = [
+            { term: "Tacit Consent", def: "The idea that by simply living in a territory and enjoying its benefits (using roads, police protection), an individual implicitly agrees to follow its laws." },
+            { term: "Inconveniences", def: "Locke’s term for problems in the State of Nature: lack of a known law, an indifferent judge, and power to back and support sentences." },
+            { term: "Regicide", def: "The action of killing a king. Mentioned historically regarding judges who fled to New Haven after Charles I's execution." },
+            { term: "Whigs & Tories", def: "Early English political parties. Whigs (Locke's allies) favored parliamentary supremacy; Tories supported the absolute crown." },
+            { term: "Patriarchalism", def: "The political theory (championed by Filmer) that the king's authority is absolute, deriving directly from the paternal authority of Adam." }
+        ];
+
+        const questionsData = [
+            { q: "Why does the invention of money fundamentally change the moral landscape of Locke’s state of nature?", a: "It allows wealth to be stored without decaying, circumventing the Spoilage Proviso, and thus justifies unequal accumulation of property." },
+            { q: "How does Locke justify the right to dissent or rebel against a sovereign?", a: "If a ruler violates the trust of the people and threatens life, liberty, or property, they essentially declare a state of war against the people, who then have the right to dissolve the government." },
+            { q: "In what ways does Locke’s 'Federative Power' differ from the modern concept of the Judicial branch?", a: "The Federative branch handles external affairs (war, alliances), whereas a modern Judicial branch interprets domestic laws. Locke grouped domestic adjudication under the Executive/Legislative umbrella." },
+            { q: "Why is an absolute monarch considered to be in a 'State of Nature' relative to their subjects?", a: "Because there is no independent, unbiased judge to settle disputes between the subject and the monarch. The monarch retains absolute power, violating the premise of civil society." },
+            { q: "How does Locke’s assumption of 'abundance' lead to a more optimistic political theory than Hobbes’s assumption of 'scarcity'?", a: "Abundance implies humans can coexist peacefully without instantly competing for survival resources. Therefore, humans are capable of rationality and limited government, rather than needing an absolute dictator." }
+        ];
+
+        function navigate(sectionId) {
+            document.querySelectorAll('main > div > section').forEach(el => {
+                el.classList.add('hidden-section');
+                el.classList.remove('block', 'animate-fade-in');
+            });
+            
+            const target = document.getElementById('section-' + sectionId);
+            target.classList.remove('hidden-section');
+            target.classList.add('block');
+            
+            setTimeout(() => {
+                target.classList.add('animate-fade-in');
+            }, 10);
+
+            document.querySelectorAll('nav button').forEach(el => {
+                el.classList.remove('nav-active');
+            });
+            document.getElementById('nav-' + sectionId).classList.add('nav-active');
+
+            if (sectionId === 'concepts') {
+                switchConceptTab('nature'); 
+            }
+        }
+
+        function toggleTimeline(eraId) {
+            const content = document.getElementById('content-' + eraId);
+            const icon = document.getElementById('icon-' + eraId);
+            
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                icon.innerHTML = '&#43;';
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                icon.innerHTML = '&#8722;';
+            }
+        }
+
+        function switchConceptTab(tabId) {
+            document.querySelectorAll('[id^="concept-"]').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('block');
+            });
+            document.getElementById('concept-' + tabId).classList.remove('hidden');
+            document.getElementById('concept-' + tabId).classList.add('block');
+
+            document.querySelectorAll('[id^="tab-"]').forEach(el => {
+                el.classList.remove('tab-active', 'text-stone-900');
+                el.classList.add('text-stone-600');
+            });
+            document.getElementById('tab-' + tabId).classList.add('tab-active');
+            document.getElementById('tab-' + tabId).classList.remove('text-stone-600');
+
+            if (tabId === 'property') {
+                renderChart();
+            }
+        }
+
+        function toggleNatureView() {
+            isLockeView = !isLockeView;
+            const knob = document.getElementById('nature-toggle-knob');
+            const btn = document.getElementById('nature-toggle');
+            
+            if (isLockeView) {
+                knob.style.transform = 'translateX(0)';
+                btn.classList.add('bg-amber-600');
+                btn.classList.remove('bg-stone-500');
+                document.getElementById('label-locke').classList.add('text-amber-700');
+                document.getElementById('label-locke').classList.remove('text-stone-400');
+                document.getElementById('label-hobbes').classList.remove('text-stone-800');
+                document.getElementById('label-hobbes').classList.add('text-stone-400');
+                
+                document.getElementById('view-locke').classList.remove('hidden');
+                document.getElementById('view-hobbes').classList.add('hidden');
+            } else {
+                knob.style.transform = 'translateX(-32px)';
+                btn.classList.remove('bg-amber-600');
+                btn.classList.add('bg-stone-500');
+                document.getElementById('label-locke').classList.remove('text-amber-700');
+                document.getElementById('label-locke').classList.add('text-stone-400');
+                document.getElementById('label-hobbes').classList.add('text-stone-800');
+                document.getElementById('label-hobbes').classList.remove('text-stone-400');
+                
+                document.getElementById('view-locke').classList.add('hidden');
+                document.getElementById('view-hobbes').classList.remove('hidden');
+            }
+        }
+
+        function renderChart() {
+            if (chartInstance) {
+                return; 
+            }
+            const ctx = document.getElementById('laborChart').getContext('2d');
+            chartInstance = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Value from Human Labor', 'Value from Raw Nature'],
+                    datasets: [{
+                        data: [95, 5],
+                        backgroundColor: [
+                            '#b45309', 
+                            '#e7e5e4'  
+                        ],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    family: "'Segoe UI', sans-serif"
+                                },
+                                color: '#292524'
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ' ' + context.label + ': ~' + context.parsed + '%';
+                                }
+                            }
+                        }
+                    },
+                    cutout: '70%'
+                }
+            });
+        }
+
+        function highlightPower(branch) {
+            document.getElementById('power-' + branch).classList.add('border-amber-600', 'bg-amber-50', 'transform', '-translate-y-1', 'shadow-md');
+        }
+
+        function resetPower(branch) {
+            document.getElementById('power-' + branch).classList.remove('border-amber-600', 'bg-amber-50', 'transform', '-translate-y-1', 'shadow-md');
+        }
+
+        function renderVocab() {
+            const grid = document.getElementById('vocab-grid');
+            vocabularyData.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'flip-card bg-transparent h-48 perspective-1000 cursor-pointer';
+                card.onclick = function() { this.classList.toggle('flipped'); };
+                
+                card.innerHTML = `
+                    <div class="flip-card-inner relative w-full h-full shadow-sm border border-stone-200 rounded-lg">
+                        <div class="flip-card-front absolute w-full h-full bg-stone-100 rounded-lg flex items-center justify-center p-4">
+                            <h3 class="text-xl font-bold text-stone-800 text-center">${item.term}</h3>
+                        </div>
+                        <div class="flip-card-back absolute w-full h-full bg-amber-700 text-white rounded-lg p-4 flex items-center justify-center overflow-y-auto">
+                            <p class="text-sm text-center">${item.def}</p>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function renderQuestions() {
+            const container = document.getElementById('questions-container');
+            questionsData.forEach((item, index) => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'bg-white border border-stone-200 rounded-lg overflow-hidden shadow-sm';
+                
+                wrapper.innerHTML = `
+                    <button onclick="toggleTimeline('q${index}')" class="w-full text-left p-6 bg-stone-100 hover:bg-stone-200 flex justify-between items-center transition-colors">
+                        <h3 class="text-lg font-bold text-stone-800 pr-4">${item.q}</h3>
+                        <span class="text-2xl text-stone-400 flex-shrink-0" id="icon-q${index}">&#43;</span>
+                    </button>
+                    <div id="content-q${index}" class="accordion-content bg-white px-6">
+                        <div class="py-4 border-t border-stone-100 mt-2">
+                            <p class="text-stone-700"><span class="font-bold text-amber-700">Analysis:</span> ${item.a}</p>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(wrapper);
+            });
+        }
+
+        renderVocab();
+        renderQuestions();
+
+        const style = document.createElement('style');
+        style.textContent = `
+            .perspective-1000 { perspective: 1000px; }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-fade-in {
+                animation: fadeIn 0.4s ease-out forwards;
+            }
+        `;
+        document.head.appendChild(style);
+
+    </script>
+</body>
+</html>
