@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montesquieu & The Spirit of the Laws</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        paper: '#FDFBF7',
+                        ink: '#2C2825',
+                        accent: '#B4654A',
+                        secondary: '#D4C9B8',
+                        highlight: '#E8E1D5',
+                        panel: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        serif: ['"Merriweather"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FDFBF7;
+            color: #2C2825;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Merriweather', serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .interactive-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+        .interactive-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .nav-link {
+            transition: color 0.2s ease;
+        }
+        .nav-link:hover {
+            color: #B4654A;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-white">
+
+    <!-- Chosen Palette: Warm Neutrals - #FDFBF7 (Paper), #2C2825 (Ink), #B4654A (Accent Terra Cotta), #D4C9B8 (Secondary Sand). Chosen to reflect a classical, scholarly, and calm 18th-century Enlightenment aesthetic. -->
+    <!-- Application Structure Plan: A linear narrative dashboard divided into four thematic sections matching the source material. 1) Methodological Foundations (toggle interface), 2) Classification of Governments (interactive donut chart), 3) Separation of Powers (interactive CSS grid diagram), 4) Environment & Spirit (line chart showing progression). This structure guides the user from foundational philosophy to complex societal dynamics, prioritizing active discovery over passive reading. -->
+    <!-- Visualization & Content Choices: 1) Methodology: Toggle button interface to clearly contrast the binary of Individualism vs Collectivism. 2) Governments: Chart.js Doughnut chart to organize the 3 forms, using clicks to reveal their driving psychological 'springs' (Virtue/Honor/Fear). 3) Powers: HTML/CSS flexbox pillars to represent the 3 branches, with a central interactive readout for checks and balances, avoiding SVG. 4) General Spirit: Chart.js Line chart to visualize the inverse relationship between Climate and General Spirit over time, demonstrating 'Change'. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <nav class="sticky top-0 z-50 bg-paper/90 backdrop-blur-md border-b border-secondary shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="text-xl font-bold font-serif text-accent tracking-tight">Esprit Général</div>
+            <div class="flex gap-4 md:gap-8 text-sm font-medium">
+                <a href="#methodology" class="nav-link text-ink">Methodology</a>
+                <a href="#governments" class="nav-link text-ink">Governments</a>
+                <a href="#powers" class="nav-link text-ink">Separation of Powers</a>
+                <a href="#spirit" class="nav-link text-ink">The General Spirit</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="max-w-4xl mx-auto px-4 py-16 md:py-24 text-center">
+        <div class="text-4xl md:text-6xl mb-4 text-accent">&#9878;</div>
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Montesquieu & The Foundation of Modern Governance</h1>
+        <p class="text-lg md:text-xl text-ink/80 max-w-2xl mx-auto leading-relaxed">
+            Explore the political philosophy of the 18th-century French Enlightenment. Discover how Baron de Montesquieu theorized the separation of powers, classified governments by their psychological principles, and pioneered the concept of the "General Spirit."
+        </p>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 pb-24 space-y-24 md:space-y-32">
+
+        <section id="methodology" class="scroll-mt-20">
+            <div class="max-w-3xl mx-auto text-center mb-10">
+                <h2 class="text-3xl font-bold mb-4">The Methodological Divide</h2>
+                <p class="text-ink/80 leading-relaxed">
+                    This section explores the fundamental starting point of 17th and 18th-century social analysis. It contrasts the British approach, which builds society up from the single person, against the French tradition that views society as a pre-existing, holistic reality. Select an approach below to explore its core premise.
+                </p>
+            </div>
+
+            <div class="bg-panel rounded-2xl shadow-sm border border-highlight p-6 md:p-10 max-w-4xl mx-auto">
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                    <button id="btn-individualism" class="px-6 py-3 rounded-lg font-semibold transition-colors duration-200 bg-highlight text-ink hover:bg-secondary border border-secondary">
+                        &#128100; British Individualism
+                    </button>
+                    <button id="btn-collectivism" class="px-6 py-3 rounded-lg font-semibold transition-colors duration-200 bg-accent text-white shadow-md">
+                        &#128101; French Collectivism
+                    </button>
+                </div>
+
+                <div id="methodology-content" class="min-h-[150px] flex items-center justify-center p-6 bg-paper rounded-xl border border-highlight text-center">
+                    <div>
+                        <h3 class="text-2xl font-serif font-bold mb-3 text-accent">Methodological Collectivism</h3>
+                        <p class="text-lg text-ink/90 max-w-2xl mx-auto">
+                            The French intellectual tradition (Montesquieu, Rousseau, Durkheim) that views society as a holistic entity with its own reality and "spirit." It exists independently of, and shapes, the individuals within it. The analysis begins with the collective, not the single person.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="governments" class="scroll-mt-20">
+            <div class="max-w-3xl mx-auto text-center mb-10">
+                <h2 class="text-3xl font-bold mb-4">Classification of Governments</h2>
+                <p class="text-ink/80 leading-relaxed">
+                    Montesquieu departed from traditional classifications by focusing not just on who rules, but on the psychological "spring" or driving principle that makes subjects obey. This section maps the three primary forms of government to their legitimacy basis. Click on the chart segments to reveal the underlying principles.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center gap-8 bg-panel rounded-2xl shadow-sm border border-highlight p-6 md:p-10">
+                <div class="w-full md:w-1/2">
+                    <div class="chart-container">
+                        <canvas id="govChart"></canvas>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 flex flex-col justify-center min-h-[250px]">
+                    <div id="gov-details" class="p-8 bg-highlight/30 rounded-xl border border-highlight h-full flex flex-col justify-center">
+                        <div class="text-4xl mb-4 text-center text-accent">&#10024;</div>
+                        <h3 class="text-2xl font-serif font-bold mb-2 text-center">Interactive Model</h3>
+                        <p class="text-center text-ink/80">Select a section of the chart to understand the driving psychological principle behind that form of government.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="powers" class="scroll-mt-20">
+            <div class="max-w-3xl mx-auto text-center mb-10">
+                <h2 class="text-3xl font-bold mb-4">The Separation of Powers</h2>
+                <p class="text-ink/80 leading-relaxed">
+                    Perhaps his most famous contribution to political theory, Montesquieu refined Locke's ideas by explicitly defining three separate branches of government. This architecture is designed specifically to prevent tyranny. Click the pillars below to learn about their functions and the checks and balances between them.
+                </p>
+            </div>
+
+            <div class="bg-panel rounded-2xl shadow-sm border border-highlight p-6 md:p-10">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div id="pillar-leg" class="interactive-card bg-paper border-2 border-secondary rounded-xl p-6 text-center h-48 flex flex-col justify-center">
+                        <div class="text-3xl mb-3">&#128220;</div>
+                        <h3 class="font-serif font-bold text-xl mb-1">Legislative</h3>
+                        <p class="text-sm text-ink/70">The power of making laws</p>
+                    </div>
+                    <div id="pillar-exe" class="interactive-card bg-paper border-2 border-secondary rounded-xl p-6 text-center h-48 flex flex-col justify-center">
+                        <div class="text-3xl mb-3">&#127984;</div>
+                        <h3 class="font-serif font-bold text-xl mb-1">Executive</h3>
+                        <p class="text-sm text-ink/70">The power of executing laws</p>
+                    </div>
+                    <div id="pillar-jud" class="interactive-card bg-paper border-2 border-secondary rounded-xl p-6 text-center h-48 flex flex-col justify-center">
+                        <div class="text-3xl mb-3">&#9878;</div>
+                        <h3 class="font-serif font-bold text-xl mb-1">Judicial</h3>
+                        <p class="text-sm text-ink/70">The power of judging law</p>
+                    </div>
+                </div>
+
+                <div id="powers-detail" class="bg-highlight/40 rounded-xl p-6 border border-secondary text-center min-h-[160px] flex items-center justify-center">
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">System of Checks and Balances</h4>
+                        <p class="text-ink/80">Liberty is only preserved when these three functions are held by separate bodies. Select a pillar above to explore specific protective mechanisms, such as the Veto or Bicameralism.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="spirit" class="scroll-mt-20">
+            <div class="max-w-3xl mx-auto text-center mb-10">
+                <h2 class="text-3xl font-bold mb-4">Environmental Determinism & The General Spirit</h2>
+                <p class="text-ink/80 leading-relaxed">
+                    Montesquieu was a pioneer in environmental determinism, theorizing that physical climate shapes early human behavior. However, he argued that as civilization progresses, cultural and legal structures take precedence. This chart illustrates the inverse relationship between nature and culture over time. Hover over the data points for details.
+                </p>
+            </div>
+
+            <div class="bg-panel rounded-2xl shadow-sm border border-highlight p-6 md:p-10 flex flex-col items-center">
+                <div class="w-full">
+                    <div class="chart-container">
+                        <canvas id="spiritChart"></canvas>
+                    </div>
+                </div>
+                <div class="mt-8 text-center max-w-2xl">
+                    <h3 class="text-xl font-serif font-bold text-accent mb-2">Esprit Général (The General Spirit)</h3>
+                    <p class="text-ink/90">
+                        The unique character of a nation resulting from the confluence of many factors: climate, religion, laws, maxims of government, precedents, morals, and manners. As society advances, this internalized spirit becomes the dominant driver of behavior, replacing raw environmental influence.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-ink text-paper py-12 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-3xl mb-4">&#128366;</div>
+            <p class="opacity-80 text-sm">Interactive Study Application based on the teachings of Baron de Montesquieu.</p>
+            <p class="opacity-60 text-xs mt-2">Political Philosophy / Foundations of Modern Social Thought</p>
+        </div>
+    </footer>
+
+    <script>
+        const state = {
+            methodology: {
+                individualism: {
+                    title: "Methodological Individualism",
+                    text: "The approach favored by British thinkers like Hobbes and Locke. It explains social phenomena solely by the actions, fears, and motivations of individual actors. Society is built from the bottom up.",
+                    icon: "&#128100;"
+                },
+                collectivism: {
+                    title: "Methodological Collectivism",
+                    text: "The French intellectual tradition (Montesquieu, Rousseau, Durkheim) that views society as a holistic entity with its own reality and 'spirit.' It exists independently of, and shapes, the individuals within it. The analysis begins with the collective, not the single person.",
+                    icon: "&#128101;"
+                }
+            },
+            governments: {
+                0: {
+                    title: "Republic",
+                    principle: "Virtue",
+                    text: "The psychological 'spring' or driving principle is Virtue. This requires the ability of citizens and leaders to prioritize the common good over private interest in order for the system to function.",
+                    icon: "&#127963;"
+                },
+                1: {
+                    title: "Monarchy",
+                    principle: "Honor",
+                    text: "The driving principle is Honor. Behavior is driven by the desire for rank, distinction, and the strict following of a code of conduct or fundamental laws.",
+                    icon: "&#128081;"
+                },
+                2: {
+                    title: "Despotism",
+                    principle: "Fear",
+                    text: "The driving principle is Fear. In the absence of the rule of law or social contracts binding the ruler, obedience is maintained entirely through the threat of arbitrary force.",
+                    icon: "&#9760;"
+                }
+            },
+            powers: {
+                leg: {
+                    title: "Legislative Branch Protection",
+                    text: "<strong>Bicameralism:</strong> Montesquieu advocated for a two-house legislature (Upper and Lower). This represents different social classes to prevent the 'despotism of the majority' and protects minority property rights. The legislature should not be in permanent session to avoid interfering with daily administration.",
+                    color: "border-accent"
+                },
+                exe: {
+                    title: "Executive Branch Protection",
+                    text: "<strong>The Veto:</strong> The 'faculty of stopping'. This is the specific power of the Executive to reject or check legislation passed by the assembly, preventing the lawmakers from enacting tyrannical rules.",
+                    color: "border-accent"
+                },
+                jud: {
+                    title: "Judicial Branch Necessity",
+                    text: "<strong>The Power of Judging:</strong> Montesquieu refined Locke’s model by establishing this as a distinct third branch. If the person making the laws (Legislative) or enforcing them (Executive) also interprets them, liberty is destroyed.",
+                    color: "border-accent"
+                }
+            }
+        };
+
+        const btnInd = document.getElementById('btn-individualism');
+        const btnCol = document.getElementById('btn-collectivism');
+        const methContent = document.getElementById('methodology-content');
+
+        function updateMethodology(type) {
+            const data = state.methodology[type];
+            methContent.innerHTML = `
+                <div class="animate-[fadeIn_0.3s_ease-in-out]">
+                    <div class="text-4xl mb-3 text-ink">${data.icon}</div>
+                    <h3 class="text-2xl font-serif font-bold mb-3 text-accent">${data.title}</h3>
+                    <p class="text-lg text-ink/90 max-w-2xl mx-auto">${data.text}</p>
+                </div>
+            `;
+            if (type === 'individualism') {
+                btnInd.className = "px-6 py-3 rounded-lg font-semibold transition-colors duration-200 bg-accent text-white shadow-md";
+                btnCol.className = "px-6 py-3 rounded-lg font-semibold transition-colors duration-200 bg-highlight text-ink hover:bg-secondary border border-secondary";
+            } else {
+                btnCol.className = "px-6 py-3 rounded-lg font-semibold transition-colors duration-200 bg-accent text-white shadow-md";
+                btnInd.className = "px-6 py-3 rounded-lg font-semibold transition-colors duration-200 bg-highlight text-ink hover:bg-secondary border border-secondary";
+            }
+        }
+
+        btnInd.addEventListener('click', () => updateMethodology('individualism'));
+        btnCol.addEventListener('click', () => updateMethodology('collectivism'));
+
+        const govCtx = document.getElementById('govChart').getContext('2d');
+        const govChart = new Chart(govCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Republic', 'Monarchy', 'Despotism'],
+                datasets: [{
+                    data: [1, 1, 1],
+                    backgroundColor: ['#B4654A', '#D4C9B8', '#2C2825'],
+                    borderWidth: 2,
+                    borderColor: '#FDFBF7',
+                    hoverOffset: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: { family: "'Inter', sans-serif", size: 14 },
+                            color: '#2C2825'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return ' Click for details';
+                            }
+                        }
+                    }
+                },
+                onClick: (e, activeElements) => {
+                    if (activeElements.length > 0) {
+                        const index = activeElements[0].index;
+                        const data = state.governments[index];
+                        const detailsContainer = document.getElementById('gov-details');
+                        detailsContainer.innerHTML = `
+                            <div class="animate-[fadeIn_0.3s_ease-in-out] text-center flex flex-col justify-center h-full">
+                                <div class="text-5xl mb-4 text-accent">${data.icon}</div>
+                                <h3 class="text-2xl font-serif font-bold mb-1">${data.title}</h3>
+                                <div class="text-lg font-semibold text-accent mb-3 uppercase tracking-wider">Principle: ${data.principle}</div>
+                                <p class="text-ink/90">${data.text}</p>
+                            </div>
+                        `;
+                    }
+                }
+            }
+        });
+
+        const pillars = ['leg', 'exe', 'jud'];
+        const powersDetail = document.getElementById('powers-detail');
+
+        pillars.forEach(p => {
+            const el = document.getElementById(`pillar-${p}`);
+            el.addEventListener('click', () => {
+                pillars.forEach(resetP => {
+                    document.getElementById(`pillar-${resetP}`).classList.remove('border-accent', 'shadow-md');
+                    document.getElementById(`pillar-${resetP}`).classList.add('border-secondary');
+                });
+                
+                el.classList.remove('border-secondary');
+                el.classList.add('border-accent', 'shadow-md');
+                
+                const data = state.powers[p];
+                powersDetail.innerHTML = `
+                    <div class="animate-[fadeIn_0.3s_ease-in-out] text-left max-w-2xl mx-auto w-full">
+                        <h4 class="font-serif font-bold text-xl mb-2 text-accent">${data.title}</h4>
+                        <p class="text-ink/90 text-lg leading-relaxed">${data.text}</p>
+                    </div>
+                `;
+            });
+        });
+
+        const spiritCtx = document.getElementById('spiritChart').getContext('2d');
+        const spiritChart = new Chart(spiritCtx, {
+            type: 'line',
+            data: {
+                labels: ['Primitive Society', 'Developing Nation', 'Advanced Civilization'],
+                datasets: [
+                    {
+                        label: 'Influence of Physical Climate',
+                        data: [90, 40, 10],
+                        borderColor: '#2C2825',
+                        backgroundColor: 'rgba(44, 40, 37, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true
+                    },
+                    {
+                        label: 'Importance of General Spirit',
+                        data: [10, 50, 95],
+                        borderColor: '#B4654A',
+                        backgroundColor: 'rgba(180, 101, 74, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: {
+                            display: true,
+                            text: 'Level of Influence',
+                            font: { family: "'Inter', sans-serif" }
+                        },
+                        ticks: { display: false }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: {
+                            font: { family: "'Inter', sans-serif", weight: 'bold' },
+                            color: '#2C2825'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: { family: "'Inter', sans-serif", size: 13 },
+                            usePointStyle: true,
+                            boxWidth: 8
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(44, 40, 37, 0.9)',
+                        titleFont: { family: "'Merriweather', serif", size: 14 },
+                        bodyFont: { family: "'Inter', sans-serif", size: 13 },
+                        padding: 12,
+                        cornerRadius: 8
+                    }
+                }
+            }
+        });
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(5px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
