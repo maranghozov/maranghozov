@@ -1,0 +1,1489 @@
+[
+  {
+    "ro": "a putea",
+    "en": "to be able to / can",
+    "part": "verb"
+  },
+  {
+    "ro": "a face",
+    "en": "to do / to make",
+    "part": "verb"
+  },
+  {
+    "ro": "a zice",
+    "en": "to say",
+    "part": "verb"
+  },
+  {
+    "ro": "a spune",
+    "en": "to tell / to say",
+    "part": "verb"
+  },
+  {
+    "ro": "a merge",
+    "en": "to go / to walk",
+    "part": "verb"
+  },
+  {
+    "ro": "a veni",
+    "en": "to come",
+    "part": "verb"
+  },
+  {
+    "ro": "a da",
+    "en": "to give",
+    "part": "verb"
+  },
+  {
+    "ro": "a lua",
+    "en": "to take",
+    "part": "verb"
+  },
+  {
+    "ro": "a vedea",
+    "en": "to see",
+    "part": "verb"
+  },
+  {
+    "ro": "a ști",
+    "en": "to know (a fact)",
+    "part": "verb"
+  },
+  {
+    "ro": "a cunoaște",
+    "en": "to know (a person/place)",
+    "part": "verb"
+  },
+  {
+    "ro": "a gândi",
+    "en": "to think",
+    "part": "verb"
+  },
+  {
+    "ro": "a crede",
+    "en": "to believe / to think",
+    "part": "verb"
+  },
+  {
+    "ro": "a vorbi",
+    "en": "to speak / to talk",
+    "part": "verb"
+  },
+  {
+    "ro": "a întreba",
+    "en": "to ask (a question)",
+    "part": "verb"
+  },
+  {
+    "ro": "a cere",
+    "en": "to ask for / to request",
+    "part": "verb"
+  },
+  {
+    "ro": "a răspunde",
+    "en": "to answer / to reply",
+    "part": "verb"
+  },
+  {
+    "ro": "a lucra",
+    "en": "to work",
+    "part": "verb"
+  },
+  {
+    "ro": "a învăța",
+    "en": "to learn / to teach",
+    "part": "verb"
+  },
+  {
+    "ro": "a înțelege",
+    "en": "to understand",
+    "part": "verb"
+  },
+  {
+    "ro": "a citi",
+    "en": "to read",
+    "part": "verb"
+  },
+  {
+    "ro": "a scrie",
+    "en": "to write",
+    "part": "verb"
+  },
+  {
+    "ro": "a mânca",
+    "en": "to eat",
+    "part": "verb"
+  },
+  {
+    "ro": "a bea",
+    "en": "to drink",
+    "part": "verb"
+  },
+  {
+    "ro": "a dormi",
+    "en": "to sleep",
+    "part": "verb"
+  },
+  {
+    "ro": "a trăi",
+    "en": "to live",
+    "part": "verb"
+  },
+  {
+    "ro": "a locui",
+    "en": "to reside / to live (in a place)",
+    "part": "verb"
+  },
+  {
+    "ro": "a muri",
+    "en": "to die",
+    "part": "verb"
+  },
+  {
+    "ro": "a pleca",
+    "en": "to leave / to depart",
+    "part": "verb"
+  },
+  {
+    "ro": "a rămâne",
+    "en": "to remain / to stay",
+    "part": "verb"
+  },
+  {
+    "ro": "a sta",
+    "en": "to stay / to stand / to sit",
+    "part": "verb"
+  },
+  {
+    "ro": "a sosi",
+    "en": "to arrive",
+    "part": "verb"
+  },
+  {
+    "ro": "a intra",
+    "en": "to enter",
+    "part": "verb"
+  },
+  {
+    "ro": "a ieși",
+    "en": "to exit / to go out",
+    "part": "verb"
+  },
+  {
+    "ro": "a aduce",
+    "en": "to bring",
+    "part": "verb"
+  },
+  {
+    "ro": "a trimite",
+    "en": "to send",
+    "part": "verb"
+  },
+  {
+    "ro": "a pune",
+    "en": "to put / to place",
+    "part": "verb"
+  },
+  {
+    "ro": "a ține",
+    "en": "to hold / to keep",
+    "part": "verb"
+  },
+  {
+    "ro": "a chema",
+    "en": "to call / to summon",
+    "part": "verb"
+  },
+  {
+    "ro": "a numi",
+    "en": "to name / to call",
+    "part": "verb"
+  },
+  {
+    "ro": "a asculta",
+    "en": "to listen",
+    "part": "verb"
+  },
+  {
+    "ro": "a auzi",
+    "en": "to hear",
+    "part": "verb"
+  },
+  {
+    "ro": "a privi",
+    "en": "to look at / to watch",
+    "part": "verb"
+  },
+  {
+    "ro": "a uita",
+    "en": "to forget / to look (when reflexive)",
+    "part": "verb"
+  },
+  {
+    "ro": "a pierde",
+    "en": "to lose",
+    "part": "verb"
+  },
+  {
+    "ro": "a găsi",
+    "en": "to find",
+    "part": "verb"
+  },
+  {
+    "ro": "a căuta",
+    "en": "to search / to look for",
+    "part": "verb"
+  },
+  {
+    "ro": "a cumpăra",
+    "en": "to buy",
+    "part": "verb"
+  },
+  {
+    "ro": "a vinde",
+    "en": "to sell",
+    "part": "verb"
+  },
+  {
+    "ro": "a plăti",
+    "en": "to pay",
+    "part": "verb"
+  },
+  {
+    "ro": "a costa",
+    "en": "to cost",
+    "part": "verb"
+  },
+  {
+    "ro": "a alege",
+    "en": "to choose",
+    "part": "verb"
+  },
+  {
+    "ro": "a deschide",
+    "en": "to open",
+    "part": "verb"
+  },
+  {
+    "ro": "a închide",
+    "en": "to close",
+    "part": "verb"
+  },
+  {
+    "ro": "a începe",
+    "en": "to begin / to start",
+    "part": "verb"
+  },
+  {
+    "ro": "a termina",
+    "en": "to finish / to end",
+    "part": "verb"
+  },
+  {
+    "ro": "a opri",
+    "en": "to stop",
+    "part": "verb"
+  },
+  {
+    "ro": "a continua",
+    "en": "to continue",
+    "part": "verb"
+  },
+  {
+    "ro": "a încerca",
+    "en": "to try",
+    "part": "verb"
+  },
+  {
+    "ro": "a reuși",
+    "en": "to succeed",
+    "part": "verb"
+  },
+  {
+    "ro": "a ajuta",
+    "en": "to help",
+    "part": "verb"
+  },
+  {
+    "ro": "a folosi",
+    "en": "to use",
+    "part": "verb"
+  },
+  {
+    "ro": "a schimba",
+    "en": "to change",
+    "part": "verb"
+  },
+  {
+    "ro": "a iubi",
+    "en": "to love",
+    "part": "verb"
+  },
+  {
+    "ro": "a plăcea",
+    "en": "to like",
+    "part": "verb"
+  },
+  {
+    "ro": "a urî",
+    "en": "to hate",
+    "part": "verb"
+  },
+  {
+    "ro": "a spera",
+    "en": "to hope",
+    "part": "verb"
+  },
+  {
+    "ro": "a râde",
+    "en": "to laugh",
+    "part": "verb"
+  },
+  {
+    "ro": "a plânge",
+    "en": "to cry",
+    "part": "verb"
+  },
+  {
+    "ro": "a zâmbi",
+    "en": "to smile",
+    "part": "verb"
+  },
+  {
+    "ro": "a cânta",
+    "en": "to sing / to play an instrument",
+    "part": "verb"
+  },
+  {
+    "ro": "a juca",
+    "en": "to play (a game/sport)",
+    "part": "verb"
+  },
+  {
+    "ro": "a alerga",
+    "en": "to run",
+    "part": "verb"
+  },
+  {
+    "ro": "a sări",
+    "en": "to jump",
+    "part": "verb"
+  },
+  {
+    "ro": "a cădea",
+    "en": "to fall",
+    "part": "verb"
+  },
+  {
+    "ro": "a coborî",
+    "en": "to go down / to descend",
+    "part": "verb"
+  },
+  {
+    "ro": "a urca",
+    "en": "to go up / to ascend",
+    "part": "verb"
+  },
+  {
+    "ro": "a conduce",
+    "en": "to drive / to lead",
+    "part": "verb"
+  },
+  {
+    "ro": "a călători",
+    "en": "to travel",
+    "part": "verb"
+  },
+  {
+    "ro": "a zbura",
+    "en": "to fly",
+    "part": "verb"
+  },
+  {
+    "ro": "a înota",
+    "en": "to swim",
+    "part": "verb"
+  },
+  {
+    "ro": "a spăla",
+    "en": "to wash",
+    "part": "verb"
+  },
+  {
+    "ro": "a curăța",
+    "en": "to clean",
+    "part": "verb"
+  },
+  {
+    "ro": "a găti",
+    "en": "to cook",
+    "part": "verb"
+  },
+  {
+    "ro": "a tăia",
+    "en": "to cut",
+    "part": "verb"
+  },
+  {
+    "ro": "a rupe",
+    "en": "to break / to tear",
+    "part": "verb"
+  },
+  {
+    "ro": "a strica",
+    "en": "to break / to spoil",
+    "part": "verb"
+  },
+  {
+    "ro": "a repara",
+    "en": "to repair / to fix",
+    "part": "verb"
+  },
+  {
+    "ro": "a construi",
+    "en": "to build",
+    "part": "verb"
+  },
+  {
+    "ro": "a crea",
+    "en": "to create",
+    "part": "verb"
+  },
+  {
+    "ro": "a desena",
+    "en": "to draw",
+    "part": "verb"
+  },
+  {
+    "ro": "a picta",
+    "en": "to paint",
+    "part": "verb"
+  },
+  {
+    "ro": "a simți",
+    "en": "to feel",
+    "part": "verb"
+  },
+  {
+    "ro": "a durea",
+    "en": "to hurt / to ache",
+    "part": "verb"
+  },
+  {
+    "ro": "a asigura",
+    "en": "to ensure / to insure",
+    "part": "verb"
+  },
+  {
+    "ro": "a salva",
+    "en": "to save",
+    "part": "verb"
+  },
+  {
+    "ro": "a păstra",
+    "en": "to keep / to preserve",
+    "part": "verb"
+  },
+  {
+    "ro": "a arunca",
+    "en": "to throw",
+    "part": "verb"
+  },
+  {
+    "ro": "a prinde",
+    "en": "to catch",
+    "part": "verb"
+  },
+  {
+    "ro": "a atinge",
+    "en": "to touch",
+    "part": "verb"
+  },
+  {
+    "ro": "a lovi",
+    "en": "to hit / to strike",
+    "part": "verb"
+  },
+  {
+    "ro": "a ascunde",
+    "en": "to hide",
+    "part": "verb"
+  },
+  {
+    "ro": "a arăta",
+    "en": "to show",
+    "part": "verb"
+  },
+  {
+    "ro": "a părea",
+    "en": "to seem",
+    "part": "verb"
+  },
+  {
+    "ro": "a apărea",
+    "en": "to appear",
+    "part": "verb"
+  },
+  {
+    "ro": "a dispărea",
+    "en": "to disappear",
+    "part": "verb"
+  },
+  {
+    "ro": "a crește",
+    "en": "to grow",
+    "part": "verb"
+  },
+  {
+    "ro": "a umple",
+    "en": "to fill",
+    "part": "verb"
+  },
+  {
+    "ro": "a goli",
+    "en": "to empty",
+    "part": "verb"
+  },
+  {
+    "ro": "a acoperi",
+    "en": "to cover",
+    "part": "verb"
+  },
+  {
+    "ro": "a descoperi",
+    "en": "to discover",
+    "part": "verb"
+  },
+  {
+    "ro": "a dezvolta",
+    "en": "to develop",
+    "part": "verb"
+  },
+  {
+    "ro": "a produce",
+    "en": "to produce",
+    "part": "verb"
+  },
+  {
+    "ro": "a transporta",
+    "en": "to transport / to carry",
+    "part": "verb"
+  },
+  {
+    "ro": "a purta",
+    "en": "to wear / to carry",
+    "part": "verb"
+  },
+  {
+    "ro": "a îmbrăca",
+    "en": "to dress",
+    "part": "verb"
+  },
+  {
+    "ro": "a dezbrăca",
+    "en": "to undress",
+    "part": "verb"
+  },
+  {
+    "ro": "a se întâlni",
+    "en": "to meet",
+    "part": "verb"
+  },
+  {
+    "ro": "a vizita",
+    "en": "to visit",
+    "part": "verb"
+  },
+  {
+    "ro": "a invita",
+    "en": "to invite",
+    "part": "verb"
+  },
+  {
+    "ro": "a primi",
+    "en": "to receive / to get",
+    "part": "verb"
+  },
+  {
+    "ro": "a oferi",
+    "en": "to offer",
+    "part": "verb"
+  },
+  {
+    "ro": "a trimite",
+    "en": "to send",
+    "part": "verb"
+  },
+  {
+    "ro": "a lăsa",
+    "en": "to let / to leave behind",
+    "part": "verb"
+  },
+  {
+    "ro": "a ierta",
+    "en": "to forgive",
+    "part": "verb"
+  },
+  {
+    "ro": "a promite",
+    "en": "to promise",
+    "part": "verb"
+  },
+  {
+    "ro": "a jura",
+    "en": "to swear / to vow",
+    "part": "verb"
+  },
+  {
+    "ro": "a minți",
+    "en": "to lie",
+    "part": "verb"
+  },
+  {
+    "ro": "a fura",
+    "en": "to steal",
+    "part": "verb"
+  },
+  {
+    "ro": "a ucide",
+    "en": "to kill",
+    "part": "verb"
+  },
+  {
+    "ro": "a apăra",
+    "en": "to defend",
+    "part": "verb"
+  },
+  {
+    "ro": "a ataca",
+    "en": "to attack",
+    "part": "verb"
+  },
+  {
+    "ro": "a câștiga",
+    "en": "to win / to earn",
+    "part": "verb"
+  },
+  {
+    "ro": "a lupta",
+    "en": "to fight",
+    "part": "verb"
+  },
+  {
+    "ro": "a proteja",
+    "en": "to protect",
+    "part": "verb"
+  },
+  {
+    "ro": "a respecta",
+    "en": "to respect",
+    "part": "verb"
+  },
+  {
+    "ro": "a admira",
+    "en": "to admire",
+    "part": "verb"
+  },
+  {
+    "ro": "a prefera",
+    "en": "to prefer",
+    "part": "verb"
+  },
+  {
+    "ro": "a dori",
+    "en": "to wish / to desire",
+    "part": "verb"
+  },
+  {
+    "ro": "a decide",
+    "en": "to decide",
+    "part": "verb"
+  },
+  {
+    "ro": "a hotărî",
+    "en": "to decide / to resolve",
+    "part": "verb"
+  },
+  {
+    "ro": "a organiza",
+    "en": "to organize",
+    "part": "verb"
+  },
+  {
+    "ro": "a pregăti",
+    "en": "to prepare",
+    "part": "verb"
+  },
+  {
+    "ro": "a verifica",
+    "en": "to check / to verify",
+    "part": "verb"
+  },
+  {
+    "ro": "a semna",
+    "en": "to sign",
+    "part": "verb"
+  },
+  {
+    "ro": "a explica",
+    "en": "to explain",
+    "part": "verb"
+  },
+  {
+    "ro": "a repeta",
+    "en": "to repeat",
+    "part": "verb"
+  },
+  {
+    "ro": "om",
+    "en": "person / man",
+    "part": "noun"
+  },
+  {
+    "ro": "femeie",
+    "en": "woman",
+    "part": "noun"
+  },
+  {
+    "ro": "copil",
+    "en": "child",
+    "part": "noun"
+  },
+  {
+    "ro": "băiat",
+    "en": "boy",
+    "part": "noun"
+  },
+  {
+    "ro": "fată",
+    "en": "girl",
+    "part": "noun"
+  },
+  {
+    "ro": "familie",
+    "en": "family",
+    "part": "noun"
+  },
+  {
+    "ro": "tată",
+    "en": "father",
+    "part": "noun"
+  },
+  {
+    "ro": "mamă",
+    "en": "mother",
+    "part": "noun"
+  },
+  {
+    "ro": "prieten",
+    "en": "friend",
+    "part": "noun"
+  },
+  {
+    "ro": "viață",
+    "en": "life",
+    "part": "noun"
+  },
+  {
+    "ro": "timp",
+    "en": "time",
+    "part": "noun"
+  },
+  {
+    "ro": "zi",
+    "en": "day",
+    "part": "noun"
+  },
+  {
+    "ro": "noapte",
+    "en": "night",
+    "part": "noun"
+  },
+  {
+    "ro": "an",
+    "en": "year",
+    "part": "noun"
+  },
+  {
+    "ro": "lună",
+    "en": "month / moon",
+    "part": "noun"
+  },
+  {
+    "ro": "săptămână",
+    "en": "week",
+    "part": "noun"
+  },
+  {
+    "ro": "oră",
+    "en": "hour",
+    "part": "noun"
+  },
+  {
+    "ro": "casă",
+    "en": "house / home",
+    "part": "noun"
+  },
+  {
+    "ro": "loc",
+    "en": "place",
+    "part": "noun"
+  },
+  {
+    "ro": "țară",
+    "en": "country",
+    "part": "noun"
+  },
+  {
+    "ro": "oraș",
+    "en": "city / town",
+    "part": "noun"
+  },
+  {
+    "ro": "sat",
+    "en": "village",
+    "part": "noun"
+  },
+  {
+    "ro": "lume",
+    "en": "world",
+    "part": "noun"
+  },
+  {
+    "ro": "stradă",
+    "en": "street",
+    "part": "noun"
+  },
+  {
+    "ro": "drum",
+    "en": "road / path",
+    "part": "noun"
+  },
+  {
+    "ro": "școală",
+    "en": "school",
+    "part": "noun"
+  },
+  {
+    "ro": "lucru",
+    "en": "thing / work",
+    "part": "noun"
+  },
+  {
+    "ro": "muncă",
+    "en": "work / labor",
+    "part": "noun"
+  },
+  {
+    "ro": "serviciu",
+    "en": "job / service",
+    "part": "noun"
+  },
+  {
+    "ro": "bani",
+    "en": "money",
+    "part": "noun"
+  },
+  {
+    "ro": "masă",
+    "en": "table / meal",
+    "part": "noun"
+  },
+  {
+    "ro": "scaun",
+    "en": "chair",
+    "part": "noun"
+  },
+  {
+    "ro": "pat",
+    "en": "bed",
+    "part": "noun"
+  },
+  {
+    "ro": "ușă",
+    "en": "door",
+    "part": "noun"
+  },
+  {
+    "ro": "fereastră",
+    "en": "window",
+    "part": "noun"
+  },
+  {
+    "ro": "cameră",
+    "en": "room",
+    "part": "noun"
+  },
+  {
+    "ro": "bucătărie",
+    "en": "kitchen",
+    "part": "noun"
+  },
+  {
+    "ro": "carte",
+    "en": "book",
+    "part": "noun"
+  },
+  {
+    "ro": "cuvânt",
+    "en": "word",
+    "part": "noun"
+  },
+  {
+    "ro": "limbă",
+    "en": "language / tongue",
+    "part": "noun"
+  },
+  {
+    "ro": "nume",
+    "en": "name",
+    "part": "noun"
+  },
+  {
+    "ro": "apă",
+    "en": "water",
+    "part": "noun"
+  },
+  {
+    "ro": "mâncare",
+    "en": "food",
+    "part": "noun"
+  },
+  {
+    "ro": "pâine",
+    "en": "bread",
+    "part": "noun"
+  },
+  {
+    "ro": "cafea",
+    "en": "coffee",
+    "part": "noun"
+  },
+  {
+    "ro": "ceai",
+    "en": "tea",
+    "part": "noun"
+  },
+  {
+    "ro": "lapte",
+    "en": "milk",
+    "part": "noun"
+  },
+  {
+    "ro": "carne",
+    "en": "meat",
+    "part": "noun"
+  },
+  {
+    "ro": "măr",
+    "en": "apple",
+    "part": "noun"
+  },
+  {
+    "ro": "haină",
+    "en": "coat / clothing item",
+    "part": "noun"
+  },
+  {
+    "ro": "pantof",
+    "en": "shoe",
+    "part": "noun"
+  },
+  {
+    "ro": "cămașă",
+    "en": "shirt",
+    "part": "noun"
+  },
+  {
+    "ro": "mașină",
+    "en": "car / machine",
+    "part": "noun"
+  },
+  {
+    "ro": "tren",
+    "en": "train",
+    "part": "noun"
+  },
+  {
+    "ro": "avion",
+    "en": "airplane",
+    "part": "noun"
+  },
+  {
+    "ro": "bicicletă",
+    "en": "bicycle",
+    "part": "noun"
+  },
+  {
+    "ro": "magazin",
+    "en": "shop / store",
+    "part": "noun"
+  },
+  {
+    "ro": "piață",
+    "en": "market / square",
+    "part": "noun"
+  },
+  {
+    "ro": "preț",
+    "en": "price",
+    "part": "noun"
+  },
+  {
+    "ro": "bilet",
+    "en": "ticket",
+    "part": "noun"
+  },
+  {
+    "ro": "hotel",
+    "en": "hotel",
+    "part": "noun"
+  },
+  {
+    "ro": "restaurant",
+    "en": "restaurant",
+    "part": "noun"
+  },
+  {
+    "ro": "spital",
+    "en": "hospital",
+    "part": "noun"
+  },
+  {
+    "ro": "medic",
+    "en": "doctor",
+    "part": "noun"
+  },
+  {
+    "ro": "poliție",
+    "en": "police",
+    "part": "noun"
+  },
+  {
+    "ro": "adevăr",
+    "en": "truth",
+    "part": "noun"
+  },
+  {
+    "ro": "minciună",
+    "en": "lie",
+    "part": "noun"
+  },
+  {
+    "ro": "problemă",
+    "en": "problem",
+    "part": "noun"
+  },
+  {
+    "ro": "întrebare",
+    "en": "question",
+    "part": "noun"
+  },
+  {
+    "ro": "răspuns",
+    "en": "answer",
+    "part": "noun"
+  },
+  {
+    "ro": "exemplu",
+    "en": "example",
+    "part": "noun"
+  },
+  {
+    "ro": "caz",
+    "en": "case / instance",
+    "part": "noun"
+  },
+  {
+    "ro": "mod",
+    "en": "way / manner",
+    "part": "noun"
+  },
+  {
+    "ro": "formă",
+    "en": "shape / form",
+    "part": "noun"
+  },
+  {
+    "ro": "parte",
+    "en": "part / side",
+    "part": "noun"
+  },
+  {
+    "ro": "cap",
+    "en": "head",
+    "part": "noun"
+  },
+  {
+    "ro": "mână",
+    "en": "hand / arm",
+    "part": "noun"
+  },
+  {
+    "ro": "picior",
+    "en": "leg / foot",
+    "part": "noun"
+  },
+  {
+    "ro": "ochi",
+    "en": "eye",
+    "part": "noun"
+  },
+  {
+    "ro": "păr",
+    "en": "hair",
+    "part": "noun"
+  },
+  {
+    "ro": "față",
+    "en": "face",
+    "part": "noun"
+  },
+  {
+    "ro": "inimă",
+    "en": "heart",
+    "part": "noun"
+  },
+  {
+    "ro": "sânge",
+    "en": "blood",
+    "part": "noun"
+  },
+  {
+    "ro": "corp",
+    "en": "body",
+    "part": "noun"
+  },
+  {
+    "ro": "cer",
+    "en": "sky / heaven",
+    "part": "noun"
+  },
+  {
+    "ro": "soare",
+    "en": "sun",
+    "part": "noun"
+  },
+  {
+    "ro": "pământ",
+    "en": "earth / ground",
+    "part": "noun"
+  },
+  {
+    "ro": "mare",
+    "en": "sea",
+    "part": "noun"
+  },
+  {
+    "ro": "râu",
+    "en": "river",
+    "part": "noun"
+  },
+  {
+    "ro": "munte",
+    "en": "mountain",
+    "part": "noun"
+  },
+  {
+    "ro": "pădure",
+    "en": "forest",
+    "part": "noun"
+  },
+  {
+    "ro": "copac",
+    "en": "tree",
+    "part": "noun"
+  },
+  {
+    "ro": "floare",
+    "en": "flower",
+    "part": "noun"
+  },
+  {
+    "ro": "iarbă",
+    "en": "grass",
+    "part": "noun"
+  },
+  {
+    "ro": "animal",
+    "en": "animal",
+    "part": "noun"
+  },
+  {
+    "ro": "câine",
+    "en": "dog",
+    "part": "noun"
+  },
+  {
+    "ro": "pisică",
+    "en": "cat",
+    "part": "noun"
+  },
+  {
+    "ro": "pasăre",
+    "en": "bird",
+    "part": "noun"
+  },
+  {
+    "ro": "pește",
+    "en": "fish",
+    "part": "noun"
+  },
+  {
+    "ro": "vreme",
+    "en": "weather / time",
+    "part": "noun"
+  },
+  {
+    "ro": "ploaie",
+    "en": "rain",
+    "part": "noun"
+  },
+  {
+    "ro": "zăpadă",
+    "en": "snow",
+    "part": "noun"
+  },
+  {
+    "ro": "vânt",
+    "en": "wind",
+    "part": "noun"
+  },
+  {
+    "ro": "foc",
+    "en": "fire",
+    "part": "noun"
+  },
+  
+  {
+    "ro": "aer",
+    "en": "air",
+    "part": "noun"
+  },
+  {
+    "ro": "lumină",
+    "en": "light",
+    "part": "noun"
+  },
+  {
+    "ro": "întuneric",
+    "en": "darkness",
+    "part": "noun"
+  },
+  {
+    "ro": "idee",
+    "en": "idea",
+    "part": "noun"
+  },
+  {
+    "ro": "gând",
+    "en": "thought",
+    "part": "noun"
+  },
+  {
+    "ro": "minte",
+    "en": "mind",
+    "part": "noun"
+  },
+  {
+    "ro": "suflet",
+    "en": "soul",
+    "part": "noun"
+  },
+  {
+    "ro": "sentiment",
+    "en": "feeling / emotion",
+    "part": "noun"
+  },
+  {
+    "ro": "dragoste",
+    "en": "love",
+    "part": "noun"
+  },
+  {
+    "ro": "frică",
+    "en": "fear",
+    "part": "noun"
+  },
+  {
+    "ro": "bucurie",
+    "en": "joy / happiness",
+    "part": "noun"
+  },
+  {
+    "ro": "tristețe",
+    "en": "sadness",
+    "part": "noun"
+  },
+  {
+    "ro": "durere",
+    "en": "pain",
+    "part": "noun"
+  },
+  {
+    "ro": "sănătate",
+    "en": "health",
+    "part": "noun"
+  },
+  {
+    "ro": "boală",
+    "en": "illness / disease",
+    "part": "noun"
+  },
+  {
+    "ro": "moarte",
+    "en": "death",
+    "part": "noun"
+  },
+  {
+    "ro": "istorie",
+    "en": "history",
+    "part": "noun"
+  },
+  {
+    "ro": "viitor",
+    "en": "future",
+    "part": "noun"
+  },
+  {
+    "ro": "trecut",
+    "en": "past",
+    "part": "noun"
+  },
+  {
+    "ro": "început",
+    "en": "beginning",
+    "part": "noun"
+  },
+  {
+    "ro": "sfârșit",
+    "en": "end",
+    "part": "noun"
+  },
+  {
+    "ro": "număr",
+    "en": "number",
+    "part": "noun"
+  },
+  {
+    "ro": "cifră",
+    "en": "digit / figure",
+    "part": "noun"
+  },
+  {
+    "ro": "linie",
+    "en": "line",
+    "part": "noun"
+  },
+  {
+    "ro": "punct",
+    "en": "point / dot",
+    "part": "noun"
+  },
+  {
+    "ro": "cheie",
+    "en": "key",
+    "part": "noun"
+  },
+  {
+    "ro": "telefon",
+    "en": "telephone",
+    "part": "noun"
+  },
+  {
+    "ro": "calculator",
+    "en": "computer",
+    "part": "noun"
+  },
+  {
+    "ro": "televizor",
+    "en": "television set",
+    "part": "noun"
+  },
+  {
+    "ro": "film",
+    "en": "movie / film",
+    "part": "noun"
+  },
+  {
+    "ro": "muzică",
+    "en": "music",
+    "part": "noun"
+  },
+  {
+    "ro": "joc",
+    "en": "game",
+    "part": "noun"
+  },
+  {
+    "ro": "sport",
+    "en": "sport",
+    "part": "noun"
+  },
+  {
+    "ro": "scrisoare",
+    "en": "letter (mail)",
+    "part": "noun"
+  },
+  {
+    "ro": "ziar",
+    "en": "newspaper",
+    "part": "noun"
+  },
+  {
+    "ro": "mesaj",
+    "en": "message",
+    "part": "noun"
+  },
+  {
+    "ro": "tablou",
+    "en": "painting / picture",
+    "part": "noun"
+  },
+  {
+    "ro": "aur",
+    "en": "gold",
+    "part": "noun"
+  },
+  {
+    "ro": "argint",
+    "en": "silver",
+    "part": "noun"
+  },
+  {
+    "ro": "fier",
+    "en": "iron",
+    "part": "noun"
+  },
+  {
+    "ro": "lemn",
+    "en": "wood",
+    "part": "noun"
+  },
+  {
+    "ro": "piatră",
+    "en": "stone",
+    "part": "noun"
+  },
+  {
+    "ro": "sticlă",
+    "en": "glass / bottle",
+    "part": "noun"
+  },
+  {
+    "ro": "hârtie",
+    "en": "paper",
+    "part": "noun"
+  },
+  {
+    "ro": "rege",
+    "en": "king",
+    "part": "noun"
+  },
+  {
+    "ro": "regină",
+    "en": "queen",
+    "part": "noun"
+  }
+  
+]

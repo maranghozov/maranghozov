@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flashcard-uri Limba Română — Explicații Complexe & Pronunție</title>
+  
+  <!-- Tailwind CSS for rich modern UI styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter for refined legibility -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    
+    /* Smooth scroll and premium dark background */
+    body {
+      background: radial-gradient(circle at top, #0f172a 0%, #020617 100%);
+      color: #f1f5f9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Card rotation animation setups */
+    .card-container {
+      perspective: 1200px;
+    }
+    
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+
+    .is-flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-front {
+      background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);
+    }
+
+    .card-back {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      transform: rotateY(180deg);
+    }
+
+    /* Custom high-tech glowing outlines */
+    .glow-btn:hover {
+      box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+    }
+    
+    /* Custom scrollbar for database and modals */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body class="p-4 md:p-8 flex flex-col justify-between items-center">
+
+  <main class="w-full max-w-4xl flex-grow flex flex-col justify-center items-center gap-6">
+    
+    <!-- App Header -->
+    <header class="text-center space-y-2">
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-500">
+        Cartonașe în Limba Română
+      </h1>
+      <p class="text-xs md:text-sm text-slate-400 max-w-lg mx-auto">
+        Învață interactiv! Module de pronunție audio, conjugări de verbe, declinări pentru substantive și 10 propoziții model cu inteligență artificială.
+      </p>
+    </header>
+
+    <!-- Interactive Deck Status & Quick Filters -->
+    <div class="flex flex-wrap items-center justify-center gap-3 w-full max-w-lg">
+      <span class="px-3 py-1 text-xs rounded-full bg-slate-800 text-slate-300 border border-slate-700 font-medium" id="progress-indicator">
+        Card 0 / 0
+      </span>
+      <span class="px-3 py-1 text-xs rounded-full bg-indigo-950/40 text-indigo-300 border border-indigo-900/40 font-medium" id="active-part-badge">
+        Parte de vorbire: Nespecificată
+      </span>
+    </div>
+
+    <!-- Flashcard Widget -->
+    <div class="w-full max-w-lg card-container h-[340px] md:h-[380px]" id="flashcard-widget">
+      <div class="card-inner w-full h-full cursor-pointer select-none" id="card-inner-element">
+        
+        <!-- FRONT SIDE OF CARD -->
+        <div class="card-face card-front">
+          <div class="flex justify-between items-center w-full">
+            <span class="text-xs uppercase font-semibold tracking-wider text-cyan-400 bg-cyan-950/45 px-2.5 py-1 rounded-md" id="card-front-type">
+              SUBSTANTIV
+            </span>
+            <div class="flex gap-2">
+              <button onclick="event.stopPropagation(); playPronunciation();" class="p-2 bg-slate-800/80 hover:bg-slate-700/80 text-white rounded-lg transition-all" title="Ascultă pronunția în română">
+                🔊 <span class="text-xs font-semibold ml-1">Ascultă</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="my-auto space-y-4">
+            <h2 class="text-4xl md:text-5xl font-black tracking-tight text-white drop-shadow-md" id="card-front-word">
+              carte
+            </h2>
+            <p class="text-xs text-slate-400 italic">Atinge cardul sau apasă SPACE pentru traducere</p>
+          </div>
+
+          <div class="flex justify-between items-center w-full mt-2 pt-2 border-t border-white/5">
+            <button onclick="event.stopPropagation(); navigateDeck(-1);" class="px-3 py-2 bg-white/5 hover:bg-white/10 text-xs font-medium text-slate-300 rounded-lg transition-all">
+              ◀ Înapoi
+            </button>
+            <span class="text-xs font-bold text-violet-300 bg-violet-950/45 px-3 py-1 rounded-md">FATĂ CARD</span>
+            <button onclick="event.stopPropagation(); navigateDeck(1);" class="px-3 py-2 bg-white/5 hover:bg-white/10 text-xs font-medium text-slate-300 rounded-lg transition-all">
+              Înainte ▶
+            </button>
+          </div>
+        </div>
+
+        <!-- BACK SIDE OF CARD -->
+        <div class="card-face card-back">
+          <div class="flex justify-between items-center w-full">
+            <span class="text-xs uppercase font-semibold tracking-wider text-rose-400 bg-rose-950/45 px-2.5 py-1 rounded-md" id="card-back-type">
+              NOUN
+            </span>
+            <span class="text-xs font-bold text-emerald-400 bg-emerald-950/45 px-2.5 py-1 rounded-md">SPATE CARD</span>
+          </div>
+
+          <div class="my-auto space-y-3">
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white" id="card-back-word">
+              book
+            </h2>
+            <p class="text-sm text-slate-400 italic" id="card-back-pronunciation-info">
+              [Limba Engleză]
+            </p>
+          </div>
+
+          <div class="flex justify-between items-center w-full mt-2 pt-2 border-t border-white/5 gap-2">
+            <button onclick="event.stopPropagation(); handleMemoryClassification(false);" class="flex-1 py-2 bg-rose-950/50 hover:bg-rose-900/60 text-xs font-bold text-rose-300 rounded-lg border border-rose-800/30 transition-all">
+              Mai repetă ✕
+            </button>
+            <button onclick="event.stopPropagation(); handleMemoryClassification(true);" class="flex-1 py-2 bg-emerald-950/50 hover:bg-emerald-900/60 text-xs font-bold text-emerald-300 rounded-lg border border-emerald-800/30 transition-all">
+              Știut ✓
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Card Control Buttons & Options -->
+    <div class="w-full max-w-lg flex flex-col gap-4">
+      
+      <!-- Interactive Flip Trigger Bar -->
+      <button id="trigger-flip" class="w-full py-4 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-bold rounded-xl shadow-lg transition-all transform active:scale-95 text-center flex justify-center items-center gap-2">
+        <span>🔄 Întoarce Cartonașul (Flipping)</span>
+      </button>
+
+      <!-- Advanced Secondary Card Controls -->
+      <div class="grid grid-cols-3 gap-2">
+        <button id="trigger-shuffle" class="py-2.5 px-3 bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 rounded-xl text-xs font-medium text-slate-200 transition-all">
+          🔀 Amestecă
+        </button>
+        <button id="trigger-random" class="py-2.5 px-3 bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 rounded-xl text-xs font-medium text-slate-200 transition-all">
+          🎯 Aleatoriu
+        </button>
+        <button id="trigger-switch-lang" class="py-2.5 px-3 bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 rounded-xl text-xs font-semibold text-violet-400 transition-all">
+          ↔️ Vezi Engleză
+        </button>
+      </div>
+
+      <!-- Sophisticated AI Detailed Explanations Panel -->
+      <div class="bg-gradient-to-br from-indigo-950/40 via-purple-950/20 to-slate-900/50 border border-violet-900/30 p-5 rounded-2xl flex flex-col md:flex-row gap-4 justify-between items-center shadow-md">
+        <div class="text-center md:text-left space-y-1">
+          <h4 class="text-sm font-bold text-violet-200 flex items-center gap-1.5 justify-center md:justify-start">
+            ✨ Generator Explicații Inteligente AI
+          </h4>
+          <p class="text-xs text-slate-400 max-w-sm">
+            Copiază promptul specializat cu conjugări, declinări detaliate în cazuri (N-A, G-D, V) și 10 fraze contextualizate în română.
+          </p>
+        </div>
+        <button id="trigger-ai-generator" class="w-full md:w-auto px-5 py-3 bg-gradient-to-r from-fuchsia-600 to-violet-600 hover:from-fuchsia-500 hover:to-violet-500 text-white font-bold text-xs rounded-xl shadow-md transition-all whitespace-nowrap glow-btn">
+          📋 Vezi Explicații & Prompt AI
+        </button>
+      </div>
+
+      <!-- Manage Dictionary / Edit DB Button -->
+      <div class="flex items-center justify-center gap-2 mt-2">
+        <button id="trigger-open-db" class="px-5 py-2.5 bg-slate-900 border border-slate-700 hover:border-slate-500 text-slate-300 font-bold text-xs rounded-lg shadow-sm transition-all flex items-center gap-1.5">
+          ⚙️ Administrează Baza de Date Română
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer instructions & credit lines -->
+  <footer class="w-full text-center py-4 mt-8 border-t border-slate-900/80 text-xs text-slate-500 space-y-1">
+    <p>💡 Tip: Apasă tastele SĂGEATĂ STÂNGA / DREAPTA pentru navigare rapidă și TASTA SPAȚIU pentru întoarcere.</p>
+    <p>© 2026 Platformă Interactivă de Studiu a Limbii Române. Construit cu drag.</p>
+  </footer>
+
+  <!-- SPECIALIZED AI PROMPT MODAL -->
+  <div id="aiPromptModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-2xl p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto flex flex-col gap-4">
+      
+      <!-- Modal Close Button -->
+      <button onclick="closeModal('aiPromptModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 text-lg p-1.5">✕</button>
+      
+      <div class="space-y-1 pr-6">
+        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+          🧠 Generator Structurat de Prompți AI (Română)
+        </h3>
+        <p class="text-xs text-slate-400">
+          Am generat un prompt complet adaptat gramaticii românești pe care îl poți rula în ChatGPT, Claude sau Google Gemini.
+        </p>
+      </div>
+
+      <!-- Dynamic Badge showing detection -->
+      <div class="p-3 rounded-lg bg-indigo-950/40 border border-indigo-900/40 text-xs flex justify-between items-center flex-wrap gap-2">
+        <div>
+          <span class="text-slate-400">Cuvânt selectat:</span> 
+          <strong class="text-indigo-300 text-sm ml-1" id="ai-modal-word">carte</strong>
+        </div>
+        <div>
+          <span class="text-slate-400">Parte de vorbire detectată:</span> 
+          <strong class="text-violet-300 bg-violet-950 px-2 py-0.5 rounded ml-1 uppercase" id="ai-modal-part-label">Substantiv</strong>
+        </div>
+      </div>
+
+      <!-- Live Prompt Preview Block -->
+      <div class="space-y-2">
+        <div class="flex justify-between items-center">
+          <span class="text-xs font-bold text-slate-300 uppercase tracking-wider">Promptul gata de utilizare:</span>
+          <button onclick="copyToClipboard('ai-prompt-textbox')" class="text-xs text-emerald-400 hover:text-emerald-300 font-bold bg-emerald-950/35 px-2.5 py-1 rounded border border-emerald-900/30">
+            📋 Copiază în Clipboard
+          </button>
+        </div>
+        <textarea id="ai-prompt-textbox" readonly class="w-full h-44 bg-slate-950 border border-slate-800 rounded-xl p-3 text-slate-200 text-xs focus:ring-1 focus:ring-violet-500 focus:outline-none resize-none leading-relaxed"></textarea>
+      </div>
+
+      <!-- Notification message for dynamic UI response -->
+      <div id="copy-success-message" class="text-xs font-medium text-emerald-400 text-center hidden">
+        ✓ Promptul a fost copiat cu succes! Deschide asistentul tău favorit și inserează-l direct.
+      </div>
+
+      <!-- Quick Link options for AI engines and Google Search -->
+      <div class="pt-2 border-t border-slate-800 space-y-2">
+        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Trimite promptul direct în motoarele de căutare / AI:</span>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <a id="ai-google-search-link" href="#" target="_blank" class="flex items-center justify-center gap-2 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-100 rounded-xl font-medium text-xs transition-all border border-slate-700">
+            🔍 Deschide căutare Google
+          </a>
+          <a id="ai-chatgpt-link" href="https://chat.openai.com/" target="_blank" class="flex items-center justify-center gap-2 py-2.5 bg-indigo-950/80 hover:bg-indigo-900/85 text-indigo-100 rounded-xl font-medium text-xs transition-all border border-indigo-900/50">
+            💬 Accesează ChatGPT direct
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ADVANCED INTEGRATED DB EDITOR MODAL -->
+  <div id="editorModal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-5xl p-6 shadow-2xl relative max-h-[95vh] overflow-y-auto flex flex-col gap-4">
+      
+      <!-- Close Button -->
+      <button onclick="closeModal('editorModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 text-lg p-1.5">✕</button>
+
+      <!-- Title / Header of Editor -->
+      <div class="flex flex-col md:flex-row justify-between md:items-center gap-2 border-b border-slate-800 pb-3">
+        <div>
+          <h2 class="text-xl font-extrabold text-white">Administrare Bază de Date Română</h2>
+          <p class="text-xs text-slate-400">Editează cuvintele în limba Română, Engleză și părțile de vorbire specifice.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <label class="text-xs text-slate-400 whitespace-nowrap">Rânduri pe pagină:</label>
+          <select id="pageSize" class="bg-slate-950 border border-slate-800 rounded px-2 py-1 text-xs text-slate-200">
+            <option value="15">15</option>
+            <option value="50">50</option>
+            <option value="100" selected>100</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Quick Filters & Top Bar Controls -->
+      <div class="flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between">
+        <div class="flex-grow">
+          <input id="filterInput" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-violet-500" placeholder="Filtrează cuvânt în română sau engleză..." />
+        </div>
+        <div class="flex gap-2 flex-wrap">
+          <button id="addNewRow" class="px-4 py-2.5 bg-violet-600 hover:bg-violet-500 text-white font-bold text-xs rounded-xl transition-all shadow-md">
+            ＋ Adaugă Cuvânt Nou
+          </button>
+          <button id="downloadJson" class="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs rounded-xl border border-slate-700 transition-all">
+            📥 Descarcă JSON (romanian.json)
+          </button>
+        </div>
+      </div>
+
+      <!-- Error and Notification Center -->
+      <div id="errorBox" class="p-3 bg-red-950/50 border border-red-900/50 text-red-200 text-xs rounded-xl hidden"></div>
+
+      <!-- Responsive DB Table -->
+      <div class="overflow-x-auto border border-slate-800 rounded-xl bg-slate-950/60 max-h-[50vh]">
+        <table class="w-full text-left border-collapse" id="editorTable">
+          <thead>
+            <tr class="bg-slate-950 text-slate-400 text-xs font-bold uppercase tracking-wider border-b border-slate-800">
+              <th class="py-3 px-4 w-[8%] text-center">#</th>
+              <th class="py-3 px-4 w-[32%]">Limba Română (ro)</th>
+              <th class="py-3 px-4 w-[32%]">Limba Engleză (en)</th>
+              <th class="py-3 px-4 w-[20%]">Parte de vorbire</th>
+              <th class="py-3 px-4 w-[8%] text-center">Elimină</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800/80 text-xs text-slate-200">
+            <!-- Dynamically populated via javascript -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination / Pager Controls -->
+      <div class="flex items-center justify-between border-t border-slate-800 pt-3 flex-wrap gap-3">
+        <button id="prevPage" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-xs font-semibold transition-all">
+          ◀ Pagina anterioară
+        </button>
+        <span class="text-xs text-slate-400" id="pageInfo">Afișare 0-0 din 0</span>
+        <button id="nextPage" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-xs font-semibold transition-all">
+          Pagina următoare ▶
+        </button>
+      </div>
+
+      <!-- Save Actions / Footer Controls -->
+      <div class="flex justify-between items-center mt-2 border-t border-slate-800 pt-3">
+        <div class="text-[11px] text-slate-500 max-w-md">
+          * Modificările sunt stocate local temporar. Descarcă fișierul JSON pentru a-l salva definitiv pe disc ca <code>romanian.json</code>.
+        </div>
+        <div class="flex gap-2">
+          <button onclick="closeModal('editorModal')" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold rounded-xl transition-all">
+            Închide
+          </button>
+          <button id="saveLocal" class="px-5 py-2 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white text-xs font-extrabold rounded-xl transition-all shadow-md">
+            Salvează și Descarcă (romanian.json)
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Elements references helper
+    const $ = id => document.getElementById(id);
+
+    // --- FALLBACK PRESET ROMANIAN DECK DATA ---
+    // If the server does not serve "romanian.json", we load this beautiful, robust database immediately!
+    const fallbackDeck = [
+      { ro: "a vorbi", en: "to speak", part: "verb" },
+      { ro: "carte", en: "book", part: "substantiv" },
+      { ro: "a face", en: "to do / to make", part: "verb" },
+      { ro: "fată", en: "girl", part: "substantiv" },
+      { ro: "frumos", en: "beautiful", part: "adjectiv" },
+      { ro: "a dori", en: "to wish / to desire", part: "verb" },
+      { ro: "băiat", en: "boy", part: "substantiv" },
+      { ro: "a merge", en: "to go", part: "verb" },
+      { ro: "mâncare", en: "food", part: "substantiv" },
+      { ro: "a mânca", en: "to eat", part: "verb" },
+      { ro: "repede", en: "fast / quickly", part: "adverb" },
+      { ro: "zi", en: "day", part: "substantiv" },
+      { ro: "noapte", en: "night", part: "substantiv" },
+      { ro: "apă", en: "water", part: "substantiv" },
+      { ro: "a avea", en: "to have", part: "verb" },
+      { ro: "a fi", en: "to be", part: "verb" },
+      { ro: "mare", en: "big / large", part: "adjectiv" },
+      { ro: "casă", en: "house / home", part: "substantiv" },
+      { ro: "prieten", en: "friend", part: "substantiv" },
+      { ro: "a citi", en: "to read", part: "verb" },
+      { ro: "scrisoare", en: "letter", part: "substantiv" },
+      { ro: "mână", en: "hand", part: "substantiv" },
+      { ro: "ochi", en: "eye", part: "substantiv" },
+      { ro: "munte", en: "mountain", part: "substantiv" },
+      { ro: "pâine", en: "bread", part: "substantiv" },
+      { ro: "a scrie", en: "to write", part: "verb" },
+      { ro: "inteligent", en: "intelligent / smart", part: "adjectiv" },
+      { ro: "drum", en: "road / path", part: "substantiv" },
+      { ro: "mic", en: "small / little", part: "adjectiv" },
+      { ro: "a vrea", en: "to want", part: "verb" }
+    ];
+
+    // --- APPLICATION STATE VARIABLES ---
+    let deck = [];
+    let activeIndex = 0;
+    let viewEnglishOnFront = false;
+
+    // --- CARD IN-PLACE REARRANGING ---
+    function performShuffle(targetArray) {
+      for (let i = targetArray.length - 1; i > 0; i--) {
+        const randomIndex = Math.floor(Math.random() * (i + 1));
+        [targetArray[i], targetArray[randomIndex]] = [targetArray[randomIndex], targetArray[i]];
+      }
+    }
+
+    // --- MAIN DECK LOADING INTERFACE ---
+    async function initDeck() {
+      try {
+        const response = await fetch('romanian.json');
+        if (!response.ok) throw new Error('Nu s-a putut găsi server-ul local sau romanian.json');
+        
+        const data = await response.json();
+        deck = Array.isArray(data)
+          ? data.filter(item => item && typeof item.ro === 'string' && typeof item.en === 'string')
+          : [];
+        
+        if (!deck.length) throw new Error('Fișierul romanian.json nu are un format valid');
+      } catch (error) {
+        console.warn('Eroare la încărcarea fișierului, rulăm varianta implicită (fallback).', error.message);
+        // Fallback robust setup
+        deck = JSON.parse(JSON.stringify(fallbackDeck));
+      }
+
+      performShuffle(deck);
+      activeIndex = Math.floor(Math.random() * deck.length);
+      renderUI();
+    }
+
+    // --- STREAMING_CHUNK: Card rendering mechanics and logic ---
+    // --- MAIN FLASHCARD RENDERING CONTROLLER ---
+    function renderUI() {
+      if (!deck.length) return;
+
+      const currentCard = deck[activeIndex];
+      const partOfSpeech = (currentCard.part || 'substantiv').toLowerCase();
+
+      // Configure fronts and backs texts
+      if (viewEnglishOnFront) {
+        $('card-front-word').textContent = currentCard.en;
+        $('card-front-type').textContent = `${partOfSpeech} (English)`;
+        $('card-back-word').textContent = currentCard.ro;
+        $('card-back-type').textContent = `${partOfSpeech} (Română)`;
+      } else {
+        $('card-front-word').textContent = currentCard.ro;
+        $('card-front-type').textContent = `${partOfSpeech} (Română)`;
+        $('card-back-word').textContent = currentCard.en;
+        $('card-back-type').textContent = `${partOfSpeech} (English)`;
+      }
+
+      // Configure progress indicator
+      $('progress-indicator').textContent = `Card ${activeIndex + 1} / ${deck.length}`;
+      $('active-part-badge').textContent = `Parte de vorbire: ${partOfSpeech.toUpperCase()}`;
+
+      // Reset card flip rotation state on render
+      $('flashcard-widget').classList.remove('is-flipped');
+    }
+
+    // --- STREAMING_CHUNK: Voice pronunciation synthesis ---
+    // --- ROMANIAN TTS PRONUNCIATION CONTROLLER ---
+    function playPronunciation() {
+      if (!deck.length) return;
+      const currentCard = deck[activeIndex];
+      const textToPronounce = viewEnglishOnFront ? currentCard.ro : currentCard.ro; // always pronounce the Romanian word
+
+      if ('speechSynthesis' in window) {
+        // Cancel ongoing speak speech
+        window.speechSynthesis.cancel();
+        
+        const utterance = new SpeechSynthesisUtterance(textToPronounce);
+        utterance.lang = 'ro-RO';
+        
+        // Match specialized Romanian speaker if browser provides it
+        const systemVoices = window.speechSynthesis.getVoices();
+        const roVoice = systemVoices.find(voice => voice.lang.includes('ro-RO') || voice.lang.includes('ro_RO'));
+        if (roVoice) {
+          utterance.voice = roVoice;
+        }
+        
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert('Ne pare rău, browser-ul dvs. nu suportă sinteza vocală!');
+      }
+    }
+
+    // --- DIRECT DECK NAVIGATION ARROWS ---
+    function navigateDeck(direction) {
+      if (!deck.length) return;
+      activeIndex = (activeIndex + direction + deck.length) % deck.length;
+      renderUI();
+    }
+
+    // --- USER RESPONSE RATING ---
+    function handleMemoryClassification(isKnown) {
+      // Moves card further or closer (simplistic algorithmic SRS visual response)
+      if (isKnown) {
+        // Known: Go directly to next card
+        navigateDeck(1);
+      } else {
+        // Again: Shuffle index position slightly back so user sees it soon
+        if (deck.length > 2) {
+          const nextRandomIndex = Math.min(activeIndex + Math.floor(Math.random() * 3) + 2, deck.length - 1);
+          const current = deck.splice(activeIndex, 1)[0];
+          deck.splice(nextRandomIndex, 0, current);
+        }
+        navigateDeck(1);
+      }
+    }
+
+    // --- SWITCH FRONT AND BACK LANGUAGES ---
+    $('trigger-switch-lang').onclick = () => {
+      viewEnglishOnFront = !viewEnglishOnFront;
+      $('trigger-switch-lang').textContent = viewEnglishOnFront ? "↔️ Vezi Română" : "↔️ Vezi Engleză";
+      renderUI();
+    };
+
+    // --- SHUFFLE & RANDOM TRIGGERS ---
+    $('trigger-shuffle').onclick = () => {
+      performShuffle(deck);
+      activeIndex = 0;
+      renderUI();
+    };
+
+    $('trigger-random').onclick = () => {
+      activeIndex = Math.floor(Math.random() * deck.length);
+      renderUI();
+    };
+
+    // --- FLIP INTERACTIONS ---
+    const toggleCardFlip = () => {
+      $('flashcard-widget').classList.toggle('is-flipped');
+    };
+
+    $('trigger-flip').onclick = toggleCardFlip;
+    $('card-inner-element').onclick = (e) => {
+      // Guard against nested clicks (buttons)
+      if (e.target.tagName !== 'BUTTON' && !e.target.closest('button')) {
+        toggleCardFlip();
+      }
+    };
+
+    // --- KEYBOARD NAVIGATIONS INTEGRATIONS ---
+    document.addEventListener('keydown', (event) => {
+      // Do not interrupt text entry in input/textareas
+      if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA' || event.target.tagName === 'SELECT') return;
+
+      if (event.key === 'ArrowRight') {
+        navigateDeck(1);
+      }
+      if (event.key === 'ArrowLeft') {
+        navigateDeck(-1);
+      }
+      if (event.key === ' ') {
+        event.preventDefault();
+        toggleCardFlip();
+      }
+    });
+
+    // --- STREAMING_CHUNK: AI Prompt Builder with custom grammatical rules ---
+    // ================= DYNAMIC AI PROMPT BUILDER =================
+    $('trigger-ai-generator').onclick = () => {
+      if (!deck.length) return;
+      
+      const currentCard = deck[activeIndex];
+      const word = currentCard.ro;
+      const partOfSpeech = (currentCard.part || 'substantiv').toLowerCase();
+      const translation = currentCard.en;
+
+      let generatedPrompt = '';
+
+      if (partOfSpeech.includes('verb')) {
+        // CUSTOM ROMANIAN VERB CONJUGATION PROMPT
+        generatedPrompt = `Te rog să-mi oferi o explicație detaliată pentru verbul românesc "${word}" (care se traduce prin "${translation}"). 
+Deoarece este un VERB, te rog să incluzi obligatoriu următoarele structuri gramaticale:
+1. Conjugarea completă a verbului la toate modurile și timpurile în limba română (Indicativ Prezent, Imperfect, Perfect Simplu, Perfect Compus, Mai-mult-ca-perfect, Viitor Standard; Conjunctiv Prezent; Condițional-Optativ Prezent; Imperativ).
+2. Menționează dacă este un verb regulat sau neregulat și ce grupă de conjugare este (I, II, III, IV).
+3. Oferă exact 10 propoziții de exemplu în limba română folosind diferite forme conjugate ale acestui verb la diverse persoane și timpuri, însoțite de traducerile lor exacte în limba engleză.`;
+      } else if (partOfSpeech.includes('substantiv') || partOfSpeech.includes('noun')) {
+        // CUSTOM ROMANIAN NOUN DECLENSION PROMPT
+        generatedPrompt = `Te rog să-mi oferi o explicație detaliată pentru substantivul românesc "${word}" (care se traduce prin "${translation}").
+Deoarece este un SUBSTANTIV, te rog să incluzi obligatoriu următoarele detalii gramaticale:
+1. Genul substantivului (Masculin, Feminin sau Neutru).
+2. Tabela de declinare completă la cazurile:
+   - Nominativ-Acuzativ (singular și plural, articulat hotărât și nehotărât)
+   - Genitiv-Dativ (singular și plural, articulat hotărât și nehotărât)
+   - Vocativ (forme uzuale de apel, dacă există).
+3. Oferă exact 10 propoziții de exemplu în limba română folosind diferite forme declinate (singulare, plurale, diverse cazuri) ale acestui substantiv, însoțite de traducerile lor exacte în limba engleză.`;
+      } else {
+        // DEFAULT FALLBACK PROMPT FOR ADJECTIVES/OTHER GRAMMAR
+        generatedPrompt = `Te rog să-mi oferi o explicație detaliată pentru cuvântul românesc "${word}" (care se traduce prin "${translation}").
+Identificat ca parte de vorbire: "${partOfSpeech.toUpperCase()}".
+Te rog să furnizezi:
+1. Detaliile morfologice specifice (acord în gen și număr pentru adjective, grade de comparație, reguli speciale).
+2. Oferă exact 10 propoziții de exemplu în limba română folosind diferite forme ale sale în diverse contexte gramaticale, însoțite de traducerile lor exacte în limba engleză.`;
+      }
+
+      // Populate elements within the Modal
+      $('ai-modal-word').textContent = word;
+      $('ai-modal-part-label').textContent = partOfSpeech;
+      $('ai-prompt-textbox').value = generatedPrompt;
+
+      // Setup Search/External Links
+      const googleSearchCommand = `Declinare/Conjugare "${word}" limba română dexonline`;
+      $('ai-google-search-link').href = `https://www.google.com/search?q=${encodeURIComponent(googleSearchCommand)}`;
+
+      // Hide copy notification message on open
+      $('copy-success-message').classList.add('hidden');
+
+      // Display prompt generator modal
+      openModal('aiPromptModal');
+    };
+
+    // Helper utilities for Modals
+    function openModal(modalId) {
+      $(modalId).classList.remove('hidden');
+      $(modalId).setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal(modalId) {
+      $(modalId).classList.add('hidden');
+      $(modalId).setAttribute('aria-hidden', 'true');
+    }
+
+    // Clipboard Copy helper
+    function copyToClipboard(elementId) {
+      const element = $(elementId);
+      element.select();
+      element.setSelectionRange(0, 99999); // Mobile compatibility
+      
+      try {
+        const success = document.execCommand('copy');
+        if (success) {
+          $('copy-success-message').classList.remove('hidden');
+          setTimeout(() => {
+            $('copy-success-message').classList.add('hidden');
+          }, 4000);
+        }
+      } catch (err) {
+        console.error('Nu s-a putut copia textul', err);
+      }
+    }
+
+
+    // ==========================================
+    //          ADVANCED DATABASE EDITOR
+    // ==========================================
+    let filteredDB = [];
+    let editorCurrentPage = 0;
+    let editorPageSize = 100;
+
+    async function syncDatabaseForEditor() {
+      // Synchronize editor variables with application runtime state
+      filteredDB = JSON.parse(JSON.stringify(deck));
+      applySearchFilter();
+    }
+
+    // Apply Realtime Search Filters and limits
+    function applySearchFilter() {
+      const query = $('filterInput').value.toLowerCase().trim();
+
+      filteredDB = deck.filter(row => 
+        !query || 
+        row.ro.toLowerCase().includes(query) || 
+        row.en.toLowerCase().includes(query) ||
+        (row.part && row.part.toLowerCase().includes(query))
+      );
+
+      editorCurrentPage = 0;
+      renderEditorTable();
+    }
+
+    // Render Paginated table inside the DB Editor Modal
+    function renderEditorTable() {
+      const tableBody = document.querySelector('#editorTable tbody');
+      tableBody.innerHTML = '';
+
+      const startIndex = editorCurrentPage * editorPageSize;
+      const endIndex = Math.min(filteredDB.length, startIndex + editorPageSize);
+
+      for (let i = startIndex; i < endIndex; i++) {
+        const rowData = filteredDB[i];
+        const actualDeckIndex = deck.indexOf(rowData);
+
+        const tableRow = document.createElement('tr');
+        tableRow.className = "hover:bg-slate-900/40 transition-colors";
+        tableRow.innerHTML = `
+          <td class="py-3 px-4 text-center font-bold text-slate-500">${i + 1}</td>
+          <td class="py-2 px-3">
+            <input type="text" data-idx="${actualDeckIndex}" data-field="ro" value="${escapeHtml(rowData.ro)}" class="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1 focus:outline-none focus:border-violet-500 text-slate-200 text-xs">
+          </td>
+          <td class="py-2 px-3">
+            <input type="text" data-idx="${actualDeckIndex}" data-field="en" value="${escapeHtml(rowData.en)}" class="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1 focus:outline-none focus:border-violet-500 text-slate-200 text-xs">
+          </td>
+          <td class="py-2 px-3">
+            <select data-idx="${actualDeckIndex}" data-field="part" class="w-full bg-slate-950 border border-slate-800 rounded px-2 py-1 focus:outline-none focus:border-violet-500 text-slate-200 text-xs">
+              <option value="substantiv" ${rowData.part === 'substantiv' ? 'selected' : ''}>Substantiv (Noun)</option>
+              <option value="verb" ${rowData.part === 'verb' ? 'selected' : ''}>Verb</option>
+              <option value="adjectiv" ${rowData.part === 'adjectiv' ? 'selected' : ''}>Adjectiv</option>
+              <option value="adverb" ${rowData.part === 'adverb' ? 'selected' : ''}>Adverb</option>
+              <option value="altul" ${rowData.part === 'altul' ? 'selected' : ''}>Altul</option>
+            </select>
+          </td>
+          <td class="py-2 px-3 text-center">
+            <button data-delete-idx="${actualDeckIndex}" class="p-1.5 text-rose-400 hover:text-rose-300 hover:bg-rose-950/30 rounded transition-all">✕</button>
+          </td>
+        `;
+
+        tableBody.appendChild(tableRow);
+      }
+
+      // Update Pagination Meta Labels
+      if (filteredDB.length === 0) {
+        $('pageInfo').textContent = "Nu s-au găsit înregistrări";
+      } else {
+        $('pageInfo').textContent = `Se afișează ${startIndex + 1} - ${endIndex} din ${filteredDB.length} înregistrări`;
+      }
+    }
+
+    // HTML sanitizer helper
+    function escapeHtml(string) {
+      if (!string) return '';
+      return string
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    // Handle Editor Modal opens
+    $('trigger-open-db').onclick = () => {
+      syncDatabaseForEditor();
+      openModal('editorModal');
+    };
+
+    // Realtime editing integrations
+    document.addEventListener('input', (event) => {
+      const itemIndex = event.target.dataset.idx;
+      const targetField = event.target.dataset.field;
+
+      if (itemIndex !== undefined && targetField !== undefined) {
+        deck[itemIndex][targetField] = event.target.value;
+      }
+    });
+
+    // Handle inline dropdown changes
+    document.addEventListener('change', (event) => {
+      const itemIndex = event.target.dataset.idx;
+      const targetField = event.target.dataset.field;
+
+      if (itemIndex !== undefined && targetField !== undefined) {
+        deck[itemIndex][targetField] = event.target.value;
+        renderUI();
+      }
+    });
+
+    // Delete a vocabulary card row
+    document.addEventListener('click', (event) => {
+      const deleteIndex = event.target.dataset.deleteIdx;
+      if (deleteIndex !== undefined) {
+        deck.splice(Number(deleteIndex), 1);
+        if (activeIndex >= deck.length) {
+          activeIndex = Math.max(0, deck.length - 1);
+        }
+        applySearchFilter();
+        renderUI();
+      }
+    });
+
+    // Add New Empty Word entry
+    $('addNewRow').onclick = () => {
+      const newCard = { ro: '', en: '', part: 'substantiv' };
+      deck.unshift(newCard); // Add to the front of deck
+      activeIndex = 0;
+      applySearchFilter();
+      renderUI();
+    };
+
+    // Download Deck as romanian.json
+    function triggerDownloadJSON() {
+      const jsonContent = JSON.stringify(deck, null, 2);
+      const blob = new Blob([jsonContent], { type: 'application/json' });
+      
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'romanian.json';
+      link.click();
+    }
+
+    // Save buttons click bindings
+    $('saveLocal').onclick = triggerDownloadJSON;
+    $('downloadJson').onclick = triggerDownloadJSON;
+
+    // Filter typing events
+    $('filterInput').oninput = () => {
+      applySearchFilter();
+    };
+
+    // Page size alterations
+    $('pageSize').onchange = (e) => {
+      editorPageSize = Number(e.target.value);
+      editorCurrentPage = 0;
+      renderEditorTable();
+    };
+
+    // Pagination Click Events
+    $('prevPage').onclick = () => {
+      if (editorCurrentPage > 0) {
+        editorCurrentPage--;
+        renderEditorTable();
+      }
+    };
+
+    $('nextPage').onclick = () => {
+      const totalPages = Math.ceil(filteredDB.length / editorPageSize);
+      if (editorCurrentPage < totalPages - 1) {
+        editorCurrentPage++;
+        renderEditorTable();
+      }
+    };
+
+    // Start active systems on page load
+    window.onload = function() {
+      initDeck();
+    };
+  </script>
+</body>
+</html>
