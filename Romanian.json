@@ -1,0 +1,2023 @@
+[
+  {
+    "ro": "a putea",
+    "en": "to be able to / can",
+    "part": "verb"
+  },
+  {
+    "ro": "a face",
+    "en": "to do / to make",
+    "part": "verb"
+  },
+  {
+    "ro": "a zice",
+    "en": "to say",
+    "part": "verb"
+  },
+  {
+    "ro": "a spune",
+    "en": "to tell / to say",
+    "part": "verb"
+  },
+  {
+    "ro": "a merge",
+    "en": "to go / to walk",
+    "part": "verb"
+  },
+  {
+    "ro": "a veni",
+    "en": "to come",
+    "part": "verb"
+  },
+  {
+    "ro": "a da",
+    "en": "to give",
+    "part": "verb"
+  },
+  {
+    "ro": "a lua",
+    "en": "to take",
+    "part": "verb"
+  },
+  {
+    "ro": "a vedea",
+    "en": "to see",
+    "part": "verb"
+  },
+  {
+    "ro": "a ști",
+    "en": "to know (a fact)",
+    "part": "verb"
+  },
+  {
+    "ro": "a cunoaște",
+    "en": "to know (a person/place)",
+    "part": "verb"
+  },
+  {
+    "ro": "a gândi",
+    "en": "to think",
+    "part": "verb"
+  },
+  {
+    "ro": "a crede",
+    "en": "to believe / to think",
+    "part": "verb"
+  },
+  {
+    "ro": "a vorbi",
+    "en": "to speak / to talk",
+    "part": "verb"
+  },
+  {
+    "ro": "a întreba",
+    "en": "to ask (a question)",
+    "part": "verb"
+  },
+  {
+    "ro": "a cere",
+    "en": "to ask for / to request",
+    "part": "verb"
+  },
+  {
+    "ro": "a răspunde",
+    "en": "to answer / to reply",
+    "part": "verb"
+  },
+  {
+    "ro": "a lucra",
+    "en": "to work",
+    "part": "verb"
+  },
+  {
+    "ro": "a învăța",
+    "en": "to learn / to teach",
+    "part": "verb"
+  },
+  {
+    "ro": "a înțelege",
+    "en": "to understand",
+    "part": "verb"
+  },
+  {
+    "ro": "a citi",
+    "en": "to read",
+    "part": "verb"
+  },
+  {
+    "ro": "a scrie",
+    "en": "to write",
+    "part": "verb"
+  },
+  {
+    "ro": "a mânca",
+    "en": "to eat",
+    "part": "verb"
+  },
+  {
+    "ro": "a bea",
+    "en": "to drink",
+    "part": "verb"
+  },
+  {
+    "ro": "a dormi",
+    "en": "to sleep",
+    "part": "verb"
+  },
+  {
+    "ro": "a trăi",
+    "en": "to live",
+    "part": "verb"
+  },
+  {
+    "ro": "a locui",
+    "en": "to reside / to live (in a place)",
+    "part": "verb"
+  },
+  {
+    "ro": "a muri",
+    "en": "to die",
+    "part": "verb"
+  },
+  {
+    "ro": "a pleca",
+    "en": "to leave / to depart",
+    "part": "verb"
+  },
+  {
+    "ro": "a rămâne",
+    "en": "to remain / to stay",
+    "part": "verb"
+  },
+  {
+    "ro": "a sta",
+    "en": "to stay / to stand / to sit",
+    "part": "verb"
+  },
+  {
+    "ro": "a sosi",
+    "en": "to arrive",
+    "part": "verb"
+  },
+  {
+    "ro": "a intra",
+    "en": "to enter",
+    "part": "verb"
+  },
+  {
+    "ro": "a ieși",
+    "en": "to exit / to go out",
+    "part": "verb"
+  },
+  {
+    "ro": "a aduce",
+    "en": "to bring",
+    "part": "verb"
+  },
+  {
+    "ro": "a trimite",
+    "en": "to send",
+    "part": "verb"
+  },
+  {
+    "ro": "a pune",
+    "en": "to put / to place",
+    "part": "verb"
+  },
+  {
+    "ro": "a ține",
+    "en": "to hold / to keep",
+    "part": "verb"
+  },
+  {
+    "ro": "a chema",
+    "en": "to call / to summon",
+    "part": "verb"
+  },
+  {
+    "ro": "a numi",
+    "en": "to name / to call",
+    "part": "verb"
+  },
+  {
+    "ro": "a asculta",
+    "en": "to listen",
+    "part": "verb"
+  },
+  {
+    "ro": "a auzi",
+    "en": "to hear",
+    "part": "verb"
+  },
+  {
+    "ro": "a privi",
+    "en": "to look at / to watch",
+    "part": "verb"
+  },
+  {
+    "ro": "a uita",
+    "en": "to forget / to look (when reflexive)",
+    "part": "verb"
+  },
+  {
+    "ro": "a pierde",
+    "en": "to lose",
+    "part": "verb"
+  },
+  {
+    "ro": "a găsi",
+    "en": "to find",
+    "part": "verb"
+  },
+  {
+    "ro": "a căuta",
+    "en": "to search / to look for",
+    "part": "verb"
+  },
+  {
+    "ro": "a cumpăra",
+    "en": "to buy",
+    "part": "verb"
+  },
+  {
+    "ro": "a vinde",
+    "en": "to sell",
+    "part": "verb"
+  },
+  {
+    "ro": "a plăti",
+    "en": "to pay",
+    "part": "verb"
+  },
+  {
+    "ro": "a costa",
+    "en": "to cost",
+    "part": "verb"
+  },
+  {
+    "ro": "a alege",
+    "en": "to choose",
+    "part": "verb"
+  },
+  {
+    "ro": "a deschide",
+    "en": "to open",
+    "part": "verb"
+  },
+  {
+    "ro": "a închide",
+    "en": "to close",
+    "part": "verb"
+  },
+  {
+    "ro": "a începe",
+    "en": "to begin / to start",
+    "part": "verb"
+  },
+  {
+    "ro": "a termina",
+    "en": "to finish / to end",
+    "part": "verb"
+  },
+  {
+    "ro": "a opri",
+    "en": "to stop",
+    "part": "verb"
+  },
+  {
+    "ro": "a continua",
+    "en": "to continue",
+    "part": "verb"
+  },
+  {
+    "ro": "a încerca",
+    "en": "to try",
+    "part": "verb"
+  },
+  {
+    "ro": "a reuși",
+    "en": "to succeed",
+    "part": "verb"
+  },
+  {
+    "ro": "a ajuta",
+    "en": "to help",
+    "part": "verb"
+  },
+  {
+    "ro": "a folosi",
+    "en": "to use",
+    "part": "verb"
+  },
+  {
+    "ro": "a schimba",
+    "en": "to change",
+    "part": "verb"
+  },
+  {
+    "ro": "a iubi",
+    "en": "to love",
+    "part": "verb"
+  },
+  {
+    "ro": "a plăcea",
+    "en": "to like",
+    "part": "verb"
+  },
+  {
+    "ro": "a urî",
+    "en": "to hate",
+    "part": "verb"
+  },
+  {
+    "ro": "a spera",
+    "en": "to hope",
+    "part": "verb"
+  },
+  {
+    "ro": "a râde",
+    "en": "to laugh",
+    "part": "verb"
+  },
+  {
+    "ro": "a plânge",
+    "en": "to cry",
+    "part": "verb"
+  },
+  {
+    "ro": "a zâmbi",
+    "en": "to smile",
+    "part": "verb"
+  },
+  {
+    "ro": "a cânta",
+    "en": "to sing / to play an instrument",
+    "part": "verb"
+  },
+  {
+    "ro": "a juca",
+    "en": "to play (a game/sport)",
+    "part": "verb"
+  },
+  {
+    "ro": "a alerga",
+    "en": "to run",
+    "part": "verb"
+  },
+  {
+    "ro": "a sări",
+    "en": "to jump",
+    "part": "verb"
+  },
+  {
+    "ro": "a cădea",
+    "en": "to fall",
+    "part": "verb"
+  },
+  {
+    "ro": "a coborî",
+    "en": "to go down / to descend",
+    "part": "verb"
+  },
+  {
+    "ro": "a urca",
+    "en": "to go up / to ascend",
+    "part": "verb"
+  },
+  {
+    "ro": "a conduce",
+    "en": "to drive / to lead",
+    "part": "verb"
+  },
+  {
+    "ro": "a călători",
+    "en": "to travel",
+    "part": "verb"
+  },
+  {
+    "ro": "a zbura",
+    "en": "to fly",
+    "part": "verb"
+  },
+  {
+    "ro": "a înota",
+    "en": "to swim",
+    "part": "verb"
+  },
+  {
+    "ro": "a spăla",
+    "en": "to wash",
+    "part": "verb"
+  },
+  {
+    "ro": "a curăța",
+    "en": "to clean",
+    "part": "verb"
+  },
+  {
+    "ro": "a găti",
+    "en": "to cook",
+    "part": "verb"
+  },
+  {
+    "ro": "a tăia",
+    "en": "to cut",
+    "part": "verb"
+  },
+  {
+    "ro": "a rupe",
+    "en": "to break / to tear",
+    "part": "verb"
+  },
+  {
+    "ro": "a strica",
+    "en": "to break / to spoil",
+    "part": "verb"
+  },
+  {
+    "ro": "a repara",
+    "en": "to repair / to fix",
+    "part": "verb"
+  },
+  {
+    "ro": "a construi",
+    "en": "to build",
+    "part": "verb"
+  },
+  {
+    "ro": "a crea",
+    "en": "to create",
+    "part": "verb"
+  },
+  {
+    "ro": "a desena",
+    "en": "to draw",
+    "part": "verb"
+  },
+  {
+    "ro": "a picta",
+    "en": "to paint",
+    "part": "verb"
+  },
+  {
+    "ro": "a simți",
+    "en": "to feel",
+    "part": "verb"
+  },
+  {
+    "ro": "a durea",
+    "en": "to hurt / to ache",
+    "part": "verb"
+  },
+  {
+    "ro": "a asigura",
+    "en": "to ensure / to insure",
+    "part": "verb"
+  },
+  {
+    "ro": "a salva",
+    "en": "to save",
+    "part": "verb"
+  },
+  {
+    "ro": "a păstra",
+    "en": "to keep / to preserve",
+    "part": "verb"
+  },
+  {
+    "ro": "a arunca",
+    "en": "to throw",
+    "part": "verb"
+  },
+  {
+    "ro": "a prinde",
+    "en": "to catch",
+    "part": "verb"
+  },
+  {
+    "ro": "a atinge",
+    "en": "to touch",
+    "part": "verb"
+  },
+  {
+    "ro": "a lovi",
+    "en": "to hit / to strike",
+    "part": "verb"
+  },
+  {
+    "ro": "a ascunde",
+    "en": "to hide",
+    "part": "verb"
+  },
+  {
+    "ro": "a arăta",
+    "en": "to show",
+    "part": "verb"
+  },
+  {
+    "ro": "a părea",
+    "en": "to seem",
+    "part": "verb"
+  },
+  {
+    "ro": "a apărea",
+    "en": "to appear",
+    "part": "verb"
+  },
+  {
+    "ro": "a dispărea",
+    "en": "to disappear",
+    "part": "verb"
+  },
+  {
+    "ro": "a crește",
+    "en": "to grow",
+    "part": "verb"
+  },
+  {
+    "ro": "a umple",
+    "en": "to fill",
+    "part": "verb"
+  },
+  {
+    "ro": "a goli",
+    "en": "to empty",
+    "part": "verb"
+  },
+  {
+    "ro": "a acoperi",
+    "en": "to cover",
+    "part": "verb"
+  },
+  {
+    "ro": "a descoperi",
+    "en": "to discover",
+    "part": "verb"
+  },
+  {
+    "ro": "a dezvolta",
+    "en": "to develop",
+    "part": "verb"
+  },
+  {
+    "ro": "a produce",
+    "en": "to produce",
+    "part": "verb"
+  },
+  {
+    "ro": "a transporta",
+    "en": "to transport / to carry",
+    "part": "verb"
+  },
+  {
+    "ro": "a purta",
+    "en": "to wear / to carry",
+    "part": "verb"
+  },
+  {
+    "ro": "a îmbrăca",
+    "en": "to dress",
+    "part": "verb"
+  },
+  {
+    "ro": "a dezbrăca",
+    "en": "to undress",
+    "part": "verb"
+  },
+  {
+    "ro": "a se întâlni",
+    "en": "to meet",
+    "part": "verb"
+  },
+  {
+    "ro": "a vizita",
+    "en": "to visit",
+    "part": "verb"
+  },
+  {
+    "ro": "a invita",
+    "en": "to invite",
+    "part": "verb"
+  },
+  {
+    "ro": "a primi",
+    "en": "to receive / to get",
+    "part": "verb"
+  },
+  {
+    "ro": "a oferi",
+    "en": "to offer",
+    "part": "verb"
+  },
+  {
+    "ro": "a trimite",
+    "en": "to send",
+    "part": "verb"
+  },
+  {
+    "ro": "a lăsa",
+    "en": "to let / to leave behind",
+    "part": "verb"
+  },
+  {
+    "ro": "a ierta",
+    "en": "to forgive",
+    "part": "verb"
+  },
+  {
+    "ro": "a promite",
+    "en": "to promise",
+    "part": "verb"
+  },
+  {
+    "ro": "a jura",
+    "en": "to swear / to vow",
+    "part": "verb"
+  },
+  {
+    "ro": "a minți",
+    "en": "to lie",
+    "part": "verb"
+  },
+  {
+    "ro": "a fura",
+    "en": "to steal",
+    "part": "verb"
+  },
+  {
+    "ro": "a ucide",
+    "en": "to kill",
+    "part": "verb"
+  },
+  {
+    "ro": "a apăra",
+    "en": "to defend",
+    "part": "verb"
+  },
+  {
+    "ro": "a ataca",
+    "en": "to attack",
+    "part": "verb"
+  },
+  {
+    "ro": "a câștiga",
+    "en": "to win / to earn",
+    "part": "verb"
+  },
+  {
+    "ro": "a lupta",
+    "en": "to fight",
+    "part": "verb"
+  },
+  {
+    "ro": "a proteja",
+    "en": "to protect",
+    "part": "verb"
+  },
+  {
+    "ro": "a respecta",
+    "en": "to respect",
+    "part": "verb"
+  },
+  {
+    "ro": "a admira",
+    "en": "to admire",
+    "part": "verb"
+  },
+  {
+    "ro": "a prefera",
+    "en": "to prefer",
+    "part": "verb"
+  },
+  {
+    "ro": "a dori",
+    "en": "to wish / to desire",
+    "part": "verb"
+  },
+  {
+    "ro": "a decide",
+    "en": "to decide",
+    "part": "verb"
+  },
+  {
+    "ro": "a hotărî",
+    "en": "to decide / to resolve",
+    "part": "verb"
+  },
+  {
+    "ro": "a organiza",
+    "en": "to organize",
+    "part": "verb"
+  },
+  {
+    "ro": "a pregăti",
+    "en": "to prepare",
+    "part": "verb"
+  },
+  {
+    "ro": "a verifica",
+    "en": "to check / to verify",
+    "part": "verb"
+  },
+  {
+    "ro": "a semna",
+    "en": "to sign",
+    "part": "verb"
+  },
+  {
+    "ro": "a explica",
+    "en": "to explain",
+    "part": "verb"
+  },
+  {
+    "ro": "a repeta",
+    "en": "to repeat",
+    "part": "verb"
+  },
+  { "ro": "un om, doi oameni (omul, oamenii) (masculine)", "en": "person / man", "part": "noun" },
+  { "ro": "o femeie, două femei (femeia, femeile) (feminine)", "en": "woman", "part": "noun" },
+  { "ro": "un copil, doi copii (copilul, copiii) (masculine)", "en": "child", "part": "noun" },
+  { "ro": "un băiat, doi băieți (băiatul, băieții) (masculine)", "en": "boy", "part": "noun" },
+  { "ro": "o fată, două fete (fata, fetele) (feminine)", "en": "girl", "part": "noun" },
+  { "ro": "o familie, două familii (familia, familiile) (feminine)", "en": "family", "part": "noun" },
+  { "ro": "un tată, doi tați (tatăl, tații) (masculine)", "en": "father", "part": "noun" },
+  { "ro": "o mamă, două mame (mama, mamele) (feminine)", "en": "mother", "part": "noun" },
+  { "ro": "un prieten, doi prieteni (prietenul, prietenii) (masculine)", "en": "friend", "part": "noun" },
+  { "ro": "o viață, două vieți (viața, viețile) (feminine)", "en": "life", "part": "noun" },
+  { "ro": "un timp, două timpuri (timpul, timpurile) (neuter)", "en": "time", "part": "noun" },
+  { "ro": "o zi, două zile (ziua, zilele) (feminine)", "en": "day", "part": "noun" },
+  { "ro": "o noapte, două nopți (noaptea, nopțile) (feminine)", "en": "night", "part": "noun" },
+  { "ro": "un an, doi ani (anul, anii) (masculine)", "en": "year", "part": "noun" },
+  { "ro": "o lună, două luni (luna, lunile) (feminine)", "en": "month / moon", "part": "noun" },
+  { "ro": "o săptămână, două săptămâni (săptămâna, săptămânile) (feminine)", "en": "week", "part": "noun" },
+  { "ro": "o oră, două ore (ora, orele) (feminine)", "en": "hour", "part": "noun" },
+  { "ro": "o casă, două case (casa, casele) (feminine)", "en": "house / home", "part": "noun" },
+  { "ro": "un loc, două locuri (locul, locurile) (neuter)", "en": "place", "part": "noun" },
+  { "ro": "o țară, două țări (țara, țările) (feminine)", "en": "country", "part": "noun" },
+  { "ro": "un oraș, două orașe (orașul, orașele) (neuter)", "en": "city / town", "part": "noun" },
+  { "ro": "un sat, două sate (satul, satele) (neuter)", "en": "village", "part": "noun" },
+  { "ro": "o lume, două lumi (lumea, lumile) (feminine)", "en": "world", "part": "noun" },
+  { "ro": "o stradă, două străzi (strada, străzile) (feminine)", "en": "street", "part": "noun" },
+  { "ro": "un drum, două drumuri (drumul, drumurile) (neuter)", "en": "road / path", "part": "noun" },
+  { "ro": "o școală, două școli (școala, școlile) (feminine)", "en": "school", "part": "noun" },
+  { "ro": "un lucru, două lucruri (lucrul, lucrurile) (neuter)", "en": "thing / work", "part": "noun" },
+  { "ro": "o muncă, două munci (munca, muncile) (feminine)", "en": "work / labor", "part": "noun" },
+  { "ro": "un serviciu, două servicii (serviciul, serviciile) (neuter)", "en": "job / service", "part": "noun" },
+  { "ro": "un ban, doi bani (banul, banii) (masculine)", "en": "money", "part": "noun" },
+  { "ro": "o masă, două mese (masa, mesele) (feminine)", "en": "table / meal", "part": "noun" },
+  { "ro": "un scaun, două scaune (scaunul, scaunele) (neuter)", "en": "chair", "part": "noun" },
+  { "ro": "un pat, două paturi (patul, paturile) (neuter)", "en": "bed", "part": "noun" },
+  { "ro": "o ușă, două uși (ușa, ușile) (feminine)", "en": "door", "part": "noun" },
+  { "ro": "o fereastră, două ferestre (fereastra, ferestrele) (feminine)", "en": "window", "part": "noun" },
+  { "ro": "o cameră, două camere (camera, camerele) (feminine)", "en": "room", "part": "noun" },
+  { "ro": "o bucătărie, două bucătării (bucătăria, bucătăriile) (feminine)", "en": "kitchen", "part": "noun" },
+  { "ro": "o carte, două cărți (cartea, cărțile) (feminine)", "en": "book", "part": "noun" },
+  { "ro": "un cuvânt, două cuvinte (cuvântul, cuvintele) (neuter)", "en": "word", "part": "noun" },
+  { "ro": "o limbă, două limbi (limba, limbile) (feminine)", "en": "language / tongue", "part": "noun" },
+  { "ro": "un nume, două nume (numele, numele) (neuter)", "en": "name", "part": "noun" },
+  { "ro": "o apă, două ape (apa, apele) (feminine)", "en": "water", "part": "noun" },
+  { "ro": "o mâncare, două mâncăruri (mâncarea, mâncărurile) (feminine)", "en": "food", "part": "noun" },
+  { "ro": "o pâine, două pâini (pâinea, pâinile) (feminine)", "en": "bread", "part": "noun" },
+  { "ro": "o cafea, două cafele (cafeaua, cafelele) (feminine)", "en": "coffee", "part": "noun" },
+  { "ro": "un ceai, două ceaiuri (ceaiul, ceaiurile) (neuter)", "en": "tea", "part": "noun" },
+  { "ro": "un lapte, două lapturi (laptele, lapturile) (neuter)", "en": "milk", "part": "noun" },
+  { "ro": "o carne, două cărnuri (carnea, cărnurile) (feminine)", "en": "meat", "part": "noun" },
+  { "ro": "un măr, doi meri (mărul, merii) (masculine)", "en": "apple", "part": "noun" },
+  { "ro": "o haină, două haine (haina, hainele) (feminine)", "en": "coat / clothing item", "part": "noun" },
+  { "ro": "un pantof, doi pantofi (pantoful, pantofii) (masculine)", "en": "shoe", "part": "noun" },
+  { "ro": "o cămașă, două cămăși (cămașa, cămășile) (feminine)", "en": "shirt", "part": "noun" },
+  { "ro": "o mașină, două mașini (mașina, mașinile) (feminine)", "en": "car / machine", "part": "noun" },
+  { "ro": "un tren, două trenuri (trenul, trenurile) (neuter)", "en": "train", "part": "noun" },
+  { "ro": "un avion, două avioane (avionul, avioanele) (neuter)", "en": "airplane", "part": "noun" },
+  { "ro": "o bicicletă, două biciclete (bicicleta, bicicletele) (feminine)", "en": "bicycle", "part": "noun" },
+  { "ro": "un magazin, două magazine (magazinul, magazinele) (neuter)", "en": "shop / store", "part": "noun" },
+  { "ro": "o piață, două piețe (piața, piețele) (feminine)", "en": "market / square", "part": "noun" },
+  { "ro": "un preț, două prețuri (prețul, prețurile) (neuter)", "en": "price", "part": "noun" },
+  { "ro": "un bilet, două bilete (biletul, biletele) (neuter)", "en": "ticket", "part": "noun" },
+  { "ro": "un hotel, două hoteluri (hotelul, hotelurile) (neuter)", "en": "hotel", "part": "noun" },
+  { "ro": "un restaurant, două restaurante (restaurantul, restaurantele) (neuter)", "en": "restaurant", "part": "noun" },
+  { "ro": "un spital, două spitale (spitalul, spitalele) (neuter)", "en": "hospital", "part": "noun" },
+  { "ro": "un medic, doi medici (medicul, medicii) (masculine)", "en": "doctor", "part": "noun" },
+  { "ro": "o poliție, două poliții (poliția, polițiile) (feminine)", "en": "police", "part": "noun" },
+  { "ro": "un adevăr, două adevăruri (adevărul, adevărurile) (neuter)", "en": "truth", "part": "noun" },
+  { "ro": "o minciună, două minciuni (minciuna, minciunile) (feminine)", "en": "lie", "part": "noun" },
+  { "ro": "o problemă, două probleme (problema, problemele) (feminine)", "en": "problem", "part": "noun" },
+  { "ro": "o întrebare, două întrebări (întrebarea, întrebările) (feminine)", "en": "question", "part": "noun" },
+  { "ro": "un răspuns, două răspunsuri (răspunsul, răspunsurile) (neuter)", "en": "answer", "part": "noun" },
+  { "ro": "un exemplu, două exemple (exemplul, exemplele) (neuter)", "en": "example", "part": "noun" },
+  { "ro": "un caz, două cazuri (cazul, cazurile) (neuter)", "en": "case / instance", "part": "noun" },
+  { "ro": "un mod, două moduri (modul, modurile) (neuter)", "en": "way / manner", "part": "noun" },
+  { "ro": "o formă, două forme (forma, formele) (feminine)", "en": "shape / form", "part": "noun" },
+  { "ro": "o parte, două părți (partea, părțile) (feminine)", "en": "part / side", "part": "noun" },
+  { "ro": "un cap, două capete (capul, capetele) (neuter)", "en": "head", "part": "noun" },
+  { "ro": "o mână, două mâini (mâna, mâinile) (feminine)", "en": "hand / arm", "part": "noun" },
+  { "ro": "un picior, două picioare (piciorul, picioarele) (neuter)", "en": "leg / foot", "part": "noun" },
+  { "ro": "un ochi, doi ochi (ochiul, ochii) (masculine)", "en": "eye", "part": "noun" },
+  { "ro": "un păr, doi peri (părul, perii) (masculine)", "en": "hair", "part": "noun" },
+  { "ro": "o față, două fețe (fața, fețele) (feminine)", "en": "face", "part": "noun" },
+  { "ro": "o inimă, două inimi (inima, inimile) (feminine)", "en": "heart", "part": "noun" },
+  { "ro": "un sânge, două sângiuri (sângele, sângiurile) (neuter)", "en": "blood", "part": "noun" },
+  { "ro": "un corp, două corpuri (corpul, corpurile) (neuter)", "en": "body", "part": "noun" },
+  { "ro": "un cer, două ceruri (cerul, cerurile) (neuter)", "en": "sky / heaven", "part": "noun" },
+  { "ro": "un soare, doi sori (soarele, sorii) (masculine)", "en": "sun", "part": "noun" },
+  { "ro": "un pământ, două pământuri (pământul, pământurile) (neuter)", "en": "earth / ground", "part": "noun" },
+  { "ro": "o mare, două mări (marea, mările) (feminine)", "en": "sea", "part": "noun" },
+  { "ro": "un râu, două râuri (râul, râurile) (neuter)", "en": "river", "part": "noun" },
+  { "ro": "un munte, doi munți (muntele, munții) (masculine)", "en": "mountain", "part": "noun" },
+  { "ro": "o pădure, două păduri (pădurea, pădurile) (feminine)", "en": "forest", "part": "noun" },
+  { "ro": "un copac, doi copaci (copacul, copacii) (masculine)", "en": "tree", "part": "noun" },
+  { "ro": "o floare, două flori (floarea, florile) (feminine)", "en": "flower", "part": "noun" },
+  { "ro": "o iarbă, două ierburi (iarba, ierburile) (feminine)", "en": "grass", "part": "noun" },
+  { "ro": "un animal, două animale (animalul, animalele) (neuter)", "en": "animal", "part": "noun" },
+  { "ro": "un câine, doi câini (câinele, câinii) (masculine)", "en": "dog", "part": "noun" },
+  { "ro": "o pisică, două pisici (pisica, pisicile) (feminine)", "en": "cat", "part": "noun" },
+  { "ro": "o pasăre, două păsări (pasărea, păsările) (feminine)", "en": "bird", "part": "noun" },
+  { "ro": "un pește, doi pești (peștele, peștii) (masculine)", "en": "fish", "part": "noun" },
+  { "ro": "o vreme, două vremuri (vremea, vremurile) (feminine)", "en": "weather / time", "part": "noun" },
+  { "ro": "o ploaie, două ploi (ploaia, ploile) (feminine)", "en": "rain", "part": "noun" },
+  { "ro": "o zăpadă, două zăpezi (zăpada, zăpezile) (feminine)", "en": "snow", "part": "noun" },
+  { "ro": "un vânt, două vânturi (vântul, vânturile) (neuter)", "en": "wind", "part": "noun" },
+  { "ro": "un foc, două focuri (focul, focurile) (neuter)", "en": "fire", "part": "noun" },
+  { "ro": "un aer, două aeruri (aerul, aerurile) (neuter)", "en": "air", "part": "noun" },
+  { "ro": "o lumină, două lumini (lumina, luminile) (feminine)", "en": "light", "part": "noun" },
+  { "ro": "un întuneric, două întunericuri (întunericul, întunercurile) (neuter)", "en": "darkness", "part": "noun" },
+  { "ro": "o idee, două idei (ideea, ideile) (feminine)", "en": "idea", "part": "noun" },
+  { "ro": "un gând, două gânduri (gândul, gândurile) (neuter)", "en": "thought", "part": "noun" },
+  { "ro": "o minte, două minți (mintea, mințile) (feminine)", "en": "mind", "part": "noun" },
+  { "ro": "un suflet, două suflete (sufletul, sufletele) (neuter)", "en": "soul", "part": "noun" },
+  { "ro": "un sentiment, două sentimente (sentimentul, sentimentele) (neuter)", "en": "feeling / emotion", "part": "noun" },
+  { "ro": "o dragoste, două dragoste (dragostea, dragostele) (feminine)", "en": "love", "part": "noun" },
+  { "ro": "o frică, două frici (frica, fricile) (feminine)", "en": "fear", "part": "noun" },
+  { "ro": "o bucurie, două bucurii (bucuria, bucuriile) (feminine)", "en": "joy / happiness", "part": "noun" },
+  { "ro": "o tristețe, două tristeți (tristețea, tristețile) (feminine)", "en": "sadness", "part": "noun" },
+  { "ro": "o durere, două dureri (durerea, durerile) (feminine)", "en": "pain", "part": "noun" },
+  { "ro": "o sănătate, două sănătăți (sănătatea, sănătățile) (feminine)", "en": "health", "part": "noun" },
+  { "ro": "o boală, două boli (boala, bolile) (feminine)", "en": "illness / disease", "part": "noun" },
+  { "ro": "o moarte, două morți (moartea, morțile) (feminine)", "en": "death", "part": "noun" },
+  { "ro": "o istorie, două istorii (istoria, istoriile) (feminine)", "en": "history", "part": "noun" },
+  { "ro": "un viitor, două viitoruri (viitorul, viitorurile) (neuter)", "en": "future", "part": "noun" },
+  { "ro": "un trecut, două trecuturi (trecutul, trecuturile) (neuter)", "en": "past", "part": "noun" },
+  { "ro": "un început, două începuturi (începutul, începuturile) (neuter)", "en": "beginning", "part": "noun" },
+  { "ro": "un sfârșit, două sfârșituri (sfârșitul, sfârșiturile) (neuter)", "en": "end", "part": "noun" },
+  { "ro": "un număr, două numere (numărul, numerele) (neuter)", "en": "number", "part": "noun" },
+  { "ro": "o cifră, două cifre (cifra, cifrele) (feminine)", "en": "digit / figure", "part": "noun" },
+  { "ro": "o linie, două linii (linia, liniile) (feminine)", "en": "line", "part": "noun" },
+  { "ro": "un punct, două puncte (punctul, punctele) (neuter)", "en": "point / dot", "part": "noun" },
+  { "ro": "o cheie, două chei (cheia, cheile) (feminine)", "en": "key", "part": "noun" },
+  { "ro": "un telefon, două telefoane (telefonul, telefoane) (neuter)", "en": "telephone", "part": "noun" },
+  { "ro": "un calculator, două calculatoare (calculatorul, calculatoarele) (neuter)", "en": "computer", "part": "noun" },
+  { "ro": "un televizor, două televizoare (televizorul, televizoarele) (neuter)", "en": "television set", "part": "noun" },
+  { "ro": "un film, două filme (filmul, filmele) (neuter)", "en": "movie / film", "part": "noun" },
+  { "ro": "o muzică, două muzici (muzica, muzicile) (feminine)", "en": "music", "part": "noun" },
+  { "ro": "un joc, două jocuri (jocul, jocurile) (neuter)", "en": "game", "part": "noun" },
+  { "ro": "un sport, două sporturi (sportul, sporturile) (neuter)", "en": "sport", "part": "noun" },
+  { "ro": "o scrisoare, două scrisori (scrisoarea, scrisorile) (feminine)", "en": "letter (mail)", "part": "noun" },
+  { "ro": "un ziar, două ziare (ziarul, ziarele) (neuter)", "en": "newspaper", "part": "noun" },
+  { "ro": "un mesaj, două mesaje (mesajul, mesajele) (neuter)", "en": "message", "part": "noun" },
+  { "ro": "un tablou, două tablouri (tabloul, tablourile) (neuter)", "en": "painting / picture", "part": "noun" },
+  { "ro": "un aur, două aururi (aurul, aururile) (neuter)", "en": "gold", "part": "noun" },
+  { "ro": "un argint, două arginturi (argintul, arginturile) (neuter)", "en": "silver", "part": "noun" },
+  { "ro": "un fier, două fieruri (fierul, fierurile) (neuter)", "en": "iron", "part": "noun" },
+  { "ro": "un lemn, două lemnuri (lemnul, lemnurile) (neuter)", "en": "wood", "part": "noun" },
+  { "ro": "o piatră, două pietre (piatra, pietrele) (feminine)", "en": "stone", "part": "noun" },
+  { "ro": "o sticlă, două sticle (sticla, sticlele) (feminine)", "en": "glass / bottle", "part": "noun" },
+  { "ro": "o hârtie, două hârtii (hârtia, hârtiile) (feminine)", "en": "paper", "part": "noun" },
+  { "ro": "un rege, doi regi (regele, regii) (masculine)", "en": "king", "part": "noun" },
+  { "ro": "o regină, două regine (regina, reginele) (feminine)", "en": "queen", "part": "noun" },
+  
+  {
+    "ro": "Acesta este (Ăsta este)",
+    "en": "This is (masculine)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Aceasta este (Asta este)",
+    "en": "This is (feminine)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Aceștia sunt (Ăștia sunt)",
+    "en": "These are (mixed)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Acestea sunt (Astea sunt)",
+    "en": "These are (feminine)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Acela este (Ăla este)",
+    "en": "That is (masculine)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Aceea este (Aia este)",
+    "en": "That is (feminine)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Aceia sunt",
+    "en": "Those are (mixed)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Acelea sunt",
+    "en": "Those are (feminine)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Acest băiat",
+    "en": "this boy",
+    "part": "phrase"
+  },
+  {
+    "ro": "Acești băieți",
+    "en": "these boys",
+    "part": "phrase"
+  },
+  {
+    "ro": "Această fată",
+    "en": "this girl",
+    "part": "phrase"
+  },
+  {
+    "ro": "Aceste fete",
+    "en": "these girls",
+    "part": "phrase"
+  },
+  {
+    "ro": "Băiatul acela",
+    "en": "That boy",
+    "part": "phrase"
+  },
+  {
+    "ro": "Acei băieți",
+    "en": "those boys",
+    "part": "phrase"
+  },
+  {
+    "ro": "Fata aceea",
+    "en": "that girl",
+    "part": "phrase"
+  },
+  {
+    "ro": "Acele fete",
+    "en": "those girls",
+    "part": "phrase"
+  },
+  {
+    "ro": "Tu ești",
+    "en": "You are",
+    "part": "phrase"
+  },
+  {
+    "ro": "Voi sunteți",
+    "en": "Y'all are",
+    "part": "phrase"
+  },
+  {
+    "ro": "Ei/Ele sunt",
+    "en": "They are",
+    "part": "phrase"
+  },
+  {
+    "ro": "Noi suntem",
+    "en": "We are",
+    "part": "phrase"
+  },
+  {
+    "ro": "De unde ești?",
+    "en": "where are you from?",
+    "part": "phrase"
+  },
+  {
+    "ro": "Ce mai faci?",
+    "en": "How are you?",
+    "part": "phrase"
+  },
+  {
+    "ro": "Cum îți merge?",
+    "en": "How are you doing?",
+    "part": "phrase"
+  },
+  {
+    "ro": "Târziu",
+    "en": "Late",
+    "part": "adverb"
+  },
+  {
+    "ro": "Devreme",
+    "en": "Early",
+    "part": "adverb"
+  },
+  {
+    "ro": "a se bronza",
+    "en": "to get a tan",
+    "part": "verb"
+  },
+  {
+    "ro": "O piscină, două piscine (piscina, piscinele)",
+    "en": "pool",
+    "part": "noun"
+  },
+  {
+    "ro": "Toate",
+    "en": "all",
+    "part": "pronoun"
+  },
+  {
+    "ro": "Toată ziua",
+    "en": "all day",
+    "part": "phrase"
+  },
+  {
+    "ro": "închis/închisă",
+    "en": "closed",
+    "part": "adjective"
+  },
+  {
+    "ro": "O școală, două școli (școala, școlile)",
+    "en": "school",
+    "part": "noun"
+  },
+  {
+    "ro": "Un soare, doi sori (soarele, sorii)",
+    "en": "sun",
+    "part": "noun"
+  },
+  {
+    "ro": "Târziu, Mai târziu",
+    "en": "Late, Later",
+    "part": "adverb"
+  },
+  {
+    "ro": "Un năut, năutul",
+    "en": "chickpea, Kichererbse",
+    "part": "noun"
+  },
+  {
+    "ro": "Seară",
+    "en": "evening",
+    "part": "noun"
+  },
+  {
+    "ro": "Seara",
+    "en": "in the evening",
+    "part": "phrase"
+  },
+  {
+    "ro": "Dimineaţă",
+    "en": "morning",
+    "part": "noun"
+  },
+  {
+    "ro": "dimineaţa",
+    "en": "in the morning",
+    "part": "phrase"
+  },
+  {
+    "ro": "după-amiază",
+    "en": "Afternoon",
+    "part": "noun"
+  },
+  {
+    "ro": "în seara asta",
+    "en": "tonight",
+    "part": "phrase"
+  },
+  {
+    "ro": "Ieri, azi (astăzi), mâine",
+    "en": "yesterday, today, tomorrow",
+    "part": "adverb"
+  },
+  {
+    "ro": "o copie, copia, copii, copiile",
+    "en": "a copy",
+    "part": "noun"
+  },
+  {
+    "ro": "un copil, doi copii, copilul, copiii",
+    "en": "child",
+    "part": "noun"
+  },
+  {
+    "ro": "Aici",
+    "en": "Here",
+    "part": "adverb"
+  },
+  {
+    "ro": "Acolo",
+    "en": "There",
+    "part": "adverb"
+  },
+  {
+    "ro": "Drept înainte",
+    "en": "Straight ahead",
+    "part": "phrase"
+  },
+  {
+    "ro": "La stânga",
+    "en": "To the left",
+    "part": "phrase"
+  },
+  {
+    "ro": "La dreapta",
+    "en": "To the right",
+    "part": "phrase"
+  },
+  {
+    "ro": "Abia",
+    "en": "barely",
+    "part": "adverb"
+  },
+  {
+    "ro": "Aștepta (1st conjugation pattern)",
+    "en": "to wait",
+    "part": "verb"
+  },
+  {
+    "ro": "a lucra (to work) → eu lucrez",
+    "en": "to work (eu lucrez)",
+    "part": "verb"
+  },
+  {
+    "ro": "a asculta (to listen) → eu ascult",
+    "en": "to listen (eu ascult)",
+    "part": "verb"
+  },
+  {
+    "ro": "a ajuta (to help) → eu ajut",
+    "en": "to help (eu ajut)",
+    "part": "verb"
+  },
+  {
+    "ro": "a striga (to shout) → eu strig",
+    "en": "to shout (eu strig)",
+    "part": "verb"
+  },
+  {
+    "ro": "a spăla (to wash) → eu spăl",
+    "en": "to wash (eu spăl)",
+    "part": "verb"
+  },
+  {
+    "ro": "a lucra → eu lucrez, tu lucrezi, el lucrează",
+    "en": "to work",
+    "part": "verb"
+  },
+  {
+    "ro": "a dansa → eu dansez, tu dansezi, el dansează",
+    "en": "to dance",
+    "part": "verb"
+  },
+  {
+    "ro": "a studia → eu studiez, tu studiezi, el studiază",
+    "en": "to study",
+    "part": "verb"
+  },
+  {
+    "ro": "a vizita → eu vizitez, tu vizitezi, el vizitează",
+    "en": "to visit",
+    "part": "verb"
+  },
+  {
+    "ro": "a organiza → eu organizez, tu organizezi, el organizează",
+    "en": "to organize",
+    "part": "verb"
+  },
+  {
+    "ro": "a pleca → eu plec, el pleacă",
+    "en": "to leave",
+    "part": "verb"
+  },
+  {
+    "ro": "a întreba → eu întreb, el întreabă",
+    "en": "to ask",
+    "part": "verb"
+  },
+  {
+    "ro": "a juca → eu joc, el joacă",
+    "en": "to play",
+    "part": "verb"
+  },
+  {
+    "ro": "a chema → eu chem, el cheamă",
+    "en": "to call",
+    "part": "verb"
+  },
+  {
+    "ro": "a arăta → eu arăt, el arată",
+    "en": "to show",
+    "part": "verb"
+  },
+  {
+    "ro": "Legume,le (feminine)",
+    "en": "vegetables",
+    "part": "noun"
+  },
+  {
+    "ro": "În ultimul timp",
+    "en": "Lately",
+    "part": "phrase"
+  },
+  {
+    "ro": "Atât de",
+    "en": "so… + adj",
+    "part": "adverb"
+  },
+  {
+    "ro": "A crește văzând cu ochii",
+    "en": "To grow like weed",
+    "part": "phrase"
+  },
+  {
+    "ro": "Un preț, două prețuri (prețul, prețurile)",
+    "en": "price",
+    "part": "noun"
+  },
+  {
+    "ro": "O pădure, două păduri (pădurea, pădurile)",
+    "en": "forest",
+    "part": "noun"
+  },
+  {
+    "ro": "Mulți, Câți?",
+    "en": "Many, how many? (Masculine/mixed)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Multe, Câte",
+    "en": "Many, how many? (feminine/mixed)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Un lup, doi lupi (Lupul, lupii)",
+    "en": "wolf",
+    "part": "noun"
+  },
+  {
+    "ro": "O stea, două stele (steaua, stelele)",
+    "en": "star",
+    "part": "noun"
+  },
+  {
+    "ro": "Un câine, doi câini (câinele, câinii)",
+    "en": "dog",
+    "part": "noun"
+  },
+  {
+    "ro": "O frunză, două frunze (frunza, frunzele)",
+    "en": "a leaf",
+    "part": "noun"
+  },
+  {
+    "ro": "Trecut, trecuturi (trecutul, trecuturile) (neuter)",
+    "en": "past",
+    "part": "noun"
+  },
+  {
+    "ro": "A lăsa trecutul în urmă",
+    "en": "To leave the past behind",
+    "part": "phrase"
+  },
+  {
+    "ro": "Bine ai revenit",
+    "en": "Welcome back",
+    "part": "phrase"
+  },
+  {
+    "ro": "Un cuvânt, două cuvinte (cuvântul, cuvintele)",
+    "en": "word, words",
+    "part": "noun"
+  },
+  {
+    "ro": "A suna",
+    "en": "to call",
+    "part": "verb"
+  },
+  {
+    "ro": "Te sun",
+    "en": "Ich rufe dich an (I call you)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Poți să mă suni?",
+    "en": "Kannst du mich anrufen? (Can you call me?)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Am primit un apel",
+    "en": "Ich habe einen Anruf erhalten (I received a call)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Cine este la telefon?",
+    "en": "Wer ist am Telefon? (Who is on the phone?)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Profesor, profesoară",
+    "en": "teacher",
+    "part": "noun"
+  },
+  {
+    "ro": "Învățător / Învățătoare",
+    "en": "Primary / kindergarten teacher",
+    "part": "noun"
+  },
+  {
+    "ro": "Grădinița",
+    "en": "kindergarten",
+    "part": "noun"
+  },
+  {
+    "ro": "Doctoriță (colloquial)",
+    "en": "female doctor",
+    "part": "noun"
+  },
+  {
+    "ro": "Pictor, pictoriță",
+    "en": "painter",
+    "part": "noun"
+  },
+  {
+    "ro": "scriitor, scriitoriță",
+    "en": "writer",
+    "part": "noun"
+  },
+  {
+    "ro": "Chelner, chelneriță",
+    "en": "waiter, waitress",
+    "part": "noun"
+  },
+  {
+    "ro": "vânzător, vânzătoare",
+    "en": "salesperson",
+    "part": "noun"
+  },
+  {
+    "ro": "dansator, dansatoare",
+    "en": "dancer",
+    "part": "noun"
+  },
+  {
+    "ro": "Coafor, coafeză",
+    "en": "hairdresser",
+    "part": "noun"
+  },
+  {
+    "ro": "A coafa",
+    "en": "to style",
+    "part": "verb"
+  },
+  {
+    "ro": "Avocat",
+    "en": "a lawyer",
+    "part": "noun"
+  },
+  {
+    "ro": "Locuiesc la țară",
+    "en": "to live (in the country)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Oricum ar fi",
+    "en": "anyway",
+    "part": "phrase"
+  },
+  {
+    "ro": "a se numi",
+    "en": "my name is",
+    "part": "verb"
+  },
+  {
+    "ro": "Îmi este foame",
+    "en": "I'm hungry",
+    "part": "phrase"
+  },
+  {
+    "ro": "Într-adevăr",
+    "en": "indeed, really, actually",
+    "part": "adverb"
+  },
+  {
+    "ro": "Adevărat",
+    "en": "true",
+    "part": "adjective"
+  },
+  {
+    "ro": "A spune adevărul",
+    "en": "to tell the truth",
+    "part": "phrase"
+  },
+  {
+    "ro": "Ce faci",
+    "en": "What are you doing",
+    "part": "phrase"
+  },
+  {
+    "ro": "Doar că",
+    "en": "It's just that",
+    "part": "phrase"
+  },
+  {
+    "ro": "Încă",
+    "en": "Still",
+    "part": "adverb"
+  },
+  {
+    "ro": "A ști",
+    "en": "to know",
+    "part": "verb"
+  },
+  {
+    "ro": "A înota",
+    "en": "to swim",
+    "part": "verb"
+  },
+  {
+    "ro": "Și",
+    "en": "and",
+    "part": "conjunction"
+  },
+  {
+    "ro": "A merge",
+    "en": "to go",
+    "part": "verb"
+  },
+  {
+    "ro": "Eu merg, tu mergi, el merge, noi mergem, voi mergeți, ei merg la mânca",
+    "en": "to go to work / eat",
+    "part": "phrase"
+  },
+  {
+    "ro": "A lua (iau, iei, ia, luam, luați, iau)",
+    "en": "to take",
+    "part": "verb"
+  },
+  {
+    "ro": "Cățel",
+    "en": "a puppy, a clove of garlic",
+    "part": "noun"
+  },
+  {
+    "ro": "Cățel de usturoi",
+    "en": "a clove of garlic",
+    "part": "noun"
+  },
+  {
+    "ro": "Cu tot cu cățel și cu purcel",
+    "en": "the whole kit and caboodle",
+    "part": "phrase"
+  },
+  {
+    "ro": "a deschide",
+    "en": "to open",
+    "part": "verb"
+  },
+  {
+    "ro": "Un caiet, două caiete (caietul, caietele)",
+    "en": "notebook",
+    "part": "noun"
+  },
+  {
+    "ro": "un stilou, două stilouri (stiloul, stilourile)",
+    "en": "pen",
+    "part": "noun"
+  },
+  {
+    "ro": "un creion, două creioane (creionul, creioanele)",
+    "en": "pencil",
+    "part": "noun"
+  },
+  {
+    "ro": "teme pentru acasă",
+    "en": "homework",
+    "part": "noun"
+  },
+  {
+    "ro": "Ia uită-te!",
+    "en": "Guck mal! (Look!)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Stai puțin!",
+    "en": "Warte mal! (Wait!)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Să vedem!",
+    "en": "Mal sehen! (Let's see!)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Nici măcar",
+    "en": "Nicht mal (Not even)",
+    "part": "phrase"
+  },
+  {
+    "ro": "O dată",
+    "en": "Einmal (Once)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Altă dată",
+    "en": "Ein anderes Mal (Another time)",
+    "part": "phrase"
+  },
+  {
+    "ro": "o dată pe săptămână",
+    "en": "once a week",
+    "part": "phrase"
+  },
+  {
+    "ro": "de două ori pe săptămână",
+    "en": "twice a week",
+    "part": "phrase"
+  },
+  {
+    "ro": "de trei ori pe săptămână",
+    "en": "thrice a week",
+    "part": "phrase"
+  },
+  {
+    "ro": "a spera (Eu sper, tu speri, el speră, noi sperăm, voi sperați, ei speră)",
+    "en": "hope",
+    "part": "verb"
+  },
+  {
+    "ro": "Ghilimele,le",
+    "en": "quotation marks",
+    "part": "noun"
+  },
+  {
+    "ro": "O ceapă, două cepe (cepe, cepele)",
+    "en": "onion",
+    "part": "noun"
+  },
+  {
+    "ro": "A afla",
+    "en": "to find out",
+    "part": "verb"
+  },
+  {
+    "ro": "Drăguț",
+    "en": "Cute",
+    "part": "adjective"
+  },
+  {
+    "ro": "a se bucura",
+    "en": "to rejoice",
+    "part": "verb"
+  },
+  {
+    "ro": "a ploua (plouă, only one form in conjunction)",
+    "en": "to rain",
+    "part": "verb"
+  },
+  {
+    "ro": "Afară",
+    "en": "outside",
+    "part": "adverb"
+  },
+  {
+    "ro": "Înăuntru",
+    "en": "inside",
+    "part": "adverb"
+  },
+  {
+    "ro": "Primăvară",
+    "en": "Spring",
+    "part": "noun"
+  },
+  {
+    "ro": "Vară",
+    "en": "Summer",
+    "part": "noun"
+  },
+  {
+    "ro": "Toamnă",
+    "en": "Autumn / Fall",
+    "part": "noun"
+  },
+  {
+    "ro": "Iarnă",
+    "en": "Winter",
+    "part": "noun"
+  },
+  {
+    "ro": "Anotimp, anotimpuri (anotimpul, anotimpurile)",
+    "en": "seasons",
+    "part": "noun"
+  },
+  {
+    "ro": "În fiecare zi",
+    "en": "every day",
+    "part": "phrase"
+  },
+  {
+    "ro": "a adormi",
+    "en": "fall asleep",
+    "part": "verb"
+  },
+  {
+    "ro": "În fiecare seară",
+    "en": "every night",
+    "part": "phrase"
+  },
+  {
+    "ro": "A aduce",
+    "en": "to bring",
+    "part": "verb"
+  },
+  {
+    "ro": "În timp ce",
+    "en": "while",
+    "part": "conjunction"
+  },
+  {
+    "ro": "a aștepta (așteaptă ← he/they)",
+    "en": "to wait",
+    "part": "verb"
+  },
+  {
+    "ro": "fiu, fii (fiul, fiii)",
+    "en": "son",
+    "part": "noun"
+  },
+  {
+    "ro": "fiică, fiice (fiica, fiicele)",
+    "en": "daughter",
+    "part": "noun"
+  },
+  {
+    "ro": "Cât costă esta?",
+    "en": "how much does it cost?",
+    "part": "phrase"
+  },
+  {
+    "ro": "a costa (coști ← you)",
+    "en": "to cost",
+    "part": "verb"
+  },
+  {
+    "ro": "leu, lei (leul, leii)",
+    "en": "leu",
+    "part": "noun"
+  },
+  {
+    "ro": "bani, banii",
+    "en": "money (masculine plural)",
+    "part": "noun"
+  },
+  {
+    "ro": "Lasă-mă în pace",
+    "en": "leave me alone",
+    "part": "phrase"
+  },
+  {
+    "ro": "Lasă asta!",
+    "en": "Stop it!",
+    "part": "phrase"
+  },
+  {
+    "ro": "A lăsa (las, lași, lasă)",
+    "en": "to let/leave",
+    "part": "verb"
+  },
+  {
+    "ro": "Poftă bună",
+    "en": "good appetit",
+    "part": "phrase"
+  },
+  {
+    "ro": "Ești superbă",
+    "en": "you're wonderful",
+    "part": "phrase"
+  },
+  {
+    "ro": "iubita mea",
+    "en": "my love",
+    "part": "phrase"
+  },
+  {
+    "ro": "țară, două !țări! (țara, țările)",
+    "en": "country",
+    "part": "noun"
+  },
+  {
+    "ro": "o minge, două mingi (mingea, mingile)",
+    "en": "ball",
+    "part": "noun"
+  },
+  {
+    "ro": "A umflu (umflu, umfli, umflă) un balon",
+    "en": "to blow up a balon",
+    "part": "phrase"
+  },
+  {
+    "ro": "a vinde (eu vând, tu vinzi, el vinde, noi vindem, voi vindeți, ei vând)",
+    "en": "to sell",
+    "part": "verb"
+  },
+  {
+    "ro": "a rămâne",
+    "en": "to remain/stay",
+    "part": "verb"
+  },
+  {
+    "ro": "a părea (par, pari, pare)",
+    "en": "to seem",
+    "part": "verb"
+  },
+  {
+    "ro": "Ca",
+    "en": "like/resemble something",
+    "part": "conjunction"
+  },
+  {
+    "ro": "Că",
+    "en": "that, because",
+    "part": "conjunction"
+  },
+  {
+    "ro": "a merge la culcare",
+    "en": "Ins Bett gehen (to go to bed)",
+    "part": "phrase"
+  },
+  {
+    "ro": "a face patul",
+    "en": "Das Bett machen (to make the bed)",
+    "part": "phrase"
+  },
+  {
+    "ro": "Noapte bună!",
+    "en": "Gute Nacht! (Good night!)",
+    "part": "phrase"
+  },
+  {
+    "ro": "eu mă trezesc, tu te trezești, el/ea se trezește, noi ne trezim, voi vă treziți, ei/ele se trezesc",
+    "en": "to wake up",
+    "part": "verb"
+  },
+  {
+    "ro": "a folosi",
+    "en": "to use",
+    "part": "verb"
+  },
+  {
+    "ro": "Ne vedem mai târziu",
+    "en": "see you later",
+    "part": "phrase"
+  },
+  {
+    "ro": "Îmi pare rău",
+    "en": "I'm sorry",
+    "part": "phrase"
+  },
+  {
+    "ro": "La revedere",
+    "en": "Goodbye",
+    "part": "phrase"
+  },
+  {
+    "ro": "A încânta",
+    "en": "to enchant",
+    "part": "verb"
+  },
+  {
+    "ro": "Încântat/ă de cunoștințe",
+    "en": "Nice to meet you",
+    "part": "phrase"
+  },
+  {
+    "ro": "A ruga (te rog, rogi, roagă)",
+    "en": "Please!!",
+    "part": "verb"
+  },
+  {
+    "ro": "O sarcină ușoară (ușor) / dificil",
+    "en": "an easy /difficult task",
+    "part": "phrase"
+  },
+  {
+    "ro": "O geantă, două genți, geanta, gențile",
+    "en": "a bag",
+    "part": "noun"
+  },
+  {
+    "ro": "O sarcină, două sarcini (sarcina, sarcinile)",
+    "en": "task",
+    "part": "noun"
+  },
+  {
+    "ro": "Românesc",
+    "en": "Romanian",
+    "part": "adjective"
+  },
+  {
+    "ro": "Bărbătesc",
+    "en": "Masculine / manly",
+    "part": "adjective"
+  },
+  {
+    "ro": "Femeiesc",
+    "en": "Feminine / womanly",
+    "part": "adjective"
+  },
+  {
+    "ro": "Copilăresc",
+    "en": "Childish / childlike",
+    "part": "adjective"
+  },
+  {
+    "ro": "Creștinesc",
+    "en": "Christian",
+    "part": "adjective"
+  },
+  {
+    "ro": "Ceresc",
+    "en": "Heavenly / celestial",
+    "part": "adjective"
+  },
+  {
+    "ro": "Omenesc",
+    "en": "Human",
+    "part": "adjective"
+  },
+  {
+    "ro": "Frățesc",
+    "en": "Brotherly / fraternal",
+    "part": "adjective"
+  },
+  {
+    "ro": "Bătrânesc",
+    "en": "Elderly / old-fashioned",
+    "part": "adjective"
+  },
+  {
+    "ro": "De asemenea",
+    "en": "likewise!",
+    "part": "phrase"
+  },
+  {
+    "ro": "Și",
+    "en": "as well!",
+    "part": "conjunction"
+  },
+  {
+    "ro": "Și eu",
+    "en": "me either",
+    "part": "phrase"
+  },
+  {
+    "ro": "Țările de jos",
+    "en": "the Netherlands",
+    "part": "noun"
+  },
+  {
+    "ro": "O floare, două flori (floarea, florile)",
+    "en": "flower",
+    "part": "noun"
+  },
+  {
+    "ro": "Foarte",
+    "en": "very",
+    "part": "adverb"
+  },
+  {
+    "ro": "a vorbi despre cineva",
+    "en": "to talk about somebody",
+    "part": "verb"
+  },
+  {
+    "ro": "fără",
+    "en": "without",
+    "part": "preposition"
+  },
+  {
+    "ro": "înţelept, înțeleaptă",
+    "en": "wise",
+    "part": "adjective"
+  },
+  {
+    "ro": "cinstit / cinstită",
+    "en": "honest",
+    "part": "adjective"
+  },
+  {
+    "ro": "a se găsi",
+    "en": "sich befinden (to be located)",
+    "part": "verb"
+  },
+  {
+    "ro": "Alături de",
+    "en": "Next to",
+    "part": "preposition"
+  },
+  {
+    "ro": "„a se ocupa de ceva“ oder „a avea grijă de ceva“",
+    "en": "sich um etwas kümmern (to take care of something)",
+    "part": "verb"
+  },
+  {
+    "ro": "O ușă, două uși (ușa, ușile)",
+    "en": "door",
+    "part": "noun"
+  },
+  {
+    "ro": "a găti (-esc)",
+    "en": "to cook",
+    "part": "verb"
+  },
+  {
+    "ro": "răspuns, răspunsuri",
+    "en": "answer",
+    "part": "noun"
+  },
+  {
+    "ro": "a cunoaște (-osc)",
+    "en": "kennen / know",
+    "part": "verb"
+  },
+  {
+    "ro": "a avea nevoie de",
+    "en": "to need",
+    "part": "verb"
+  },
+  {
+    "ro": "deschis, deschiși",
+    "en": "open",
+    "part": "adjective"
+  },
+  {
+    "ro": "a se despărți",
+    "en": "to break up",
+    "part": "verb"
+  },
+  {
+    "ro": "elev(i) / elevă (eleve)",
+    "en": "Schüler / Schülerin (Schülerinnen)",
+    "part": "noun"
+  },
+  {
+    "ro": "înalt",
+    "en": "tall",
+    "part": "adjective"
+  },
+  {
+    "ro": "puternic",
+    "en": "strong",
+    "part": "adjective"
+  },
+  {
+    "ro": "Vreodată",
+    "en": "jemals / schon einmal",
+    "part": "adverb"
+  },
+  {
+    "ro": "Mai bine mai târziu decât niciodată",
+    "en": "besser später als nie",
+    "part": "phrase"
+  },
+  {
+    "ro": "A repeta",
+    "en": "to repeat",
+    "part": "verb"
+  },
+  {
+    "ro": "a încărca",
+    "en": "to load",
+    "part": "verb"
+  },
+  {
+    "ro": "orez",
+    "en": "rice",
+    "part": "noun"
+  },
+  {
+    "ro": "rece (genderless) reci (plural)",
+    "en": "cold",
+    "part": "adjective"
+  },
+  {
+    "ro": "mâncare",
+    "en": "food",
+    "part": "noun"
+  },
+  {
+    "ro": "Lentile de contact (plural feminine)",
+    "en": "Kontaktlinsen",
+    "part": "noun"
+  },
+  {
+    "ro": "a se îmbrăca",
+    "en": "sich anziehen",
+    "part": "verb"
+  },
+  {
+    "ro": "a se dezbrăca",
+    "en": "sich ausziehen",
+    "part": "verb"
+  }
+]
