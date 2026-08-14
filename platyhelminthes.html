@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Подробен куиз: Плоски червеи (Platyhelminthes)</title>
+  <style>
+    :root {
+      --primary-color: #0d9488;
+      --primary-hover: #0f766e;
+      --bg-gradient: linear-gradient(135deg, #0f172a, #1e293b, #0f766e);
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --correct-bg: #dcfce7;
+      --correct-border: #22c55e;
+      --correct-text: #15803d;
+      --incorrect-bg: #fee2e2;
+      --incorrect-border: #ef4444;
+      --incorrect-text: #b91c1c;
+      --border-color: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: var(--bg-gradient);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: var(--text-main);
+    }
+
+    .quiz-card {
+      background: var(--card-bg);
+      width: 100%;
+      max-width: 680px;
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header {
+      margin-bottom: 25px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ccfbf1;
+      color: #0f766e;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 4px 12px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    header h1 {
+      color: #0f172a;
+      font-size: 1.75rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    .progress-section {
+      margin-top: 18px;
+    }
+
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      background-color: #f1f5f9;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #14b8a6, #0d9488);
+      border-radius: 10px;
+      transition: width 0.4s ease;
+    }
+
+    .question-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .option-btn {
+      background-color: #f8fafc;
+      border: 2px solid var(--border-color);
+      padding: 16px 20px;
+      border-radius: 12px;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .option-btn:hover:not([disabled]) {
+      background-color: #f1f5f9;
+      border-color: #cbd5e1;
+      transform: translateY(-1px);
+    }
+
+    .option-btn.correct {
+      background-color: var(--correct-bg) !important;
+      border-color: var(--correct-border) !important;
+      color: var(--correct-text) !important;
+      font-weight: 700;
+    }
+
+    .option-btn.incorrect {
+      background-color: var(--incorrect-bg) !important;
+      border-color: var(--incorrect-border) !important;
+      color: var(--incorrect-text) !important;
+    }
+
+    .explanation-box {
+      margin-top: 20px;
+      padding: 16px;
+      border-radius: 12px;
+      background-color: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #166534;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      display: none;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .explanation-box.visible {
+      display: block;
+    }
+
+    .explanation-box strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #14532d;
+    }
+
+    footer {
+      margin-top: 28px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .btn {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+    }
+
+    .btn:hover:not([disabled]) {
+      background-color: var(--primary-hover);
+      box-shadow: 0 6px 16px rgba(13, 148, 136, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .btn:disabled {
+      background-color: #cbd5e1;
+      box-shadow: none;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    #result-screen {
+      text-align: center;
+      padding: 20px 0;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #14b8a6, #0f766e);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 24px auto;
+      box-shadow: 0 10px 25px rgba(13, 148, 136, 0.35);
+    }
+
+    .score-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-total {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-top: 4px;
+    }
+
+    #result-screen h2 {
+      color: #0f172a;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    #result-msg {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-card">
+    <header>
+      <span class="badge">Биология &bull; Зоология</span>
+      <h1>Плоски червеи (Platyhelminthes)</h1>
+      <p>Проверете знанията си за устройството, класификацията и значението им</p>
+      
+      <div class="progress-section">
+        <div class="progress-info">
+          <span id="question-counter">Въпрос 1 от 10</span>
+          <span id="percent-counter">10%</span>
+        </div>
+        <div class="progress-bar">
+          <div id="progress" class="progress"></div>
+        </div>
+      </div>
+    </header>
+
+    <main id="quiz-body">
+      <div id="question-container">
+        <h2 id="question-text" class="question-title">Зареждане на въпрос...</h2>
+        <div id="options-container" class="options-list"></div>
+        <div id="explanation-box" class="explanation-box">
+          <strong>💡 Разяснение:</strong>
+          <span id="explanation-text"></span>
+        </div>
+      </div>
+    </main>
+
+    <footer id="quiz-footer">
+      <button id="next-btn" class="btn" disabled>Следващ въпрос &rarr;</button>
+    </footer>
+
+    <div id="result-screen" class="hidden">
+      <div class="score-circle">
+        <span id="score-num" class="score-number">0</span>
+        <span class="score-total">от 10 точки</span>
+      </div>
+      <h2>Тестът приключи!</h2>
+      <p id="result-msg">Отлична работа!</p>
+      <button id="restart-btn" class="btn">Започни отново</button>
+    </div>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "Какъв тип телесна симетрия и форма на тялото са характерни за плоските червеи?",
+        options: [
+          "Радиална (лъчева) симетрия и сферично тяло",
+          "Двустранна (билатерална) симетрия и сплеснато тяло",
+          "Асиметрия и цилиндрично тяло",
+          "Двустранна симетрия и сегментирано тяло с членчета"
+        ],
+        correct: 1,
+        explanation: "Плоските червеи са сред най-простите безгръбначни животни, притежаващи двустранна (билатерална) симетрия и характерно сплеснато тяло."
+      },
+      {
+        question: "От колко зародишни слоя се развиват плоските червеи (Platyhelminthes)?",
+        options: [
+          "Един зародишен слой",
+          "Два зародишни слоя (дипластни животни)",
+          "Три зародишни слоя (трипластни животни)",
+          "Те нямат зародишни слоеве"
+        ],
+        correct: 2,
+        explanation: "Плоските червеи са трипластни животни – развиват се от три зародишни слоя (ектодерма, ендодерма и мезодерма)."
+      },
+      {
+        question: "Какво е устройството на телесната кухина при плоските червеи?",
+        options: [
+          "Липсва телесна кухина (ацеломати)",
+          "Имат първична телесна кухина (псевдоцелом)",
+          "Имат вторична телесна кухина (целом)",
+          "Притежават кухина, пълна с въздух"
+        ],
+        correct: 0,
+        explanation: "Плоските червеи са ацеломати – при тях липсва телесна кухина, а пространството между вътрешните органи е запълнено с паренхимна тъкан."
+      },
+      {
+        question: "Как е устроена храносмилателната система при плоските червеи?",
+        options: [
+          "Проходно черво с отделни уста и анус",
+          "Сляпо завършващо черво без анус",
+          "Сложно развит стомах с анален отвор",
+          "Непрекъснат храносмилателен тракт с два отвора"
+        ],
+        correct: 1,
+        explanation: "Храносмилателната им система е сляпо завършващо черво. Тъй като липсва анус, приемането на храна и изхвърлянето на непотребите остатъци става през устата."
+      },
+      {
+        question: "Кой клас плоски червеи включва свободно живеещи водни хищници?",
+        options: [
+          "Смукалници (Trematoda)",
+          "Тении (Cestoda)",
+          "Ресничести червеи (Turbellaria, напр. планария)",
+          "Кръгли червеи (Nematoda)"
+        ],
+        correct: 2,
+        explanation: "Ресничестите червеи (като планарията) са свободно живеещи водни хищници, за разлика от изцяло паразитните смукалници и тении."
+      },
+      {
+        question: "При коя група плоски червеи храносмилателната система напълно ЛИПСВА?",
+        options: [
+          "Ресничести червеи",
+          "Тении (напр. свинска тения)",
+          "Смукалници (напр. чернодробен метил)",
+          "Всички плоски червеи имат храносмилателна система"
+        ],
+        correct: 1,
+        explanation: "Поради пълната си адаптация към паразитизъм, тениите нямат храносмилателна система и усвояват хранителни вещества директно през повърхността на тялото си."
+      },
+      {
+        question: "Чрез какви специализирани клетки се извършва отделянето при плоските червеи?",
+        options: [
+          "Нефрони",
+          "Метанефридии",
+          "Протонефридии",
+          "Мапигиеви съдове"
+        ],
+        correct: 2,
+        explanation: "Отделителната система при плоските червеи е съставена от специализирани клетки, наречени протонефридии (с пламъчни клетки)."
+      },
+      {
+        question: "Какъв тип е нервната система при плоските червеи?",
+        options: [
+          "Дифузна (мрежеста) нервна система",
+          "Възлова (ганглийна), наподобяваща стълба",
+          "Тръбеста нервна система с гръбначен мозък",
+          "Централна нервна система с силно развит главен мозък"
+        ],
+        correct: 1,
+        explanation: "Нервната система е възлова (ганглийна) – състои се от предни ганглии и надлъжни нервни стволове, свързани с напречни връзки (наподобяваща стълба)."
+      },
+      {
+        question: "Как се осъществяват дишането и размножаването при плоските червеи?",
+        options: [
+          "Дишане с хвърли; размножаване само чрез пъпкуване",
+          "Дишане с бели дробове; разделнополови животни",
+          "Дишане чрез цялата повърхност на тялото; повечето са хермафродити",
+          "Не извършват газообмен; размножават се само безполово"
+        ],
+        correct: 2,
+        explanation: "Плоските червеи нямат специализирана дихателна система и дишат през цялата повърхност на тялото. Повечето са хермафродити (имат мъжки и женски органи)."
+      },
+      {
+        question: "Кое твърдение за значението за човека и превенцията е вярно?",
+        options: [
+          "Не причиняват заболявания у човека",
+          "Причиняват шарка, която се предотвратява с ваксина",
+          "Причиняват тежки хелминтози; превенцията изисква добра хигиена и термична обработка на месото",
+          "Причиняват вирусни инфекции, предотвратявани с антибиотици"
+        ],
+        correct: 2,
+        explanation: "Паразитните плоски червеи причиняват тежки паразитни болести (хелминтози). За предпазване е необходима висока лична хигиена и добра термична обработка на месото."
+      }
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    const questionText = document.getElementById('question-text');
+    const optionsContainer = document.getElementById('options-container');
+    const nextBtn = document.getElementById('next-btn');
+    const counterText = document.getElementById('question-counter');
+    const percentText = document.getElementById('percent-counter');
+    const progressBar = document.getElementById('progress');
+    const quizBody = document.getElementById('quiz-body');
+    const quizFooter = document.getElementById('quiz-footer');
+    const resultScreen = document.getElementById('result-screen');
+    const scoreNum = document.getElementById('score-num');
+    const resultMsg = document.getElementById('result-msg');
+    const restartBtn = document.getElementById('restart-btn');
+    const explanationBox = document.getElementById('explanation-box');
+    const explanationText = document.getElementById('explanation-text');
+
+    function startQuiz() {
+      currentQuestionIndex = 0;
+      score = 0;
+      resultScreen.classList.add('hidden');
+      quizBody.classList.remove('hidden');
+      quizFooter.classList.remove('hidden');
+      showQuestion();
+    }
+
+    function showQuestion() {
+      resetState();
+      const currentQuestion = quizData[currentQuestionIndex];
+      questionText.textContent = `${currentQuestionIndex + 1}. ${currentQuestion.question}`;
+
+      currentQuestion.options.forEach((option, index) => {
+        const button = document.createElement('button');
+        button.className = 'option-btn';
+        button.innerHTML = `<span>${option}</span>`;
+        button.addEventListener('click', () => selectOption(index, currentQuestion.correct, currentQuestion.explanation));
+        optionsContainer.appendChild(button);
+      });
+
+      const total = quizData.length;
+      const progressPercent = Math.round(((currentQuestionIndex + 1) / total) * 100);
+      counterText.textContent = `Въпрос ${currentQuestionIndex + 1} от ${total}`;
+      percentText.textContent = `${progressPercent}%`;
+      progressBar.style.width = `${progressPercent}%`;
+    }
+
+    function resetState() {
+      nextBtn.disabled = true;
+      optionsContainer.innerHTML = '';
+      explanationBox.classList.remove('visible');
+      explanationText.textContent = '';
+      if (currentQuestionIndex === quizData.length - 1) {
+        nextBtn.textContent = 'Виж резултата';
+      } else {
+        nextBtn.textContent = 'Следващ въпрос \u2192';
+      }
+    }
+
+    function selectOption(selectedIndex, correctIndex, explanation) {
+      const buttons = optionsContainer.children;
+
+      if (selectedIndex === correctIndex) {
+        score++;
+      }
+
+      Array.from(buttons).forEach((button, index) => {
+        button.disabled = true;
+        if (index === correctIndex) {
+          button.classList.add('correct');
+        } else if (index === selectedIndex) {
+          button.classList.add('incorrect');
+        }
+      });
+
+      explanationText.textContent = explanation;
+      explanationBox.classList.add('visible');
+
+      nextBtn.disabled = false;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < quizData.length) {
+        showQuestion();
+      } else {
+        showResults();
+      }
+    });
+
+    function showResults() {
+      quizBody.classList.add('hidden');
+      quizFooter.classList.add('hidden');
+      resultScreen.classList.remove('hidden');
+      
+      scoreNum.textContent = score;
+
+      const percentage = (score / quizData.length) * 100;
+      if (percentage === 100) {
+        resultMsg.textContent = "Перфектен резултат! Усвоили сте материала за плоските червеи отлично!";
+      } else if (percentage >= 70) {
+        resultMsg.textContent = "Много добър резултат! Имате стабилни познания по биология.";
+      } else if (percentage >= 50) {
+        resultMsg.textContent = "Добър опит! Прегледайте отново основните характеристики на типа.";
+      } else {
+        resultMsg.textContent = "Препоръчваме да прочетете теорията отново и да опитате пак.";
+      }
+    }
+
+    restartBtn.addEventListener('click', startQuiz);
+
+    startQuiz();
+  </script>
+</body>
+</html>
