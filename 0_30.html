@@ -1,1 +1,678 @@
 
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atomic Number Quiz (1-30)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        chemistry: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            900: '#134e4a',
+                        }
+                    },
+                    animation: {
+                        'shake': 'shake 0.4s ease-in-out',
+                        'bounce-short': 'bounce 0.5s ease-in-out 1',
+                        'pop': 'pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+                    },
+                    keyframes: {
+                        shake: {
+                            '0%, 100%': { transform: 'translateX(0)' },
+                            '20%, 60%': { transform: 'translateX(-10px)' },
+                            '40%, 80%': { transform: 'translateX(10px)' }
+                        },
+                        pop: {
+                            '0%': { transform: 'scale(0.9)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tone.js for optional audio feedback -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+        .mono-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        /* Custom scrollbar for history review panel */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(156, 163, 175, 0.5);
+            border-radius: 9999px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: rgba(75, 85, 99, 0.5);
+        }
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-slate-100 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-300 flex flex-col justify-between selection:bg-teal-500 selection:text-white">
+
+    <!-- Navigation / Header -->
+    <header class="w-full border-b border-slate-200 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/70 sticky top-0 z-30 glass-panel">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-teal-500 to-emerald-400 flex items-center justify-center text-white shadow-lg shadow-teal-500/20 font-bold text-xl">
+                    <i class="fa-solid fa-flask"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg sm:text-xl leading-tight tracking-tight">ElementMaster</h1>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Atomic Numbers (1 – 30)</p>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-2 sm:space-x-3">
+                <!-- Sound Toggle Button -->
+                <button id="soundToggleBtn" onclick="toggleSound()" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all focus:outline-none focus:ring-2 focus:ring-teal-500" title="Toggle Sound Effects">
+                    <i id="soundIcon" class="fa-solid fa-volume-high text-sm w-4 h-4 flex items-center justify-center"></i>
+                </button>
+
+                <!-- Theme Toggle Button -->
+                <button onclick="toggleTheme()" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all focus:outline-none focus:ring-2 focus:ring-teal-500" title="Toggle Dark/Light Mode">
+                    <i id="themeIcon" class="fa-solid fa-moon text-sm w-4 h-4 flex items-center justify-center"></i>
+                </button>
+
+                <!-- Reset Stats Button -->
+                <button onclick="confirmReset()" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-red-50 dark:hover:bg-red-950/40 hover:text-red-600 dark:hover:text-red-400 hover:border-red-200 dark:hover:border-red-900 transition-all focus:outline-none focus:ring-2 focus:ring-red-500" title="Reset Statistics">
+                    <i class="fa-solid fa-rotate-left text-sm w-4 h-4 flex items-center justify-center"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8 w-full flex-grow flex flex-col justify-center">
+        
+        <!-- Statistics Panel -->
+        <section class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
+            <!-- Score Card -->
+            <div class="bg-white dark:bg-slate-900/90 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-3.5 sm:p-4 shadow-sm flex items-center justify-between">
+                <div>
+                    <span class="text-xs font-medium uppercase tracking-wider text-slate-400 dark:text-slate-500 block">Score</span>
+                    <span id="scoreDisplay" class="text-xl sm:text-2xl font-extrabold text-slate-800 dark:text-slate-100 mono-font">0 / 0</span>
+                </div>
+                <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+            </div>
+
+            <!-- Accuracy Card -->
+            <div class="bg-white dark:bg-slate-900/90 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-3.5 sm:p-4 shadow-sm flex items-center justify-between">
+                <div>
+                    <span class="text-xs font-medium uppercase tracking-wider text-slate-400 dark:text-slate-500 block">Accuracy</span>
+                    <span id="accuracyDisplay" class="text-xl sm:text-2xl font-extrabold text-slate-800 dark:text-slate-100 mono-font">0%</span>
+                </div>
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+            </div>
+
+            <!-- Current Streak Card -->
+            <div class="bg-white dark:bg-slate-900/90 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-3.5 sm:p-4 shadow-sm flex items-center justify-between">
+                <div>
+                    <span class="text-xs font-medium uppercase tracking-wider text-slate-400 dark:text-slate-500 block">Current Streak</span>
+                    <span id="streakDisplay" class="text-xl sm:text-2xl font-extrabold text-slate-800 dark:text-slate-100 mono-font">0</span>
+                </div>
+                <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+            </div>
+
+            <!-- Best Streak Card -->
+            <div class="bg-white dark:bg-slate-900/90 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-3.5 sm:p-4 shadow-sm flex items-center justify-between">
+                <div>
+                    <span class="text-xs font-medium uppercase tracking-wider text-slate-400 dark:text-slate-500 block">Best Streak</span>
+                    <span id="bestStreakDisplay" class="text-xl sm:text-2xl font-extrabold text-slate-800 dark:text-slate-100 mono-font">0</span>
+                </div>
+                <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Quiz Card -->
+        <div id="quizCard" class="bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-xl shadow-slate-200/50 dark:shadow-none transition-all duration-300 relative overflow-hidden">
+            
+            <!-- Top Controls inside card: Auto Advance Toggle -->
+            <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100 dark:border-slate-800/60">
+                <div class="flex items-center space-x-2">
+                    <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-teal-100 dark:bg-teal-950/80 text-teal-700 dark:text-teal-300">
+                        <i class="fa-solid fa-atom mr-1.5 text-xs"></i> Questions 1–30
+                    </span>
+                </div>
+
+                <div class="flex items-center space-x-3 text-xs sm:text-sm">
+                    <label for="autoAdvanceToggle" class="text-slate-500 dark:text-slate-400 select-none cursor-pointer font-medium">
+                        Auto-advance
+                    </label>
+                    <button id="autoAdvanceToggle" role="switch" aria-checked="true" onclick="toggleAutoAdvance()" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-teal-500 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900">
+                        <span id="autoAdvanceThumb" class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out translate-x-5"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Question Prompt Heading -->
+            <div class="text-center mb-6">
+                <h2 id="questionPrompt" class="text-lg sm:text-2xl font-semibold tracking-tight text-slate-800 dark:text-slate-100">
+                    What is the atomic number of <span id="promptElementName" class="text-teal-600 dark:text-teal-400 font-bold">Hydrogen</span> (<span id="promptElementSymbol" class="font-bold">H</span>)?
+                </h2>
+            </div>
+
+            <!-- Visual Element Card Display -->
+            <div class="flex justify-center mb-8">
+                <div id="elementVisualCard" class="w-40 h-44 sm:w-48 sm:h-52 rounded-2xl border-2 p-4 flex flex-col justify-between items-center bg-gradient-to-br transition-all duration-300 shadow-md relative group select-none">
+                    <!-- Top Corner Info: Mass/Category -->
+                    <div class="w-full flex justify-between items-center text-xs text-slate-400 dark:text-slate-500 font-medium">
+                        <span id="elementCategoryTag" class="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Nonmetal</span>
+                        <span id="elementAtomicMass" class="mono-font">1.008</span>
+                    </div>
+
+                    <!-- Center Chemical Symbol -->
+                    <div class="my-auto text-center">
+                        <span id="cardSymbol" class="text-5xl sm:text-6xl font-extrabold tracking-tight font-sans drop-shadow-sm">
+                            H
+                        </span>
+                        <div id="cardName" class="text-sm font-semibold tracking-wide text-slate-600 dark:text-slate-300 mt-1">
+                            Hydrogen
+                        </div>
+                    </div>
+
+                    <!-- Bottom Corner: Hidden Answer Placeholder -->
+                    <div class="w-full text-center">
+                        <span id="cardAtomicNumReveal" class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold mono-font bg-slate-200/80 dark:bg-slate-800/80 text-slate-500 dark:text-slate-400">
+                            Atomic No. <i class="fa-solid fa-question text-[10px]"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input & Form Section -->
+            <form id="quizForm" onsubmit="handleFormSubmit(event)" class="max-w-md mx-auto space-y-4">
+                <div class="relative">
+                    <input 
+                        type="text" 
+                        inputmode="numeric" 
+                        pattern="[0-9]*"
+                        id="answerInput" 
+                        placeholder="Type atomic number (1-30)..." 
+                        autocomplete="off"
+                        autofocus
+                        class="w-full px-5 py-3.5 text-center text-xl font-bold mono-font rounded-2xl border-2 border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white focus:outline-none focus:border-teal-500 dark:focus:border-teal-400 focus:ring-4 focus:ring-teal-500/10 transition-all placeholder:font-sans placeholder:text-sm placeholder:font-normal placeholder:text-slate-400"
+                    >
+                </div>
+
+                <!-- Submit & Next Action Buttons -->
+                <div class="flex items-center gap-3">
+                    <button 
+                        type="submit" 
+                        id="submitBtn" 
+                        class="flex-1 py-3.5 px-6 rounded-2xl font-bold text-white bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 active:scale-[0.98] shadow-lg shadow-teal-500/25 transition-all flex items-center justify-center space-x-2 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+                    >
+                        <span>Submit Answer</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+
+                    <button 
+                        type="button" 
+                        id="nextBtn" 
+                        onclick="nextQuestion()" 
+                        class="hidden py-3.5 px-6 rounded-2xl font-bold text-slate-700 dark:text-slate-200 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 active:scale-[0.98] transition-all flex items-center justify-center space-x-2 focus:outline-none focus:ring-2 focus:ring-slate-500"
+                    >
+                        <span>Next</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Feedback Alert Banner -->
+            <div id="feedbackBanner" class="hidden mt-6 max-w-md mx-auto p-4 rounded-2xl text-center transition-all duration-300 animate-pop">
+                <div class="flex items-center justify-center space-x-2 font-bold text-base sm:text-lg mb-0.5">
+                    <i id="feedbackIcon" class="fa-solid"></i>
+                    <span id="feedbackTitle">Correct!</span>
+                </div>
+                <p id="feedbackDetail" class="text-sm opacity-90"></p>
+            </div>
+        </div>
+
+        <!-- Previous Answers Review Panel -->
+        <section class="mt-8 bg-white dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 rounded-3xl p-5 sm:p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-bold text-base text-slate-700 dark:text-slate-300 flex items-center">
+                    <i class="fa-solid fa-clock-rotate-left mr-2 text-teal-500"></i> Answer History
+                </h3>
+                <span id="historyCount" class="text-xs text-slate-400 font-medium">0 items</span>
+            </div>
+
+            <!-- Scrollable list of recent entries -->
+            <div id="historyContainer" class="flex items-center space-x-2 overflow-x-auto pb-2 min-h-[70px] text-sm">
+                <p id="emptyHistoryMsg" class="text-xs text-slate-400 dark:text-slate-500 italic">Answers will appear here as you complete questions.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full text-center py-4 text-xs text-slate-400 dark:text-slate-600 border-t border-slate-200/60 dark:border-slate-800/60">
+        Periodic Table Atomic Numbers Quiz (1 - 30) &bull; Designed for quick chemistry learning
+    </footer>
+
+    <script>
+        // Data set: Elements 1 to 30 (Hydrogen to Zinc)
+        const ELEMENTS_DATA = [
+            { number: 1, name: "Hydrogen", symbol: "H", category: "Reactive Nonmetal", mass: "1.008", classColor: "from-sky-500/10 to-blue-500/10 border-sky-500/40 text-sky-600 dark:text-sky-400" },
+            { number: 2, name: "Helium", symbol: "He", category: "Noble Gas", mass: "4.0026", classColor: "from-purple-500/10 to-indigo-500/10 border-purple-500/40 text-purple-600 dark:text-purple-400" },
+            { number: 3, name: "Lithium", symbol: "Li", category: "Alkali Metal", mass: "6.94", classColor: "from-red-500/10 to-rose-500/10 border-red-500/40 text-red-600 dark:text-red-400" },
+            { number: 4, name: "Beryllium", symbol: "Be", category: "Alkaline Earth Metal", mass: "9.0122", classColor: "from-amber-500/10 to-orange-500/10 border-amber-500/40 text-amber-600 dark:text-amber-400" },
+            { number: 5, name: "Boron", symbol: "B", category: "Metalloid", mass: "10.81", classColor: "from-teal-500/10 to-emerald-500/10 border-teal-500/40 text-teal-600 dark:text-teal-400" },
+            { number: 6, name: "Carbon", symbol: "C", category: "Reactive Nonmetal", mass: "12.011", classColor: "from-sky-500/10 to-blue-500/10 border-sky-500/40 text-sky-600 dark:text-sky-400" },
+            { number: 7, name: "Nitrogen", symbol: "N", category: "Reactive Nonmetal", mass: "14.007", classColor: "from-sky-500/10 to-blue-500/10 border-sky-500/40 text-sky-600 dark:text-sky-400" },
+            { number: 8, name: "Oxygen", symbol: "O", category: "Reactive Nonmetal", mass: "15.999", classColor: "from-sky-500/10 to-blue-500/10 border-sky-500/40 text-sky-600 dark:text-sky-400" },
+            { number: 9, name: "Fluorine", symbol: "F", category: "Halogen", mass: "18.998", classColor: "from-cyan-500/10 to-teal-500/10 border-cyan-500/40 text-cyan-600 dark:text-cyan-400" },
+            { number: 10, name: "Neon", symbol: "Ne", category: "Noble Gas", mass: "20.180", classColor: "from-purple-500/10 to-indigo-500/10 border-purple-500/40 text-purple-600 dark:text-purple-400" },
+            { number: 11, name: "Sodium", symbol: "Na", category: "Alkali Metal", mass: "22.990", classColor: "from-red-500/10 to-rose-500/10 border-red-500/40 text-red-600 dark:text-red-400" },
+            { number: 12, name: "Magnesium", symbol: "Mg", category: "Alkaline Earth Metal", mass: "24.305", classColor: "from-amber-500/10 to-orange-500/10 border-amber-500/40 text-amber-600 dark:text-amber-400" },
+            { number: 13, name: "Aluminium", symbol: "Al", category: "Post-Transition Metal", mass: "26.982", classColor: "from-slate-500/10 to-zinc-500/10 border-slate-500/40 text-slate-600 dark:text-slate-300" },
+            { number: 14, name: "Silicon", symbol: "Si", category: "Metalloid", mass: "28.085", classColor: "from-teal-500/10 to-emerald-500/10 border-teal-500/40 text-teal-600 dark:text-teal-400" },
+            { number: 15, name: "Phosphorus", symbol: "P", category: "Reactive Nonmetal", mass: "30.974", classColor: "from-sky-500/10 to-blue-500/10 border-sky-500/40 text-sky-600 dark:text-sky-400" },
+            { number: 16, name: "Sulfur", symbol: "S", category: "Reactive Nonmetal", mass: "32.06", classColor: "from-sky-500/10 to-blue-500/10 border-sky-500/40 text-sky-600 dark:text-sky-400" },
+            { number: 17, name: "Chlorine", symbol: "Cl", category: "Halogen", mass: "35.45", classColor: "from-cyan-500/10 to-teal-500/10 border-cyan-500/40 text-cyan-600 dark:text-cyan-400" },
+            { number: 18, name: "Argon", symbol: "Ar", category: "Noble Gas", mass: "39.948", classColor: "from-purple-500/10 to-indigo-500/10 border-purple-500/40 text-purple-600 dark:text-purple-400" },
+            { number: 19, name: "Potassium", symbol: "K", category: "Alkali Metal", mass: "39.098", classColor: "from-red-500/10 to-rose-500/10 border-red-500/40 text-red-600 dark:text-red-400" },
+            { number: 20, name: "Calcium", symbol: "Ca", category: "Alkaline Earth Metal", mass: "40.078", classColor: "from-amber-500/10 to-orange-500/10 border-amber-500/40 text-amber-600 dark:text-amber-400" },
+            { number: 21, name: "Scandium", symbol: "Sc", category: "Transition Metal", mass: "44.956", classColor: "from-blue-600/10 to-violet-600/10 border-blue-600/40 text-blue-600 dark:text-blue-400" },
+            { number: 22, name: "Titanium", symbol: "Ti", category: "Transition Metal", mass: "47.867", classColor: "from-blue-600/10 to-violet-600/10 border-blue-600/40 text-blue-600 dark:text-blue-400" },
+            { number: 23, name: "Vanadium", symbol: "V", category: "Transition Metal", mass: "50.942", classColor: "from-blue-600/10 to-violet-600/10 border-blue-600/40 text-blue-600 dark:text-blue-400" },
+            { number: 24, name: "Chromium", symbol: "Cr", category: "Transition Metal", mass: "51.996", classColor: "from-blue-600/10 to-violet-600/10 border-blue-600/40 text-blue-600 dark:text-blue-400" },
+            { number: 25, name: "Manganese", symbol: "Mn", category: "Transition Metal", mass: "54.938", classColor: "from-blue-600/10 to-violet-600/10 border-blue-600/40 text-blue-600 dark:text-blue-400" },
+            { number: 26, name: "Iron", symbol: "Fe", category: "Transition Metal", mass: "55.845", classColor: "from-blue-600/10 to-violet-600/10 border-blue-600/40 text-blue-600 dark:text-blue-400" },
+            { number: 27, name: "Cobalt", symbol: "Co", category: "Transition Metal", mass: "58.933", classColor: "from-blue-600/10 to-violet-600/10 border-blue-600/40 text-blue-600 dark:text-blue-400" },
+            { number: 28, name: "Nickel", symbol: "Ni", category: "Transition Metal", mass: "58.693", classColor: "from-blue-600/10 to-violet-600/10 border-blue-600/40 text-blue-600 dark:text-blue-400" },
+            { number: 29, name: "Copper", symbol: "Cu", category: "Transition Metal", mass: "63.546", classColor: "from-blue-600/10 to-violet-600/10 border-blue-600/40 text-blue-600 dark:text-blue-400" },
+            { number: 30, name: "Zinc", symbol: "Zn", category: "Transition Metal", mass: "65.38", classColor: "from-blue-600/10 to-violet-600/10 border-blue-600/40 text-blue-600 dark:text-blue-400" }
+        ];
+
+        // State variables
+        let currentElement = null;
+        let previousElementNumber = null;
+        let score = 0;
+        let totalAttempts = 0;
+        let streak = 0;
+        let bestStreak = 0;
+        let autoAdvance = true;
+        let isSubmitted = false;
+        let soundEnabled = true;
+        let advanceTimer = null;
+        let historyList = [];
+
+        // Tone.js Synth Setup
+        let correctSynth = null;
+        let incorrectSynth = null;
+
+        // Initialize Application
+        window.addEventListener('DOMContentLoaded', () => {
+            loadSavedStats();
+            initAudio();
+            nextQuestion();
+            updateStatsDisplay();
+
+            // Always ensure proper focus on load
+            setTimeout(() => {
+                const input = document.getElementById('answerInput');
+                if (input) input.focus();
+            }, 100);
+        });
+
+        // Initialize web audio synth
+        function initAudio() {
+            try {
+                correctSynth = new Tone.PolySynth(Tone.Synth, {
+                    oscillator: { type: 'triangle' },
+                    envelope: { attack: 0.005, decay: 0.1, sustain: 0.1, release: 0.3 }
+                }).toDestination();
+                correctSynth.volume.value = -8;
+
+                incorrectSynth = new Tone.Synth({
+                    oscillator: { type: 'sawtooth' },
+                    envelope: { attack: 0.01, decay: 0.2, sustain: 0, release: 0.1 }
+                }).toDestination();
+                incorrectSynth.volume.value = -10;
+            } catch (e) {
+                console.log('Audio init postponed until user interaction');
+            }
+        }
+
+        function playSound(isCorrect) {
+            if (!soundEnabled) return;
+            try {
+                if (Tone.context.state !== 'running') {
+                    Tone.start();
+                }
+                if (isCorrect && correctSynth) {
+                    correctSynth.triggerAttackRelease(["E5", "A5"], "16n");
+                } else if (!isCorrect && incorrectSynth) {
+                    incorrectSynth.triggerAttackRelease("C3", "8n");
+                }
+            } catch (e) {
+                // Ignore audio autoplay restrictions gracefully
+            }
+        }
+
+        // Randomly select an element avoiding immediate repeats
+        function getRandomElement() {
+            let availableElements = ELEMENTS_DATA.filter(el => el.number !== previousElementNumber);
+            const randomIndex = Math.floor(Math.random() * availableElements.length);
+            const selected = availableElements[randomIndex];
+            previousElementNumber = selected.number;
+            return selected;
+        }
+
+        // Render current question to UI
+        function nextQuestion() {
+            if (advanceTimer) clearTimeout(advanceTimer);
+            isSubmitted = false;
+            currentElement = getRandomElement();
+
+            // Clear & reset UI components
+            const promptName = document.getElementById('promptElementName');
+            const promptSymbol = document.getElementById('promptElementSymbol');
+            const cardSymbol = document.getElementById('cardSymbol');
+            const cardName = document.getElementById('cardName');
+            const cardCategory = document.getElementById('elementCategoryTag');
+            const cardMass = document.getElementById('elementAtomicMass');
+            const cardReveal = document.getElementById('cardAtomicNumReveal');
+            const visualCard = document.getElementById('elementVisualCard');
+            const input = document.getElementById('answerInput');
+            const feedback = document.getElementById('feedbackBanner');
+            const submitBtn = document.getElementById('submitBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const quizCard = document.getElementById('quizCard');
+
+            // Format Prompt strictly as required:
+            // "What is the atomic number of [Element Name] ([Symbol])?"
+            promptName.textContent = currentElement.name;
+            promptSymbol.textContent = currentElement.symbol;
+
+            // Visual Card Setup
+            cardSymbol.textContent = currentElement.symbol;
+            cardName.textContent = currentElement.name;
+            cardCategory.textContent = currentElement.category;
+            cardMass.textContent = currentElement.mass;
+            
+            // Reset Atomic Number reveal text on card
+            cardReveal.innerHTML = `Atomic No. <i class="fa-solid fa-question text-[10px]"></i>`;
+            cardReveal.className = "inline-block px-2.5 py-0.5 rounded-full text-xs font-bold mono-font bg-slate-200/80 dark:bg-slate-800/80 text-slate-500 dark:text-slate-400";
+
+            // Apply category color theme to element card
+            visualCard.className = `w-40 h-44 sm:w-48 sm:h-52 rounded-2xl border-2 p-4 flex flex-col justify-between items-center bg-gradient-to-br transition-all duration-300 shadow-md relative group select-none ${currentElement.classColor}`;
+
+            // Reset Input field
+            input.value = '';
+            input.disabled = false;
+            input.className = "w-full px-5 py-3.5 text-center text-xl font-bold mono-font rounded-2xl border-2 border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white focus:outline-none focus:border-teal-500 dark:focus:border-teal-400 focus:ring-4 focus:ring-teal-500/10 transition-all placeholder:font-sans placeholder:text-sm placeholder:font-normal placeholder:text-slate-400";
+            
+            // Reset buttons & feedback
+            submitBtn.classList.remove('hidden');
+            if (autoAdvance) {
+                nextBtn.classList.add('hidden');
+            } else {
+                nextBtn.classList.add('hidden');
+            }
+            feedback.className = "hidden mt-6 max-w-md mx-auto p-4 rounded-2xl text-center transition-all duration-300 animate-pop";
+            quizCard.classList.remove('animate-shake');
+
+            // Auto focus input
+            setTimeout(() => {
+                input.focus();
+            }, 50);
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            if (isSubmitted) {
+                nextQuestion();
+                return;
+            }
+
+            const input = document.getElementById('answerInput');
+            const userAnswer = parseInt(input.value.trim(), 10);
+
+            if (isNaN(userAnswer)) {
+                // Focus and shake input if empty
+                input.focus();
+                return;
+            }
+
+            isSubmitted = true;
+            totalAttempts++;
+
+            const isCorrect = (userAnswer === currentElement.number);
+            const cardReveal = document.getElementById('cardAtomicNumReveal');
+            const feedback = document.getElementById('feedbackBanner');
+            const feedbackIcon = document.getElementById('feedbackIcon');
+            const feedbackTitle = document.getElementById('feedbackTitle');
+            const feedbackDetail = document.getElementById('feedbackDetail');
+            const quizCard = document.getElementById('quizCard');
+            const submitBtn = document.getElementById('submitBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            input.disabled = true;
+
+            // Reveal the correct atomic number inside the visual element card
+            cardReveal.textContent = `Atomic No. ${currentElement.number}`;
+            cardReveal.className = "inline-block px-2.5 py-0.5 rounded-full text-xs font-bold mono-font bg-teal-500 text-white shadow-sm";
+
+            if (isCorrect) {
+                score++;
+                streak++;
+                if (streak > bestStreak) bestStreak = streak;
+                playSound(true);
+
+                // Success Styling
+                input.className = "w-full px-5 py-3.5 text-center text-xl font-bold mono-font rounded-2xl border-2 border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 transition-all";
+                
+                feedback.className = "block mt-6 max-w-md mx-auto p-4 rounded-2xl text-center transition-all duration-300 animate-pop bg-emerald-100 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-800 text-emerald-800 dark:text-emerald-200";
+                feedbackIcon.className = "fa-solid fa-circle-check text-emerald-600 dark:text-emerald-400";
+                feedbackTitle.textContent = "Correct!";
+                feedbackDetail.textContent = `Great job! ${currentElement.name} (${currentElement.symbol}) has atomic number ${currentElement.number}.`;
+            } else {
+                streak = 0;
+                playSound(false);
+
+                // Shake animation on wrong answer
+                quizCard.classList.remove('animate-shake');
+                void quizCard.offsetWidth; // trigger reflow
+                quizCard.classList.add('animate-shake');
+
+                // Error Styling
+                input.className = "w-full px-5 py-3.5 text-center text-xl font-bold mono-font rounded-2xl border-2 border-red-500 bg-red-50 dark:bg-red-950/40 text-red-700 dark:text-red-300 transition-all";
+
+                feedback.className = "block mt-6 max-w-md mx-auto p-4 rounded-2xl text-center transition-all duration-300 animate-pop bg-red-100 dark:bg-red-950/80 border border-red-300 dark:border-red-800 text-red-800 dark:text-red-200";
+                feedbackIcon.className = "fa-solid fa-circle-xmark text-red-600 dark:text-red-400";
+                feedbackTitle.textContent = "Not quite!";
+                feedbackDetail.textContent = `The atomic number for ${currentElement.name} (${currentElement.symbol}) is ${currentElement.number} (you entered ${userAnswer}).`;
+            }
+
+            // Update Review Log & Stats
+            addToHistory(currentElement, userAnswer, isCorrect);
+            updateStatsDisplay();
+            saveStats();
+
+            // Next button or Auto advance logic
+            if (autoAdvance) {
+                submitBtn.classList.add('hidden');
+                advanceTimer = setTimeout(() => {
+                    nextQuestion();
+                }, isCorrect ? 1200 : 2200);
+            } else {
+                submitBtn.classList.add('hidden');
+                nextBtn.classList.remove('hidden');
+                nextBtn.focus();
+            }
+        }
+
+        function updateStatsDisplay() {
+            document.getElementById('scoreDisplay').textContent = `${score} / ${totalAttempts}`;
+            document.getElementById('streakDisplay').textContent = streak;
+            document.getElementById('bestStreakDisplay').textContent = bestStreak;
+
+            const accuracy = totalAttempts > 0 ? Math.round((score / totalAttempts) * 100) : 0;
+            document.getElementById('accuracyDisplay').textContent = `${accuracy}%`;
+        }
+
+        function addToHistory(element, userGuess, isCorrect) {
+            historyList.unshift({ element, userGuess, isCorrect });
+            if (historyList.length > 20) historyList.pop();
+
+            renderHistory();
+        }
+
+        function renderHistory() {
+            const container = document.getElementById('historyContainer');
+            const countLabel = document.getElementById('historyCount');
+            const emptyMsg = document.getElementById('emptyHistoryMsg');
+
+            countLabel.textContent = `${historyList.length} recent`;
+
+            if (historyList.length === 0) {
+                emptyMsg.classList.remove('hidden');
+                return;
+            } else {
+                emptyMsg.classList.add('hidden');
+            }
+
+            container.innerHTML = '';
+            historyList.forEach(item => {
+                const badge = document.createElement('div');
+                badge.className = `flex-shrink-0 flex items-center space-x-2 px-3 py-2 rounded-xl border text-xs font-medium transition-transform hover:scale-105 ${
+                    item.isCorrect 
+                        ? 'bg-emerald-50 dark:bg-emerald-950/50 border-emerald-200 dark:border-emerald-800/80 text-emerald-800 dark:text-emerald-300' 
+                        : 'bg-red-50 dark:bg-red-950/50 border-red-200 dark:border-red-800/80 text-red-800 dark:text-red-300'
+                }`;
+
+                badge.innerHTML = `
+                    <span class="font-bold text-sm">${item.element.symbol}</span>
+                    <span class="opacity-75">#${item.element.number}</span>
+                    <i class="fa-solid ${item.isCorrect ? 'fa-check text-emerald-500' : 'fa-xmark text-red-500'}"></i>
+                `;
+                container.appendChild(badge);
+            });
+        }
+
+        function toggleAutoAdvance() {
+            autoAdvance = !autoAdvance;
+            const btn = document.getElementById('autoAdvanceToggle');
+            const thumb = document.getElementById('autoAdvanceThumb');
+
+            if (autoAdvance) {
+                btn.setAttribute('aria-checked', 'true');
+                btn.className = "relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-teal-500 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900";
+                thumb.className = "pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out translate-x-5";
+            } else {
+                btn.setAttribute('aria-checked', 'false');
+                btn.className = "relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-slate-300 dark:bg-slate-700 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900";
+                thumb.className = "pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out translate-x-0";
+            }
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('themeIcon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                icon.className = "fa-solid fa-sun text-amber-500 text-sm w-4 h-4 flex items-center justify-center";
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                icon.className = "fa-solid fa-moon text-sm w-4 h-4 flex items-center justify-center";
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            const icon = document.getElementById('soundIcon');
+            if (soundEnabled) {
+                icon.className = "fa-solid fa-volume-high text-sm w-4 h-4 flex items-center justify-center";
+            } else {
+                icon.className = "fa-solid fa-volume-xmark text-slate-400 text-sm w-4 h-4 flex items-center justify-center";
+            }
+        }
+
+        function confirmReset() {
+            score = 0;
+            totalAttempts = 0;
+            streak = 0;
+            bestStreak = 0;
+            historyList = [];
+            saveStats();
+            updateStatsDisplay();
+            renderHistory();
+            nextQuestion();
+        }
+
+        function saveStats() {
+            try {
+                localStorage.setItem('elemQuiz_score', score);
+                localStorage.setItem('elemQuiz_total', totalAttempts);
+                localStorage.setItem('elemQuiz_streak', streak);
+                localStorage.setItem('elemQuiz_bestStreak', bestStreak);
+            } catch (e) {}
+        }
+
+        function loadSavedStats() {
+            try {
+                const savedScore = localStorage.getItem('elemQuiz_score');
+                const savedTotal = localStorage.getItem('elemQuiz_total');
+                const savedStreak = localStorage.getItem('elemQuiz_streak');
+                const savedBest = localStorage.getItem('elemQuiz_bestStreak');
+                const savedTheme = localStorage.getItem('theme');
+
+                if (savedScore !== null) score = parseInt(savedScore, 10) || 0;
+                if (savedTotal !== null) totalAttempts = parseInt(savedTotal, 10) || 0;
+                if (savedStreak !== null) streak = parseInt(savedStreak, 10) || 0;
+                if (savedBest !== null) bestStreak = parseInt(savedBest, 10) || 0;
+
+                if (savedTheme === 'light') {
+                    document.documentElement.classList.remove('dark');
+                    document.getElementById('themeIcon').className = "fa-solid fa-sun text-amber-500 text-sm w-4 h-4 flex items-center justify-center";
+                }
+            } catch (e) {}
+        }
+    </script>
+</body>
+</html>
